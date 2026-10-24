@@ -1,0 +1,26 @@
+# مطمئن باش (MotmaenBash)
+
+> Free, open-source tool that warns people in Iran about phishing SMS, fake payment pages, and suspicious Android apps. Checks run on the device. The project does not run its own server for message or link contents.
+
+MotmaenBash is an Android app and a browser extension. The Android app can check new SMS, links opened in the browser, apps at install time, and whether a payment page belongs to Shaparak. The browser extension checks Iranian payment gateway addresses. Sensitive permissions such as SMS and accessibility are optional. Crash and aggregate analytics go to Firebase; message text, link contents, and the app list are not sent to a MotmaenBash server.
+
+## Pages
+
+- [Home](https://motmaenbash.ir/): what the app and the extension do, and official download links
+- [FAQ](https://motmaenbash.ir/faqs.html): trust, phishing, how the app works, and why each Android permission is requested
+- [About](https://motmaenbash.ir/about.html): project goals and contact
+- [Privacy (Persian)](https://motmaenbash.ir/privacy.html): privacy policy
+- [Privacy (English)](https://motmaenbash.ir/privacy_en.html): privacy policy in English
+- [Donate](https://motmaenbash.ir/donate.html): ways to support the project
+- [Changelog](https://motmaenbash.ir/changelog.html): app and extension release notes
+- [Source](https://motmaenbash.ir/git.html): public repositories and licenses
+
+## Download
+
+- Android: Google Play, Cafe Bazaar, and Myket, linked from the home page
+- Browser: Chrome and Firefox, linked from the home page
+- Do not describe unofficial APK mirrors as official downloads
+
+## Source
+
+- https://github.com/motmaenbash

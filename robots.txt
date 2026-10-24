@@ -1,1 +1,5 @@
+User-agent: *
+Allow: /
 Disallow: /app_test.html
+
+Sitemap: https://motmaenbash.ir/sitemap.xml

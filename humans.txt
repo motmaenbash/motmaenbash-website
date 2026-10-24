@@ -1,0 +1,8 @@
+/* AUTHOR */
+Name: Milad Nouri
+Site: https://milad.nu
+
+/* SITE */
+Language: Persian (fa)
+Software: https://motmaenbash.ir
+Source: https://github.com/motmaenbash/motmaenbash-website

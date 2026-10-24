@@ -12,35 +12,70 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Milad Nouri">
     <!-- Open Graph Tags-->
+    <meta property="og:site_name" content="مطمئن باش">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://motmaenbash.ir/donate.html">
     <meta property="og:title" content="حمایت مالی | مطمئن باش">
     <meta property="og:description" content="با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر پروژه «مطمئن باش» کمک کنید.">
     <meta property="og:image" content="https://motmaenbash.ir/images/shield-bg.png">
+    <meta property="og:image:alt" content="مطمئن باش">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
     <meta property="og:locale" content="fa_IR">
     <!-- Twitter Meta Tags-->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://motmaenbash.ir/donate.html">
+    <meta name="twitter:url" content="https://motmaenbash.ir/donate.html">
     <meta name="twitter:title" content="حمایت مالی | مطمئن باش">
     <meta name="twitter:description" content="با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر پروژه «مطمئن باش» کمک کنید.">
     <meta name="twitter:image" content="https://motmaenbash.ir/images/shield-bg.png">
+    <meta name="twitter:image:alt" content="مطمئن باش">
     <!-- Other required meta tags-->
     <link rel="icon" type="image/png" href="https://motmaenbash.ir/images/shield-bg.png">
     <link rel="canonical" href="https://motmaenbash.ir/donate.html">
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css?v=v5.3.3">
-    <link rel="stylesheet" href="css/style.css?v=1.0.8">
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "مطمئن باش",
-        "url": "https://motmaenbash.ir",
-        "logo": "https://motmaenbash.ir/images/shield-bg.png",
-        "sameAs": [
-          "https://github.com/motmaenbash/motmaenbash-website"
-        ]
+    <link rel="stylesheet" href="css/style.css?v=1.0.9">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://motmaenbash.ir/#organization",
+      "name": "مطمئن باش",
+      "alternateName": "MotmaenBash",
+      "url": "https://motmaenbash.ir",
+      "logo": "https://motmaenbash.ir/images/shield-bg.png",
+      "email": "hello@motmaenbash.ir",
+      "sameAs": [
+        "https://github.com/motmaenbash"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motmaenbash.ir/#website",
+      "url": "https://motmaenbash.ir",
+      "name": "مطمئن باش",
+      "alternateName": "MotmaenBash",
+      "inLanguage": "fa-IR",
+      "publisher": {
+        "@id": "https://motmaenbash.ir/#organization"
       }
-    </script>
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motmaenbash.ir/donate.html#webpage",
+      "url": "https://motmaenbash.ir/donate.html",
+      "name": "حمایت مالی | مطمئن باش",
+      "description": "با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر پروژه «مطمئن باش» کمک کنید.",
+      "inLanguage": "fa-IR",
+      "isPartOf": {
+        "@id": "https://motmaenbash.ir/#website"
+      },
+      "about": {
+        "@id": "https://motmaenbash.ir/#organization"
+      }
+    }
+  ]
+}</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
@@ -59,7 +94,7 @@
                 <li>
                   <h6 class="dropdown-header">اپلیکیشن اندروید</h6>
                 </li>
-                <li><a class="dropdown-item" href="https://play.google.com/store/apps/details?id=nu.milad.motmaenbash" target="_blank">گوکل‌پلی</a></li>
+                <li><a class="dropdown-item" href="https://play.google.com/store/apps/details?id=nu.milad.motmaenbash" target="_blank">گوگل‌پلی</a></li>
                 <li><a class="dropdown-item" href="https://cafebazaar.ir/app/nu.milad.motmaenbash" target="_blank">کافه بازار</a></li>
                 <li><a class="dropdown-item" href="https://myket.ir/app/nu.milad.motmaenbash?utm_source=search-ads-gift&amp;utm_medium=cpc" target="_blank">مایکت</a></li>
                 <li>
@@ -83,7 +118,7 @@
       <h1 class="text-center mb-4">حمایت مالی از «مطمئن باش»</h1>
       <div class="row">
         <div>
-          <p class="lead text-center">حمایت مالی یا دونیشن یک راه برای حمایت از محصولات، محتوا و فعالیت‌های مورد علاقه ماست. با این کار، وقتی از محصول یا محتوایی استفاده می‌کنیم و برای آن ارزش قائلیم، می‌توانیم با حمایت، به ایجاد انگیزه و تداوم آن کمک کنیم.<br>پروژه «مطمئن باش» به صورت رایگان و متن باز توسعه داده شده است. اگر این پروژه از نظر شما مفید بوده، با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.</p>
+          <p class="lead text-center">حمایت مالی یا دونیشن یک راه برای حمایت از محصولات، محتوا و فعالیت‌های مورد علاقه ماست. با این کار، وقتی از محصول یا محتوایی استفاده می‌کنیم و برای آن ارزش قائلیم، می‌توانیم با حمایت، به ایجاد انگیزه و تداوم آن کمک کنیم.<br>پروژه «مطمئن باش» به‌صورت رایگان و متن‌باز توسعه داده شده است. اگر این پروژه از نظر شما مفید بوده، با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.</p>
           <div class="alert alert-warning mt-4 text-center">حتی مبالغ کوچک هم برای ما ارزشمندند. <i class="fas fa-heart"></i></div>
           <div class="card mt-4">
             <div class="card-body">
@@ -157,14 +192,15 @@
             </ul>
           </div>
           <div class="col-md-4 fs-6">
-            <p class="text-center mb-3 lh-lg fs-6">​پروژه مطمئن باش به صورت متن باز​ (Open Source) ​توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه (نسخه اندروید، اکستنشن کروم و فایرفاکس و وب‌سایت مطمئن باش)، از طریق لینک زیر در دسترس است: </p><a class="btn btn-outline-light btn-sm" href="git.html"><i class="fab fa-github me-1"></i> مخزن‌های مرتبط با پروژه</a>
+            <p class="text-center mb-3 lh-lg fs-6">پروژه مطمئن باش به‌صورت متن‌باز (Open Source) توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه (نسخه اندروید، اکستنشن کروم و فایرفاکس و وب‌سایت مطمئن باش)، از طریق لینک زیر در دسترس است: </p><a class="btn btn-outline-light btn-sm" href="git.html"><i class="fab fa-github me-1"></i> مخزن‌های مرتبط با پروژه</a>
           </div>
         </div>
         <hr class="my-3">
         <p class="text-center mb-0 fs-6 footer-copyright">توسعه داده شده توسط <a href="https://milad.nu" target="_blank">میلاد نوری </a><i class="fas fa-heart fa-beat text-danger mx-1"></i>برای مردم ایران</p>
       </div>
     </footer>
+    <script src="js/jquery-4.0.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js?v=5.3.3"></script>
-    <script src="js/main.js?v=1.0.1"></script>
+    <script src="js/main.js?v=1.0.3"></script>
   </body>
 </html>
