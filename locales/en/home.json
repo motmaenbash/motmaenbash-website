@@ -1,0 +1,347 @@
+{
+  "title": "MotmaenBash | Your digital security shield",
+  "description": "MotmaenBash is a free Android app and browser extension that helps people recognize phishing and online fraud.",
+  "keywords": "MotmaenBash, phishing protection, browser extension, Android app, online fraud, phishing",
+  "url": "https://motmaenbash.ir/en/",
+  "alternateUrl": "https://motmaenbash.ir",
+  "alternateLang": "fa",
+  "softwareAndroidName": "MotmaenBash for Android",
+  "softwareExtensionName": "MotmaenBash browser extension",
+  "softwareAndroidInstall": "https://motmaenbash.ir/en/#android-app",
+  "softwareExtensionInstall": "https://motmaenbash.ir/en/#download",
+  "hero": {
+    "logoAlt": "MotmaenBash",
+    "title": "MotmaenBash",
+    "titleAttr": "MotmaenBash",
+    "subtitle": "Your digital security shield",
+    "share": "Share:",
+    "whatsapp": "WhatsApp",
+    "twitter": "X",
+    "telegram": "Telegram",
+    "linkedin": "LinkedIn",
+    "shareWhatsapp": "https://wa.me/?text=Check%20Iranian%20online%20payment%20gateways%0A%20https://motmaenbash.ir",
+    "shareTwitter": "https://x.com/intent/tweet?text=Check%20Iranian%20online%20payment%20gateways&url=https://motmaenbash.ir",
+    "shareTelegram": "https://t.me/share/url?url=https://motmaenbash.ir&text=Check%20Iranian%20online%20payment%20gateways",
+    "shareLinkedin": "https://www.linkedin.com/sharing/share-offsite/?url=https://motmaenbash.ir",
+    "installApp": "Install the app",
+    "installExtension": "Install the extension",
+    "brand": "MotmaenBash",
+    "trustBefore": "Security of",
+    "trustBrand": "MotmaenBash",
+    "trustAfter": "and why to trust it"
+  },
+  "trustTitle": "Security of MotmaenBash, and why to trust it",
+  "trustQuestion": "Is MotmaenBash itself safe to trust?",
+  "trustItems": [
+    {
+      "icon": "fas fa-check-double me-2",
+      "text": "Open source, so anyone can review the code"
+    },
+    {
+      "icon": "fas fa-check-double me-2",
+      "text": "SMS, links, and apps are checked on the phone. Their contents are not uploaded or stored on a server"
+    },
+    {
+      "icon": "fas fa-check-double me-2",
+      "text": "Checks run offline, using the database inside the app"
+    },
+    {
+      "icon": "fas fa-check me-2",
+      "text": "Sensitive permissions are optional. The rest of the app still works without them"
+    },
+    {
+      "icon": "fas fa-check me-2",
+      "text": "No account, and no name, email, or phone number is collected"
+    },
+    {
+      "icon": "fas fa-check me-2",
+      "text": "Reviewed and published by established app stores"
+    },
+    {
+      "icon": "fas fa-check me-2",
+      "text": "The offline database inside the app is updated from a public GitHub repository"
+    }
+  ],
+  "trustMore": "More…",
+  "trustMoreHref": "/en/faqs.html#trust",
+  "androidTitle": "MotmaenBash Android app",
+  "androidLeadBefore": "The Android app ",
+  "androidLeadAfter": " warns you about online fraud. It looks for suspicious messages, links, and apps and alerts you.",
+  "androidFeatures": [
+    "Checks a bank payment page before you enter card details",
+    "Reads new SMS messages and flags dangerous links and phishing texts",
+    "Warns you when a fraudulent app is being installed",
+    "Warns you if you open a known phishing payment page, site, or link",
+    "Keeps the database updated, with help from users and specialists, as new scams appear",
+    "Explains current scam tricks"
+  ],
+  "playTitle": "Download MotmaenBash from Google Play",
+  "playLabel": "Get it on Google Play",
+  "bazaarTitle": "Download MotmaenBash from Cafe Bazaar",
+  "bazaarLabel": "Get it on Cafe Bazaar",
+  "myketTitle": "Download MotmaenBash from Myket",
+  "myketLabel": "Get it on Myket",
+  "fdroidTitle": "Coming soon",
+  "fdroidLabel": "F-Droid (coming soon)",
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.jpg",
+      "alt": "MotmaenBash app screenshot"
+    },
+    {
+      "src": "/images/screenshot2.jpg",
+      "alt": "MotmaenBash app screenshot"
+    },
+    {
+      "src": "/images/screenshot3.jpg",
+      "alt": "MotmaenBash app screenshot"
+    }
+  ],
+  "warnings": [
+    "Install MotmaenBash only from the official links above.",
+    "Copies from anywhere else may have been changed, and may be unsafe or contain malware.",
+    "You are responsible for the risk of installing an unofficial copy."
+  ],
+  "extensionTitle": "MotmaenBash browser extension",
+  "extensionLeadBefore": "The ",
+  "extensionLeadAfter": " extension checks online payment gateways in the browser, so a fake payment page is easier to spot.",
+  "browsers": [
+    {
+      "badges": [
+        {
+          "class": "bg-success",
+          "label": "Desktop"
+        }
+      ],
+      "image": "/images/chrome.svg",
+      "alt": "Chrome extension",
+      "name": "Google Chrome",
+      "text": "Safer online payments",
+      "href": "https://chromewebstore.google.com/detail/motmaenbash-%D9%85%D8%B7%D9%85%D8%A6%D9%86-%D8%A8%D8%A7%D8%B4/efhpmpdbeaganelnekhbffjphahncbgn",
+      "cta": "Get the Chrome extension"
+    },
+    {
+      "badges": [
+        {
+          "class": "bg-success",
+          "label": "Desktop"
+        },
+        {
+          "class": "bg-info",
+          "label": "Mobile"
+        }
+      ],
+      "image": "/images/firefox.svg",
+      "alt": "Firefox extension",
+      "name": "Firefox",
+      "text": "Safer online payments",
+      "href": "https://addons.mozilla.org/en-US/firefox/addon/motmaenbash-%D9%85%D8%B7%D9%85%D8%A6%D9%86-%D8%A8%D8%A7%D8%B4/",
+      "cta": "Get the Firefox extension"
+    },
+    {
+      "badges": [
+        {
+          "class": "bg-success",
+          "label": "Desktop"
+        },
+        {
+          "class": "bg-info",
+          "label": "Mobile"
+        }
+      ],
+      "image": "/images/yandex.svg",
+      "alt": "Yandex extension",
+      "name": "Yandex Browser",
+      "text": "Yandex Browser can install the Chrome extension",
+      "href": "https://chrome.google.com/webstore/detail/motmaenbash-%D9%85%D8%B7%D9%85%D8%A6%D9%86-%D8%A8%D8%A7%D8%B4/efhpmpdbeaganelnekhbffjphahncbgn",
+      "cta": "Get the Yandex extension"
+    }
+  ],
+  "phishingTitle": "What is phishing?",
+  "phishingLead": [
+    "Phishing is a common attack. Someone copies a real site, payment page, or mobile app and tries to steal bank details, passwords, crypto-wallet funds, or identity information. The bait is usually a fake email, a text message, a misleading ad, or a link in a social network or messenger."
+  ],
+  "phishingGoal": "Phishing is after private data:",
+  "phishingTargets": [
+    "Card and bank-account details",
+    "Usernames and passwords",
+    "Identity information",
+    "Two-factor codes and one-time passwords"
+  ],
+  "phishingMethodsTitle": "Common methods:",
+  "phishingMethods": [
+    "Fake pages that look like a real bank or a known service",
+    "Fake emails that ask for private information",
+    "Text messages with an attractive offer and a link to a fake site or app",
+    "Malicious apps shared in messengers and social networks"
+  ],
+  "phishingAlert": "These messages are written to make the request feel urgent or rewarding, so the private information is handed over without a second look.",
+  "phishingItems": [
+    {
+      "icon": "fas fa-shield",
+      "title": "How does a phishing attack work?",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The attacker sends a fake email or message. The link opens a page that looks like a real bank or a known service. Information entered there goes to the attacker."
+        },
+        {
+          "type": "p",
+          "class": "",
+          "text": "Typical phishing:"
+        },
+        {
+          "type": "ul",
+          "icon": "fas fa-triangle-exclamation text-warning me-1",
+          "items": [
+            "Texts promising a prize or free mobile data",
+            "Fake bank payment pages that collect card details",
+            "Malicious apps shared in social networks and messengers",
+            "Fake emails with urgent warnings, such as “your account will be blocked”"
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "fas fa-comment",
+      "title": "How do I recognize a phishing SMS?",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Look for these signs:"
+        },
+        {
+          "type": "ul",
+          "icon": "fas fa-triangle-exclamation text-warning me-1",
+          "items": [
+            "Shortened or unusual links",
+            "Spelling and grammar mistakes",
+            "Bait such as “you have won a prize” or “you have an unpaid toll”",
+            "Claims about a subsidy payment, or that you were removed from a payment list",
+            "Messages pretending to be the judiciary and asking you to view a case",
+            "A personal phone number instead of an official sender such as adliran",
+            "A request for personal information, a card password, or a confirmation code",
+            "Threats such as “your account will be blocked if you do not pay”"
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "fas fa-envelope",
+      "title": "How do I recognize a phishing email?",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Look for these signs:"
+        },
+        {
+          "type": "ul",
+          "icon": "fas fa-check-double text-success me-1",
+          "items": [
+            "A sender domain that only looks real, such as support@google-support.com instead of @google.com",
+            "Spelling and grammar mistakes",
+            "A request for private information",
+            "Shortened or unusual links",
+            "Urgent threats pushing you to enter private information",
+            "Do not open links you were not expecting"
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "fab fa-android",
+      "title": "How does the MotmaenBash Android app work?",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The Android app uses the checks below. 🚀"
+        },
+        {
+          "type": "ul",
+          "icon": "fas fa-check-double text-success me-1",
+          "items": [
+            "Checks new SMS messages by sender, text, and links.",
+            "Compares links in SMS messages with the phishing database and warns you when one matches.",
+            "Warns you when a suspicious app is installed.",
+            "Can scan apps that are already installed.",
+            "Shows short security tips on the home screen.",
+            "Checks links opened in the browser and warns you about suspicious pages.",
+            "Shows a green confirmation on genuine Shaparak payment pages.",
+            "Warns you immediately about a suspicious or misleading site.",
+            "Lets people report new scams, and those reports improve the database.",
+            "Updates the database as new threats appear.",
+            "Works offline, at the moment the message, link, or app is seen."
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "fas fa-shield-alt",
+      "title": "How does the MotmaenBash browser extension work?",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The browser extension does two things:"
+        },
+        {
+          "type": "ul",
+          "icon": "fas fa-check-double text-success me-1",
+          "items": [
+            "Checks the address of payment gateways",
+            {
+              "before": "Shows a green mark",
+              "icon": "fas fa-circle-check text-success mx-1",
+              "after": " when the payment gateway looks genuine"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "fas fa-globe",
+      "title": "How to avoid phishing",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These habits help:"
+        },
+        {
+          "type": "ul",
+          "icon": "fas fa-check-double text-success me-1",
+          "items": [
+            "Learn the current tricks, and warn people around you",
+            "Look at the site carefully before entering information",
+            "Install mobile apps only from official stores",
+            "Pay attention to warnings from the browser and other security tools",
+            "Do not enter information on a site you do not know",
+            "Delete suspicious texts and emails",
+            "Do not open unexpected links",
+            "Use a browser extension such as MotmaenBash",
+            "Use the MotmaenBash Android app"
+          ]
+        }
+      ]
+    }
+  ],
+  "reportTitle": "Report a phishing SMS, link, or app",
+  "reportBefore": "The more reports ",
+  "reportBrand": "MotmaenBash",
+  "reportAfter": " receives, the more scams it can recognize. If you get a phishing SMS, or you find a fraudulent link or app, send it with the form below.",
+  "reportButton": "Report a scam",
+  "pressTitle": "MotmaenBash in the press",
+  "pressMore": "See more",
+  "press": [
+    "Nooshdaroo Logo",
+    "Digiato Logo",
+    "Zoomit Logo",
+    "ICTNA Logo",
+    "ICTNA Logo",
+    "Didgah News Logo"
+  ],
+  "pressBody": " is covered by several Iranian technology publications. That coverage helps more people hear about the tool. If you write for a site, a blog, or a video, you can introduce it to your audience.",
+  "pressContact": "For an interview or more information: hello [at] motmaenbash [dot] ir",
+  "pressNoteBefore": "If you write about MotmaenBash, please also mention ",
+  "pressNoteLink": "why the project can be trusted",
+  "pressNoteAfter": ".",
+  "pressShare": "Sharing MotmaenBash with people you know helps them avoid these scams."
+}

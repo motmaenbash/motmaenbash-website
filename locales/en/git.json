@@ -1,0 +1,51 @@
+{
+  "title": "Source repositories | MotmaenBash",
+  "description": "Source repositories and licenses for the MotmaenBash Android app, browser extensions, website, and database.",
+  "keywords": "MotmaenBash, open source, Android, browser extension, license, GitHub",
+  "url": "https://motmaenbash.ir/en/git.html",
+  "alternateUrl": "https://motmaenbash.ir/git.html",
+  "alternateLang": "fa",
+  "heading": "MotmaenBash source repositories",
+  "lead": "MotmaenBash is open source. The repositories for each part of the project are listed below.",
+  "githubLabel": "GitHub:",
+  "repos": [
+    {
+      "icon": "fab fa-android",
+      "title": "Android app",
+      "license": "License: Apache 2.0",
+      "href": "https://github.com/motmaenbash/motmaenbash-android",
+      "notes": [
+        "The Android app is released under the Apache 2.0 license.",
+        "You may use, change, and distribute the source code. Use of the name or logo «مطمئن باش» (MotmaenBash / Motmaen Bash) is not allowed.",
+        "Public builds under the name MotmaenBash are published by the project only."
+      ]
+    },
+    {
+      "icon": "fab fa-chrome",
+      "title": "Chrome extension",
+      "license": "License: MIT",
+      "href": "https://github.com/motmaenbash/motmaenbash-chrome"
+    },
+    {
+      "icon": "fab fa-firefox",
+      "title": "Firefox extension",
+      "license": "License: MIT",
+      "href": "https://github.com/motmaenbash/motmaenbash-firefox"
+    },
+    {
+      "icon": "fas fa-window-restore",
+      "title": "Website",
+      "license": "License: MIT",
+      "href": "https://github.com/motmaenbash/motmaenbash-website"
+    },
+    {
+      "icon": "fas fa-database",
+      "title": "Database",
+      "license": "License: CC-BY-4.0",
+      "href": "https://github.com/miladnouri/motmaenbash-data"
+    }
+  ],
+  "donateTitle": "Support the project",
+  "donateText": "A donation helps keep MotmaenBash updated.",
+  "donateLabel": "Donate"
+}

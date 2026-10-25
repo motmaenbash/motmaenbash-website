@@ -1,0 +1,71 @@
+extends ../layout/base.pug
+
+block variables
+  - var t = press
+  - var title = t.title
+  - var description = t.description
+  - var keywords = t.keywords
+  - var url = t.url
+  - var lang = t.lang
+  - var locale = t.locale
+  - var alternateUrl = t.alternateUrl
+  - var alternateLang = t.alternateLang
+
+mixin socialCard(item)
+  a.press-social-card(href=item.href target="_blank" rel="noopener" class=item.wide ? "is-wide" : false)
+    if item.cover
+      img(src=item.cover alt="")
+    span.press-social-card-caption
+      span.press-social-card-name= item.outlet
+      span.press-social-card-title= item.title
+
+block content
+  section.container.my-2(class=t.sectionClass || false dir=t.contentDir || false)
+    h1.text-center.mb-4= t.heading
+    p.lead.text-center.mb-4= t.lead
+
+    .row.media-logos.justify-content-center.align-content-center.text-center.g-4.mb-4
+      .col-6.col-md-2
+        a(href="https://nooshdaroo.ir/security-tools/motmaen-bash/" target="_blank" rel="noopener")
+          img.logo-width-120(src="/images/press/nooshdaroo-logo.jpg" alt="Nooshdaroo")
+      .col-6.col-md-2
+        a(href="https://digiato.com/iran-technology-news/unveiling-android-app-motmaenbash" target="_blank" rel="noopener")
+          img(src="/images/press/digiato-logo.svg" alt="Digiato")
+      .col-6.col-md-2
+        a(href="https://www.zoomit.ir/software-application/443587-motmaen-bash-milad-nouri-app-released-android/" target="_blank" rel="noopener")
+          img(src="/images/press/zoomit-logo.svg" alt="Zoomit")
+      .col-6.col-md-2
+        a(href="https://ana.ir/fa/news/984599/" target="_blank" rel="noopener")
+          img.logo-width-150(src="/images/press/ana-logo.svg" alt="ANA")
+      .col-6.col-md-2
+        a(href="https://ictna.ir/id/196908/" target="_blank" rel="noopener")
+          img.logo-width-150(src="/images/press/ictna-logo.png" alt="ICTNA")
+      .col-6.col-md-2
+        a(href="https://didgahnews.ir/%d9%86%d8%b1%d9%85%d8%a7%d9%81%d8%b2%d8%a7%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%db%8c-%d9%85%d8%b7%d9%85%d8%a6%d9%86-%d8%a8%d8%a7%d8%b4-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b4%d8%af/" target="_blank" rel="noopener")
+          img.logo-width-180(src="/images/press/didgahnews-logo.png" alt="Didgah News")
+
+    ul.list-unstyled
+      each item in t.items
+        li.border-bottom.py-3
+          .d-flex.align-items-center.gap-3
+            if item.logo
+              img.press-item-logo(src=item.logo alt="")
+            else if item.logoSpace
+              span.press-item-logo.press-item-logo-empty(aria-hidden="true")
+            div.flex-grow-1
+              span.fw-bold.d-block= item.outlet
+              a.d-inline-block.mt-1(href=item.href target="_blank" rel="noopener")= item.title
+
+    h2.h4.mt-5.mb-3= t.socialTitle
+    .row.g-3.press-social
+      each item in t.social
+        if !item.wide
+          .col-6.col-md-4.press-social-col
+            +socialCard(item)
+    .row.g-3.press-social.mt-3
+      each item in t.social
+        if item.wide
+          .col-12
+            +socialCard(item)
+
+  include ../layout/inc_section_donate.pug

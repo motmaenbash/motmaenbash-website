@@ -1,0 +1,22 @@
+-
+  var pageId = "home"
+  if (typeof url !== "undefined" && url) {
+    var pagePath = String(url).replace(/^https?:\/\/[^/]+/, "")
+    siteLanguages.forEach(function (language) {
+      if (language.prefix && (pagePath === language.prefix || pagePath.indexOf(language.prefix + "/") === 0)) {
+        pagePath = pagePath.slice(language.prefix.length) || "/"
+      }
+    })
+    if (pagePath === "" || pagePath === "/") pageId = "home"
+    else pageId = pagePath.replace(/^\//, "").replace(/\.html$/, "")
+  }
+  var pageHref = function (language) {
+    if (pageId === "home") return language.prefix ? language.prefix + "/" : "/"
+    return (language.prefix || "") + "/" + pageId + ".html"
+  }
+  var currentLanguageLabel = ""
+  if (typeof siteLanguages !== "undefined" && typeof lang !== "undefined") {
+    siteLanguages.forEach(function (language) {
+      if (language.code === lang) currentLanguageLabel = language.label
+    })
+  }

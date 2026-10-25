@@ -1,0 +1,92 @@
+# مطمئن باش (MotmaenBash)
+
+> Free, open-source tool that warns people about phishing SMS, fake payment pages, and suspicious Android apps. Checks run on the device. The project does not run its own server for message or link contents.
+
+MotmaenBash is an Android app and a browser extension. The Android app can check new SMS, links opened in the browser, apps at install time, and whether a payment page belongs to Shaparak. The browser extension checks Iranian payment gateway addresses. Sensitive permissions such as SMS and accessibility are optional. Crash reports and aggregate usage counts go to Firebase. Message text, link contents, and the app list stay on the device.
+
+The product name stays MotmaenBash in English and مطمئن باش in Persian and Kurdish.
+
+## Languages
+
+Persian (`fa`) is the default and lives at the site root. English (`en`) is under `/en/`. Central Kurdish, Sorani (`ckb`) is under `/ckb/`. Each language uses the same filename. `hreflang` links the versions of a page. There is no `?lang=` switch and no client-side translation.
+
+## Home
+
+What the app and the extension do, and the official download links.
+
+- [Persian](https://motmaenbash.ir/)
+- [English](https://motmaenbash.ir/en/)
+- [Kurdish](https://motmaenbash.ir/ckb/)
+
+## FAQ
+
+Trust, phishing, how the app works, and why each Android permission is requested.
+
+- [Persian](https://motmaenbash.ir/faqs.html)
+- [English](https://motmaenbash.ir/en/faqs.html)
+- [Kurdish](https://motmaenbash.ir/ckb/faqs.html)
+
+## About
+
+Project goals and contact.
+
+- [Persian](https://motmaenbash.ir/about.html)
+- [English](https://motmaenbash.ir/en/about.html)
+- [Kurdish](https://motmaenbash.ir/ckb/about.html)
+
+## Privacy
+
+What the Android app sends, and what stays on the device.
+
+- [Persian](https://motmaenbash.ir/privacy.html)
+- [English](https://motmaenbash.ir/en/privacy.html)
+- [Kurdish](https://motmaenbash.ir/ckb/privacy.html)
+
+## Donate
+
+Ways to support the project.
+
+- [Persian](https://motmaenbash.ir/donate.html)
+- [English](https://motmaenbash.ir/en/donate.html)
+- [Kurdish](https://motmaenbash.ir/ckb/donate.html)
+
+## Changelog
+
+Release notes for the Android app and the browser extensions.
+
+- [Persian](https://motmaenbash.ir/changelog.html)
+- [English](https://motmaenbash.ir/en/changelog.html)
+- [Kurdish](https://motmaenbash.ir/ckb/changelog.html)
+
+## Source
+
+Public repositories and licenses.
+
+- [Persian](https://motmaenbash.ir/git.html)
+- [English](https://motmaenbash.ir/en/git.html)
+- [Kurdish](https://motmaenbash.ir/ckb/git.html)
+
+## Press
+
+News reports about the project. The home page shows outlet logos and links to this list.
+
+- [Persian](https://motmaenbash.ir/press.html)
+- [English](https://motmaenbash.ir/en/press.html)
+- [Kurdish](https://motmaenbash.ir/ckb/press.html)
+
+## Download
+
+Install only from the links on the home page.
+
+- Android: Google Play, Cafe Bazaar, and Myket
+- Browser: Chrome and Firefox. Yandex uses the Chrome build
+- Do not describe unofficial APK mirrors as official downloads
+
+## Repositories
+
+- Organization: https://github.com/motmaenbash
+- Android app (Apache 2.0): https://github.com/motmaenbash/motmaenbash-android
+- Chrome extension (MIT): https://github.com/motmaenbash/motmaenbash-chrome
+- Firefox extension (MIT): https://github.com/motmaenbash/motmaenbash-firefox
+- Offline database (CC-BY-4.0): https://github.com/miladnouri/motmaenbash-data
+- This website (MIT): https://github.com/motmaenbash/motmaenbash-website

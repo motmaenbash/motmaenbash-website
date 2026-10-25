@@ -1,3 +1,78 @@
+-
+  var siteUrl = "https://motmaenbash.ir"
+  var shareImage = siteUrl + "/images/shield-bg.png"
+  var pageLang = typeof lang === "undefined" ? "fa" : lang
+  var siteName = pageLang === "en" ? "MotmaenBash" : "مطمئن باش"
+  var siteAlternateName = pageLang === "en" ? "مطمئن باش" : "MotmaenBash"
+  var pageLocale = typeof locale === "undefined" ? (pageLang === "en" ? "en_US" : pageLang === "ckb" ? "ckb_IQ" : "fa_IR") : locale
+  var pageRobots = typeof robots === "undefined" ? "index, follow" : robots
+  var pageKeywords = typeof keywords === "undefined" ? "" : keywords
+  var inLanguage = pageLang === "en" ? "en" : pageLang === "ckb" ? "ckb" : "fa-IR"
+  var graph = [
+    {
+      "@type": "Organization",
+      "@id": siteUrl + "/#organization",
+      "name": siteName,
+      "alternateName": siteAlternateName,
+      "url": siteUrl,
+      "logo": shareImage,
+      "email": "hello@motmaenbash.ir",
+      "sameAs": [
+        "https://github.com/motmaenbash"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": siteUrl + "/#website",
+      "url": siteUrl,
+      "name": siteName,
+      "alternateName": siteAlternateName,
+      "inLanguage": inLanguage,
+      "publisher": { "@id": siteUrl + "/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": url + "#webpage",
+      "url": url,
+      "name": title,
+      "description": description,
+      "inLanguage": inLanguage,
+      "isPartOf": { "@id": siteUrl + "/#website" },
+      "about": { "@id": siteUrl + "/#organization" }
+    }
+  ]
+  if (typeof includeSoftware !== "undefined" && includeSoftware)
+    graph.push(
+      {
+        "@type": "SoftwareApplication",
+        "name": typeof softwareAndroidName === "undefined" ? "مطمئن باش برای اندروید" : softwareAndroidName,
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Android",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IRR" },
+        "downloadUrl": "https://play.google.com/store/apps/details?id=nu.milad.motmaenbash",
+        "installUrl": typeof softwareAndroidInstall === "undefined" ? siteUrl + "/#android-app" : softwareAndroidInstall,
+        "url": siteUrl,
+        "image": shareImage,
+        "description": description,
+        "isAccessibleForFree": true,
+        "author": { "@id": siteUrl + "/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": typeof softwareExtensionName === "undefined" ? "افزونه مرورگر مطمئن باش" : softwareExtensionName,
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Chrome, Firefox",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IRR" },
+        "installUrl": typeof softwareExtensionInstall === "undefined" ? siteUrl + "/#download" : softwareExtensionInstall,
+        "url": siteUrl,
+        "image": shareImage,
+        "description": description,
+        "isAccessibleForFree": true,
+        "author": { "@id": siteUrl + "/#organization" }
+      }
+    )
+  var structuredData = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2)
+
 title=title
 meta(charset="UTF-8")
 meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -6,39 +81,63 @@ meta(name="theme-color" content="#1261A7")
 
 // SEO Meta Tags
 meta(name="description" content=description)
-meta(name="keywords" content=keywords)
-meta(name="robots" content="index, follow")
+if pageKeywords
+  meta(name="keywords" content=pageKeywords)
+meta(name="robots" content=pageRobots)
 meta(name="author" content="Milad Nouri")
 
 // Open Graph Tags
+meta(property="og:site_name" content=siteName)
 meta(property="og:type" content="website")
 meta(property="og:url" content=url)
 meta(property="og:title" content=title)
 meta(property="og:description" content=description)
-meta(property="og:image" content="https://motmaenbash.ir/images/shield-bg.png")
-meta(property="og:locale" content="fa_IR")
+meta(property="og:image" content=shareImage)
+meta(property="og:image:alt" content=siteName)
+meta(property="og:image:width" content="1024")
+meta(property="og:image:height" content="1024")
+meta(property="og:locale" content=pageLocale)
 
 // Twitter Meta Tags
 meta(name="twitter:card" content="summary_large_image")
-meta(property="twitter:url" content=url)
+meta(name="twitter:url" content=url)
 meta(name="twitter:title" content=title)
 meta(name="twitter:description" content=description)
-meta(name="twitter:image" content="https://motmaenbash.ir/images/shield-bg.png")
+meta(name="twitter:image" content=shareImage)
+meta(name="twitter:image:alt" content=siteName)
 
 // Other required meta tags
-link(rel="icon" type="image/png" href="https://motmaenbash.ir/images/shield-bg.png")
+link(rel="icon" type="image/png" href=shareImage)
 link(rel="canonical" href=url)
-link(rel="stylesheet" href="css/bootstrap.rtl.min.css?v=v5.3.3")
-link(rel="stylesheet" href="css/style.css?v=1.0.8")
-
-script(type="application/ld+json").
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "مطمئن باش",
-    "url": "https://motmaenbash.ir",
-    "logo": "https://motmaenbash.ir/images/shield-bg.png",
-    "sameAs": [
-      "https://github.com/motmaenbash/motmaenbash-website"
-    ]
+-
+  var hreflangPageId = "home"
+  if (typeof url !== "undefined" && url) {
+    var hreflangPath = String(url).replace(/^https?:\/\/[^/]+/, "")
+    siteLanguages.forEach(function (language) {
+      if (language.prefix && (hreflangPath === language.prefix || hreflangPath.indexOf(language.prefix + "/") === 0)) {
+        hreflangPath = hreflangPath.slice(language.prefix.length) || "/"
+      }
+    })
+    if (hreflangPath === "" || hreflangPath === "/") hreflangPageId = "home"
+    else hreflangPageId = hreflangPath.replace(/^\//, "").replace(/\.html$/, "")
   }
+  var hreflangHref = function (language) {
+    if (hreflangPageId === "home") return "https://motmaenbash.ir" + (language.prefix ? language.prefix + "/" : "/")
+    return "https://motmaenbash.ir" + (language.prefix || "") + "/" + hreflangPageId + ".html"
+  }
+  var faLanguage = null
+  siteLanguages.forEach(function (language) {
+    if (language.code === "fa") faLanguage = language
+  })
+if typeof pagesByLang !== "undefined" && pagesByLang.fa.indexOf(hreflangPageId) !== -1
+  each language in siteLanguages
+    if pagesByLang[language.code].indexOf(hreflangPageId) !== -1
+      link(rel="alternate" hreflang=language.code href=hreflangHref(language))
+      if language.code !== pageLang
+        meta(property="og:locale:alternate" content=language.locale)
+  link(rel="alternate" hreflang="x-default" href=hreflangHref(faLanguage))
+- var bootstrapFile = dir === "ltr" ? "bootstrap.min.css" : "bootstrap.rtl.min.css"
+link(rel="stylesheet" href="/css/" + bootstrapFile + "?v=v5.3.3")
+link(rel="stylesheet" href="/css/style.css?v=1.0.19")
+
+script(type="application/ld+json")!= structuredData

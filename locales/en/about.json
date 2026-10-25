@@ -1,0 +1,55 @@
+{
+  "title": "About | MotmaenBash",
+  "description": "About the MotmaenBash Android app and browser extension.",
+  "keywords": "MotmaenBash, phishing protection, browser extension, Android app, online fraud, phishing",
+  "url": "https://motmaenbash.ir/en/about.html",
+  "alternateUrl": "https://motmaenbash.ir/about.html",
+  "alternateLang": "fa",
+  "heading": "About MotmaenBash",
+  "lead": "MotmaenBash is a free, independent, open-source project that helps people recognize phishing and online fraud.",
+  "developerTitle": "Developer",
+  "developerBefore": "This project is developed by ",
+  "developerName": "Milad Nouri",
+  "developerAfter": ". The aim is a simple, practical tool, continued with help from users and volunteer developers.",
+  "developerParagraphs": [
+    "Transparency and security come first, so the project code is published on GitHub.",
+    "You can help improve it. Suggestions and contributions on GitHub are welcome."
+  ],
+  "gitHref": "/en/git.html",
+  "gitLabel": "View on GitHub",
+  "goalsTitle": "Goals",
+  "goals": [
+    "Help people recognize online fraud, phishing, and ways to avoid them",
+    "Offer simple tools",
+    "Lower the risk of phishing and online fraud",
+    "Keep the project updated as new scams appear"
+  ],
+  "featuresTitle": "What MotmaenBash does",
+  "features": [
+    "A browser extension that checks online payment gateways",
+    "An Android app that checks SMS messages, links, and suspicious apps",
+    "A database that is updated as new scams appear",
+    "A way for people to report suspicious cases"
+  ],
+  "contactTitle": "Contact",
+  "contactIntro": "Questions and suggestions:",
+  "email": "hello [at] motmaenbash [dot] ir",
+  "contactFollow": "Milad Nouri on ",
+  "socials": [
+    {
+      "href": "https://t.me/MiladNouriChannel",
+      "label": "Telegram"
+    },
+    {
+      "href": "https://twitter.com/MilaDnu",
+      "label": "X"
+    },
+    {
+      "href": "https://youtube.com/MilaDnu",
+      "label": "YouTube"
+    }
+  ],
+  "donateTitle": "Support the project",
+  "donateText": "A donation helps keep MotmaenBash updated.",
+  "donateLabel": "Donate"
+}

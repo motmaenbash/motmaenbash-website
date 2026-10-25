@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'Vazir';
-    src: url('../webfonts/Vazirmatn-RD[wght].ttf') format('woff2-variations');
+    src: url("../webfonts/Vazirmatn-RD[wght].ttf") format("truetype");
     font-weight: 100 900;
     font-display: swap;
 }
@@ -17,8 +17,7 @@
 
 body {
     font-family: 'Vazir', sans-serif;
-    direction: rtl;
-    text-align: right;
+    text-align: start;
     background-color: #fff;
     color: #000;
     margin: 0;
@@ -96,7 +95,7 @@ a {
     justify-content: center;
     background: whitesmoke;
     position: absolute;
-    right: 0;
+    inset-inline-start: 0;
     top: 0;
     bottom: 0;
     width: 25%;
@@ -109,7 +108,7 @@ a {
 }
 
 .btn-platform-text {
-    padding-right: 27%;
+    padding-inline-start: 27%;
     text-align: center;
 }
 
@@ -155,7 +154,7 @@ a {
     }
 
     .btn-platform-text {
-        padding-right: 40%;
+        padding-inline-start: 40%;
     }
 }
 
@@ -178,11 +177,6 @@ a {
     background: white !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     animation: fadeInDown 0.5s ease-in-out;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar.scrolled .navbar-brand {
-    font-weight: 900;
 }
 
 .navbar .navbar-brand,
@@ -211,6 +205,7 @@ a {
 .navbar.scrolled .navbar-brand {
     color: var(--bs-blue) !important;
     font-size: 1.5rem;
+    font-weight: 900;
 }
 
 .navbar.scrolled .nav-link {
@@ -249,7 +244,7 @@ a {
     overflow: hidden;
 }
 
-canvas {
+#hero-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -267,7 +262,7 @@ canvas {
 
 
 .hero-section .logo:hover {
-    transform: scale(1.3) translateY(-16px);
+    transform: scale(1.1) translateY(-8px);
 }
 
 
@@ -429,8 +424,13 @@ section h2.title-bg::before {
 
 
 .trust-box {
-    border-left: 10px solid #458a92;
+    border-inline-end: 10px solid #458a92;
     background-color: rgb(24 45 67) !important
+}
+
+.code-box code {
+    text-align: left;
+    direction: ltr;
 }
 
 .trust-list i {
@@ -460,6 +460,111 @@ section h2.title-bg::before {
 
 .media-logos img {
     max-width: 200px;
+}
+
+.press-item-logo {
+    width: 120px;
+    height: 42px;
+    object-fit: contain;
+    object-position: center;
+    flex: 0 0 120px;
+}
+
+.press-item-logo-empty {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    background: #f7f7f7;
+}
+
+@media (min-width: 992px) {
+    .press-social-col {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+
+.press-social-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.4s ease;
+}
+
+.press-social-card:hover,
+.press-social-card:focus-visible {
+    color: #fff;
+    transform: translateY(-6px);
+}
+
+.press-social-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    transition: transform 0.45s ease;
+}
+
+.press-social-card:hover img,
+.press-social-card:focus-visible img {
+    transform: scale(1.06);
+}
+
+.press-social-card.is-wide {
+    aspect-ratio: 16 / 9;
+}
+
+.press-social-card.is-wide img {
+    object-position: center center;
+}
+
+.press-social-card::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 28%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.35) 62%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+}
+
+.press-social-card-caption {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 10px 12px;
+    text-align: start;
+}
+
+.press-social-card-name,
+.press-social-card-title {
+    display: block;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+.press-social-card-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.press-social-card-title {
+    display: -webkit-box;
+    margin-top: 2px;
+    overflow: hidden;
+    font-size: 0.72rem;
+    font-weight: 400;
+    line-height: 1.35;
+    opacity: 0.95;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 /* Logo width classes */
@@ -588,26 +693,23 @@ footer ul li a:hover {
 }
 
 
-@keyframes beam {
-    0% {
-        transform: scale(1);
-        opacity: .5;
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .btn-platform,
+    .btn-platform-icon,
+    .btn-platform-icon img,
+    .navbar,
+    .hero-section .logo,
+    .hero-content .social-share a,
+    .screenshot,
+    .media-logos a,
+    .press-social-card,
+    .press-social-card img,
+    footer ul li a {
+        transition: none;
     }
 
-    100% {
-        transform: scale(1.2);
-        opacity: 0;
-    }
-}
-
-@keyframes beamScale {
-    0% {
-        transform: scaleX(1) scaleY(1);
-        opacity: .7;
-    }
-
-    100% {
-        transform: scaleX(1.3) scaleY(1.5);
-        opacity: 0;
+    .navbar.scrolled {
+        animation: none;
     }
 }

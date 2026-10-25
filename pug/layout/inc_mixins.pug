@@ -3,9 +3,11 @@ mixin accordion-header(id, icon, title)
     i(class=`${icon} me-2`)
     | #{title}
     if block
-      block    
-    
-mixin accordion-item(id, icon, title, badge, isBold=false)
+      block
+
+mixin accordion-item(icon, title, badge, isBold=false)
+  - accordionSeq += 1
+  - var id = "collapse-" + accordionSeq
   .accordion-item
     h3.accordion-header
       button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target=`#${id}` aria-expanded="false" class=isBold ? 'fw-bold' : '')

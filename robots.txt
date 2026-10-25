@@ -1,1 +1,8 @@
+# https://motmaenbash.ir/
+# Persian is at the site root. English is under /en/. Kurdish (Sorani) is under /ckb/.
+
+User-agent: *
+Allow: /
 Disallow: /app_test.html
+
+Sitemap: https://motmaenbash.ir/sitemap.xml

@@ -1,0 +1,9 @@
+/* AUTHOR */
+Name: Milad Nouri
+Site: https://milad.nu
+
+/* SITE */
+Last update: 2026/10/25
+Language: Persian (fa), English (en), Central Kurdish / Sorani (ckb)
+Software: MotmaenBash — https://motmaenbash.ir
+Source: https://github.com/motmaenbash/motmaenbash-website

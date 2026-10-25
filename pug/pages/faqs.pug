@@ -2,446 +2,125 @@ extends ../layout/base.pug
 include ../layout/inc_mixins.pug
 
 block variables
-  - var title = 'سوال‌های پرتکرار | مطمئن باش'
-  - var description = 'پاسخ به سوالات رایج درباره فیشینگ، اعتماد به مطمئن باش و سطح دسترسی‌های برنامه اندروید.'
-  - var keywords = 'سوالات متداول, فیشینگ, مطمئن باش, افزونه مرورگر, برنامه اندروید, کلاهبرداری اینترنتی'
-  - var url = 'https://motmaenbash.ir/faqs.html'
+  - var t = faqs
+  - var title = t.title
+  - var description = t.description
+  - var keywords = t.keywords
+  - var url = t.url
+  - var lang = t.lang
+  - var locale = t.locale
+  - var alternateUrl = t.alternateUrl
+  - var alternateLang = t.alternateLang
+
+mixin manifest-code
+  .code-box.bg-light.border.rounded.p-3.mt-2
+    pre.mb-0
+      code(dir="ltr")
+        | &lt;!-- Remove permissions automatically added by Firebase and Google Play Services --&gt;
+        br
+        | &lt;uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" /&gt;
+        br
+        | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" tools:node="remove" /&gt;
+        br
+        | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" tools:node="remove" /&gt;
+        br
+        | &lt;uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" tools:node="remove" /&gt;
+
+mixin faq-blocks(parts)
+  each part in parts
+    case part.type
+      when "text"
+        | #{part.text}
+      when "p"
+        p(class=part.class)= part.text
+      when "br"
+        br
+      when "h6"
+        h6= part.text
+      when "hr"
+        hr
+      when "ul"
+        ul(class=part.class === undefined ? "list-unstyled" : part.class)
+          each item in part.items
+            li
+              if part.icon
+                i(class=part.icon)
+              if item.before
+                |  #{item.before}
+                span.text-success
+                  i(class=item.icon)
+                | #{item.after}
+              else if item.text
+                |  #{item.text}
+                if item.manifest
+                  +manifest-code
+              else
+                |  #{item}
+      when "alert"
+        .alert(class=part.class)
+          if part.icon
+            i(class=part.icon)
+            | 
+          if part.strong
+            strong #{part.strong}
+            | 
+          | #{part.text}
+      when "buttons"
+        each button in part.items
+          a.btn.btn-sm.btn-outline-primary.mt-2(href=button.href class=button.class target=button.blank ? "_blank" : false)
+            if button.icon
+              i(class=button.icon)
+            |  #{button.label}
+      when "split"
+        .row(class=part.rowClass)
+          div(class=part.mainCol || "col-md-8")
+            +faq-blocks(part.main)
+          div(class=part.sideCol || "col-md-4")
+            +faq-blocks(part.side)
+      when "panel"
+        .card.bg-light
+          .card-body.text-center
+            if part.title
+              h5= part.title
+            +faq-blocks(part.blocks)
+      when "cards"
+        .row(class=part.rowClass)
+          each card in part.items
+            .col-md-6
+              .card.border-secondary.mb-3
+                .card-header.bg-secondary.text-white= card.title
+                .card-body
+                  +faq-blocks(card.blocks)
+      when "sidecards"
+        each card in part.items
+          .card.bg-light.mb-3
+            .card-body
+              h6
+                if card.icon
+                  i(class=card.icon)
+                  | 
+                | #{card.title}
+              ul.list-check
+                each line in card.items
+                  li= line
 
 block content
-  section.container.my-2
-    h1.text-center.mb-3 سوال‌های پرتکرار
+  section.container.my-2(class=t.sectionClass || false dir=t.contentDir || false)
+    h1.text-center.mb-3= t.heading
     .row.justify-content-center
       .col-12
         .d-flex.flex-wrap.gap-2.mb-5
-          a.btn.btn-blue(href="#trust") اعتماد به مطمئن باش؟
-          a.btn.btn-blue(href="#general") سوال‌های عمومی فیشینگ
-          a.btn.btn-blue(href="#motmaen-bash") عملکرد مطمئن باش
-          a.btn.btn-blue(href="#android-app") دسترسی‌های اندروید
+          each link in t.links
+            a.btn.btn-blue(href=link.href)= link.label
 
+        - var accordionSeq = 0
         #faqAccordion.accordion
+          each section in t.sections
+            +accordion-header(section.id, section.icon, section.title)
+              if section.badge
+                span.badge.bg-info.fs-6.text-white.ms-2= section.badge
+            each item in section.items
+              +accordion-item(item.icon, item.title, item.badge)
+                +faq-blocks(item.blocks)
 
-
-          // Section 1: Trust
-          +accordion-header("trust", "fas fa-lock", "اعتماد به مطمئن باش؟")
-            span.badge.bg-info.fs-6.text-white.ms-2 مهم
-
-
-          +accordion-item("collapse9", "fas fa-lock", "آیا خود مطمئن باش امن است؟", {text: 'حتما بخوانید', color: 'bg-success'})
-            .row
-              .col-md-9
-                p.fw-bold بله، مطمئن باش یک پروژه متن‌باز (Open Source) است و تمام کدهای آن در گیت‌هاب قابل مشاهده و بررسی است.
-                p
-                  | چرا خود "مطمئن باش" قابل اعتماد است؟
-                ul.list-unstyled
-                  li
-                    i.fas.fa-check-double.text-success.me-1
-                    | اپلیکیشن مطمئن باش، متن باز (Open Source) می‌باشد و کدهای آن توسط برنامه‌نویس‌ها، کارشناس‌ها و عموم کاربران قابل بررسی است.
-                  li
-                    i.fas.fa-check-double.text-success.me-1
-                    | اپلیکیشن مطمئن باش فاقد سرور است و اطلاعات را به جایی ارسال / ذخیره نمی‌کند.
-                  li
-                    i.fas.fa-check-double.text-success.me-1
-                    | کلیه بررسی‌های مربوط به شناسایی برنامه، لینک و سایر موارد مشکوک به صورت آفلاین و با استفاده از دیتابیس (پایگاه داده) داخل خود برنامه روی گوشی کاربر صورت می‌گیرد.
-
-                  li
-                    i.fas.fa-check-double.text-success.me-1
-                    | دسترسی‌های حساس برنامه (دریافت پیامک و دسترسی‌پذیری) کاملا اختیاری است و کاربر می‌تواند با عدم اعطای این دسترسی‌ها، از سایر امکانات برنامه مثل بررسی و اسکن‌های دستی استفاده کند.
-                  li
-                    i.fas.fa-check-double.text-success.me-1
-                    | اپلیکیشن هیچ قسمتی برای عضویت و حساب کاربری ندارد و اطلاعاتی مثل شماره تماس، آدرس ایمیل و هیچ اطلاعات کاربری دیگری دریافت و ذخیره نمی‌کند.
-                  li
-                    i.fas.fa-check-double.text-success.me-1
-                    | مطمئن باش توسط مارکت‌های معتبر (با سخت‌گیری بالا) بررسی و منتشر شده است.
-
-                  li
-                    i.fas.fa-check-double.text-success.me-1
-                    | اپلیکیشن دیتابیس (پایگاه داده) آفلاین خود را به صورت دوره‌ای از یک مخزن (ریپازیتوری) گیت‌هاب بروزرسانی می‌کند.
-               
-
-              .col-md-3
-                .card.bg-light
-                  .card-body.text-center
-                    h5 متن‌باز و قابل بررسی توسط همه
-                    a.btn.btn-sm.btn-outline-primary.mt-2(href="git.html" target="_blank")
-                      i.fab.fa-github.me-1
-                      | مشاهده کد در گیت‌هاب
-
-
-          +accordion-item("collapse10", "fas fa-user-shield", "آیا مطمئن باش از اطلاعات شخصی من استفاده می‌کند؟", {text: 'حتما بخوانید', color: 'bg-success'})
-            | خیر، مطمئن باش یک پروژه متن‌باز است و هیچ سرور مستقلی ندارد و هیچ اطلاعاتی از کاربران دریافت نمی‌کند و به جایی ارسال و ذخیره نمی‌کند.
-            br
-            | این برنامه برای بررسی لینک‌ها، پیامک‌ها و اپلیکیشن‌های مشکوک، به هیچ عنوان اطلاعات شخصی، پیامک‌ها یا داده‌های مربوط به نصب برنامه‌ها را به سرور یا شخص ثالثی ارسال نمی‌کند، بلکه تمام بررسی‌ها و پردازش‌ها به‌صورت آفلاین و فقط روی دستگاه خود کاربر انجام می‌شود.
-
-          +accordion-item("collapse21", "fas fa-chart-bar", "آیا اپلیکیشن از ابزارهای آماری استفاده می‌کند؟")
-            | بله، برای بررسی پایداری برنامه و بهبود کیفیت آن، از ابزارهای زیر استفاده شده است:
-            ul
-              li
-                | برای گزارش خطاها و کرش‌های احتمالی از سرویس Crashlytics فایربیس (متعلق به گوگل) استفاده می‌شود.
-              li
-                | برای اطلاعات آماری کلی، از سرویس Analytics فایربیس (متعلق به گوگل) استفاده شده است.
-              li
-                | اطلاعات آماری شامل شمارش برخی رویدادها مانند تعداد نمایش هشدارها می‌شود، اما هیچ‌گونه داده‌ای شامل محتوای هشدارها، جزییات فنی یا اطلاعات شناسایی‌کننده از کاربران ذخیره یا ارسال نمی‌شود.
-              li
-                | کتابخانه‌های آماری فایربیس متعلق به گوگل، برای استفاده‌های آماری، به‌صورت خودکار برخی دسترسی‌های مربوط به تبلیغات را به برنامه اضافه کنمی‌کنندند. ما برای حفظ حریم خصوصی کاربران، این دسترسی‌ها را نیز به‌صورت دستی از طریق کدهای زیر از فایل مانیفست برنامه حذف کرده‌ایم:
-                .code-box.bg-light.border.rounded.p-3.mt-2
-                  pre.mb-0
-                    code.float-end.text-end(dir="ltr")
-                      | &lt;!-- Remove permissions automatically added by Firebase and Google Play Services --&gt;
-                      br
-                      | &lt;uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" /&gt;
-                      br
-                      | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" tools:node="remove" /&gt;
-                      br
-                      | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" tools:node="remove" /&gt;
-                      br
-                      | &lt;uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" tools:node="remove" /&gt;
-
-
-          +accordion-item("collapse11", "fas fa-download", "نسخه امن مطمئن باش را از کجا دانلود کنم؟")
-            .row
-              .col-md-8
-                | برای حفظ امنیت و اطمینان از دریافت نسخه‌های معتبر، تنها از لینک‌های موجود در سایت مطمئن باش برای دانلود برنامه و افزونه‌های مربوطه استفاده کنید.
-                br
-                | سایر نسخه‌های دانلود شده از منابع متفرقه ممکن است دستکاری شده و خطرات امنیتی به همراه داشته باشند. برای دانلود برنامه موبایل و افزونه مرورگر مطمئن باش از لینک‌های موجود در سایت مطمئن باش استفاده کنید:
-
-              .col-md-4
-                .card.bg-light
-                  .card-body.text-center
-                    a.btn.btn-sm.btn-outline-primary.mt-2(href="https://motmaenbash.ir/#android-app" target="_blank")
-                      i.ion-logo-android.me-1
-                      | دریافت برنامه موبایل 
-
-                    a.btn.btn-sm.btn-outline-primary.mt-2(href="https://motmaenbash.ir/#download" target="_blank")
-                      i.ion-ios-cloud-download.me-1
-                      | دریافت افزونه مرورگر
-
-            .alert.alert-danger.mt-3
-              i.fas.fa-triangle-exclamation.me-1
-              | ما هیچ‌گونه مسئولیتی در قبال دانلود و نصب برنامه یا افزونه از منابع غیررسمی و عواقب آن نداریم.
-
-          // Section 2: General Questions
-          +accordion-header("general", "fas fa-shield", "سوال‌های عمومی فیشینگ")
-
-          +accordion-item("collapse1", "fas fa-shield", "فیشینگ چیست و چگونه انجام می‌شود؟")
-            .row.mt-3
-              .col-md-8
-                p فیشینگ یک روش کلاهبرداری اینترنتی است که مهاجمان با جعل هویت سازمان‌ها و خدمات معتبر و فریب کاربر، اطلاعات حساس آن‌ها مانند اطلاعات هویتی، اطلاعات مالی و بانکی، رمزهای عبور و... را سرقت می‌کنند.
-                ul.list-check
-                  li مهاجمان خود را به عنوان نهادهای خدمات‌دهنده و معتبر جا می‌زنند
-                  li از طریق کانال‌های دیجیتال مانند ایمیل، پیامک و شبکه‌های اجتماعی حمله می‌کنند
-                  li صفحات جعلی‌ای طراحی می‌کنند که مشابه درگاه‌های پرداخت یا سرویس‌های شناخته‌شده است
-                  li قربانیان را ترغیب می‌کنند اطلاعات حساس خود را وارد کنند
-                .alert.alert-info.mt-3
-                  strong مثال پرتکرار:
-                  |  دریافت پیامک جعلی با عنوان "ابلاغیه قضایی" که کاربر را به یک صفحه تقلبی هدایت می‌کند تا برنامه مخرب دانلود کند یا اطلاعات بانکی خود را وارد نماید.
-                hr
-                h6 مهاجمان از تکنیک‌های مختلف برای فریب کاربران استفاده می‌کنند، از جمله:
-                ul.list-unstyled
-                  li
-                    i.fas.fa-triangle-exclamation.text-warning.me-1
-                    | ارسال پیامک‌های فریبنده با وعده‌های دروغین مانند "برنده جایزه شدید" یا "دریافت بسته اینترنت رایگان".
-                  li
-                    i.fas.fa-triangle-exclamation.text-warning.me-1
-                    | طراحی صفحات جعلی درگاه پرداخت بانکی برای سرقت اطلاعات کارت.
-                  li
-                    i.fas.fa-triangle-exclamation.text-warning.me-1
-                    | انتشار برنامه‌های مخرب در شبکه‌های اجتماعی و پیام‌رسان‌ها.
-                  li
-                    i.fas.fa-triangle-exclamation.text-warning.me-1
-                    | ارسال ایمیل‌های جعلی با هشدارهای اضطراری مانند "مسدود شدن حساب" یا "نیاز به تأیید فوری اطلاعات".
-                .alert.alert-warning.mt-3
-                  i.fas.fa-triangle-exclamation.me-1
-                  | کاربران با وارد کردن اطلاعات در این صفحات، اطلاعات خود را در اختیار کلاهبرداران می‌گذارند
-              .col-md-4
-                .card.bg-light.mb-3
-                  .card-body
-                    h6
-                      i.ion-md-alert.me-2
-                      | روش‌های شایع فیشینگ:
-                    ul.list-check
-                      li پیامک‌های جعلی و فریبنده
-                      li صفحات بانکی جعلی
-                      li برنامه‌های مخرب
-                      li ایمیل‌های اضطراری
-                .card.bg-light.mb-3
-                  .card-body
-                    h6 
-                      i.ion-ios-chatbubbles.me-2
-                      | پیامک‌های فریبنده
-                    ul.list-check
-                      li پیشنهاد شارژ رایگان
-                      li هشدارهای جعلی بانکی
-                      li لینک‌های کوتاه مشکوک
-                .card.bg-light
-                  .card-body
-                    h6
-                      i.ion-logo-android.me-2
-                      | برنامه‌های جعلی
-                    ul.list-check
-                      li نسخه‌های تقلبی برنامه‌های بانکی
-                      li نسخه جعلی برنامه‌های دولتی
-                      li ابزارهای فیلترشکن ناشناس
-
-
-          +accordion-item("collapse2", "fas fa-comment", "چگونه یک پیامک فیشینگ را تشخیص دهیم؟")
-            h6 برای تشخیص پیامک‌های فیشینگ به این نکات توجه کنید:
-            ul.list-unstyled
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | وجود اشتباهات املایی و نگارشی در متن پیامک
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | وجود لینک‌های کوتاه‌شده و مشکوک در متن پیامک
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | ارسال پیامک‌های جعلی با عناوین فریبنده مانند "برنده جایزه شده‌اید" یا "پرداخت عوارض معوقه"
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | پیامک‌های جعلی با ادعای واریز یارانه یا حذف از لیست دریافت‌کنندگان
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | پیامک‌های جعلی به نام قوه قضاییه با درخواست مشاهده ابلاغیه و پرونده
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | ارسال پیامک از شماره‌های شخصی به جای سرشماره‌های رسمی مانند adliran و...
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | درخواست اطلاعات شخصی، رمز کارت یا کد تأیید در پیامک
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | استفاده از جملات تهدیدآمیز مانند "در صورت عدم پرداخت، حساب شما مسدود می‌شود"
-
-          +accordion-item("collapse3", "fas fa-envelope", "چگونه یک ایمیل فیشینگ را تشخیص دهیم؟")
-            h6 برای تشخیص ایمیل‌های فیشینگ به این نکات توجه کنید:
-            ul.list-unstyled
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | بررسی دامنه فرستنده با دقت بالا (مثال: support@google-support.com به جای @google.com)
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | وجود لینک‌های کوتاه‌شده و مشکوک
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | بررسی دامنه لینک‌های موجود در ایمیل با دقت بالا (مثال: inistagram.com به جای instagram.com)
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | درخواست اطلاعات حساس از طریق ایمیل (مثال: نام کاربری و رمز عبور پس از کلیک بر روی لینک)
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | درخواست‌های فوری و تهدیدآمیز برای ورود اطلاعات حساس (مثل از دست دادن دسترسی به اکانت)
-              li
-                i.fas.fa-triangle-exclamation.text-warning.me-1
-                | فایل‌های ضمیمه ناشناس و غیرضروری در ایمیل
-
-          +accordion-item("collapse4", "fas fa-shield-alt", "راه‌های مقابله با فیشینگ چیست؟")
-            h6 برای محافظت در برابر حملات فیشینگ، اقدامات زیر را انجام دهید:
-            ul.list-unstyled
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | افزایش سطح آگاهی خود درباره روش‌های جدید فیشینگ و هشدار به اطرافیان
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | بررسی دقیق سایت‌ها قبل از وارد کردن اطلاعات
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | دانلود برنامه‌های موبایل فقط از منابع رسمی و معتبر
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | توجه به هشدارهای امنیتی مرورگر، آنتی‌ویروس و سایر ابزارهای امنیتی
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | عدم وارد کردن اطلاعات در سایت‌های ناشناس و مشکوک
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | نادیده گرفتن و حذف پیامک‌ها و ایمیل‌های مشکوک
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | عدم کلیک رو لینک‌های ناشناس و مشکوک در پیام‌رسانها، شبکه‌های اجتماعی، پیامک و ایمیل
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | عدم نصب برنامه‌های ناشناس مثل وی‌پی‌ان و ... از طریق تلگرام و سایر پیام‌رسان‌ها
-              li.mb-2
-                i.fas.fa-check-double.text-success.me-1
-                | نصب و استفاده از افزونه مرورگر و برنامه موبایل "مطمئن باش" برای خود و اعضای خانواده:
-
-            a.btn.btn-sm.btn-outline-primary.mt-2.me-3(href="https://motmaenbash.ir/#android-app" target="_blank")
-              i.fab.fa-android.me-1
-              | دریافت برنامه موبایل مطمئن باش
-
-            a.btn.btn-sm.btn-outline-primary.mt-2(href="https://motmaenbash.ir/#download" target="_blank")
-              i.fas.fa-download.me-1
-              | دریافت افزونه مرورگر مطمئن باش
-
-
-          // Section 3: Motmaenbash
-          +accordion-header("motmaen-bash", "fas fa-mobile-alt", "عملکرد مطمئن باش")
-
-
-          +accordion-item("collapse5", "fab fa-android", "برنامه اندروید مطمئن باش چگونه کار می‌کند؟")
-            p.lead برنامه اندروید "مطمئن باش" از مکانیزم‌ها و روش‌های زیر برای افزایش امنیت کاربران در برابر حملات فیشینگ استفاده می‌کند: 🚀
-            .row.mt-3
-              .col-md-6
-                .card.border-secondary.mb-3
-                  .card-header.bg-secondary.text-white محافظت پیامکی
-                  .card-body
-                    ul.list-unstyled
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | بررسی خودکار پیامک‌های دریافتی و شناسایی پیامک‌های مشکوک
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | اسکن لینک‌های موجود در پیامک‌ها و نمایش هشدار در صورت خطر
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | نمایش هشدار در صورت شناسایی پیامک‌های مشکوک
-              .col-md-6
-                .card.border-secondary.mb-3
-                  .card-header.bg-secondary.text-white محافظت مرورگر
-                  .card-body
-                    ul.list-unstyled
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | بررسی خودکار لینک‌های بازشده در مرورگر کاربر
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | نمایش پیام اطمینان سبز هنگام ورود به درگاه‌های پرداخت معتبر شاپرک
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | هشدار فوری هنگام شناسایی وبسایت‌های مشکوک یا فریبنده روی مرورگر کاربر
-            .row.mt-2
-              .col-md-6
-                .card.border-secondary.mb-3
-                  .card-header.bg-secondary.text-white محافظت برنامه
-                  .card-body
-                    ul.list-unstyled
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | بررسی و هشدار هنگام شناسایی برنامه‌های مشکوک هنگام نصب برنامه جدید
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | امکان اسکن دستی برنامه‌های نصب‌شده برای شناسایی برنامه‌های مخرب
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | هشدار نسبت به برنامه‌های درخواست‌کننده دسترسی‌های مشکوک
-              .col-md-6
-                .card.border-secondary.mb-3
-                  .card-header.bg-secondary.text-white ویژگی‌های عمومی
-                  .card-body
-                    ul.list-unstyled
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | نمایش نکات آموزشی کوتاه و کاربردی درباره امنیت در صفحه اصلی برنامه.
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | به‌روزرسانی مداوم و خودکار پایگاه داده برای شناسایی تهدیدات جدید
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | عملکرد برنامه به صورت لحظه‌ای و آفلاین بدون نیاز به اینترنت
-                      li
-                        i.fas.fa-check-double.text-success.me-1
-                        | امکان گزارش موارد جدید کلاهبرداری توسط کاربران و به‌روزرسانی پایگاه داده به‌صورت مشارکتی
-
-
-
-          +accordion-item("collapse31", "fas fa-mobile-alt", "آیا برنامه موبایل مطمئن باش برای بررسی و شناسایی پیامک و لینک و برنامه مخرب اطلاعات را به سرور ارسال می‌کند؟")
-            | خیر، برنامه موبایل "مطمئن باش" به هیچ عنوان اطلاعات کاربران را به هیچ سروری ارسال نمی‌کند و به‌صورت کاملا آفلاین کار می‌کند و هیچ سرور مرکزی ندارد.
-            | تمامی پردازش‌ها شامل شناسایی لینک‌های مشکوک، پیامک‌های فیشینگ و برنامه‌های مخرب، به‌صورت کاملا آفلاین روی دستگاه انجام می‌شود.
-            | دیتابیس داخلی برنامه برای شناسایی تهدیدهای جدید، در بازه‌های زمانی مشخص از طریق مخزن گیت‌هاب به‌روزرسانی می‌شود، آن هم بدون نیاز به ارسال هیچ‌گونه اطلاعات از طرف کاربر.
-
-          +accordion-item("collapse6", "fas fa-globe", "افزونه مرورگر مطمئن باش چگونه کار می‌کند؟")
-            | افزونه مرورگر "مطمئن باش" از روش‌های زیر برای حفاظت بیشتر از شما در مقابل فیشینگ استفاده می‌کند:
-            ul.list-unstyled
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | بررسی خودکار آدرس درگاه‌های پرداخت
-              li
-                i.fas.fa-check-double.text-success.me-1
-                | نمایش نماد سبزرنگ
-                span.text-success
-                  i.fas.fa-circle-check.text-success.mx-1
-                | در صورت اطمینان از اصالت درگاه پرداخت
-          +accordion-item("collapse7", "fas fa-flag", "چگونه می‌توانم فیشینگ و کلاهبرداری جدید را گزارش کنم؟")
-            .row
-              .col-md-8
-                p
-                  | برای ارسال گزارش پیامک‌ها، سایت‌ها و برنامه‌های فیشینگ و کلاهبرداری، می‌توانید از فرم ارسال گزارش استفاده کنید.
-                  | ارسال گزارش‌های شما باعث می‌شود دامنه تشخیص برنامه مطمئن باش گسترده‌تر شود.
-              .col-md-4
-                .card.bg-light
-                  .card-body.text-center
-                    a.btn.btn-sm.btn-outline-primary.mt-2(href="https://forms.gle/odNaY6jeks2eqZDZA" target="_blank")
-                      i.far.fa-envelope.me-1
-                      | ارسال گزارش
-
-          +accordion-item("collapse8", "fas fa-dollar-sign", "آیا این برنامه رایگان است؟")
-            | بله، این برنامه در حال حاضر رایگان است و شما می‌توانید بدون هیچ هزینه‌ای از آن استفاده کنید. ممکن است به صورت موقت یا دایم در محیط برنامه تبلیغات متنی یا تصویری نمایش داده شود.
-          +accordion-item("collapse23", "fab fa-chrome", "سپر وب‌گردی مطمئن باش روی اندروید از چه مرورگرهایی پشتیبانی می‌کند؟")
-            | سپر وب‌گردی مطمئن باش در حال حاضر از مرورگرهای زیر پشتیبانی می‌کند:
-            br
-            | کروم (Chrome)، فایرفاکس (Firefox)، مایکروسافت اج (Edge)، اپرا
-            | (Opera)، بریو (Brave)، داک‌داک‌گو (DuckDuckGo)، سامسونگ اینترنت
-            |  (Samsung Internet)، یو‌سی بروزر (UC)، کوانت (Qwant).
-            br
-            |ممکن است در آینده پشتیبانی از مرورگرهای بیشتری به برنامه اضافه شود.
-            br
-            | ممکن است مرورگرهای مختلف در نسخه‌های گدشته خود عملکرد متفاوتی داشته باشند، سپر وب‌گردی مطمئن باش همواره روی نسخه‌های آخر مرورگرها بررسی و همگام‌سازی می‌شود. برای عملکرد درست این سپر امنیتی، مرورگر وب خود را به‌روزر نگه دارید.
-
-
-          // Section 4: App Permissions
-          +accordion-header("android-app", "fas fa-layer-group", "سطح دسترسی‌های برنامه اندروید مطمئن باش")
-
-
-          +accordion-item("collapse13", "fas fa-wifi", "چرا اپلیکیشن به دسترسی‌های اینترنت و وضعیت شبکه (INTERNET و ACCESS_NETWORK_STATE) نیاز دارد؟")
-            | این برنامه برای به‌روزرسانی پایگاه داده و دریافت اطلاعات جدید، به دسترسی اینترنت نیاز دارد. همچنین به‌منظور جلوگیری از بروز خطاهای ناشی از عدم دسترسی به اینترنت، دسترسی به وضعیت شبکه نیز مورد نیاز است.
-
-          +accordion-item("collapse12", "fas fa-comment", "چرا اپلیکیشن به دسترسی دریافت پیامک جدید (RECEIVE_SMS) نیاز دارد؟", {text: 'دسترسی اختیاری', color: 'bg-info'})
-          
-            | این برنامه برای شناسایی پیامک‌های مشکوک و فیشینگ، به دسترسی دریافت پیامک جدید نیاز دارد. توجه داشته باشید این دسترسی تنها شامل پیامک تازه دریافت‌شده است و برنامه به هیچ وجه دسترسی به ارسال پیامک یا مشاهده پیامک‌های ذخیره‌شده کاربر را ندارد.
-            .alert.alert-info.mt-2
-              |  این دسترسی اختیاری است و کاربر می‌تواند بدون اعطای این دسترسی از سایر امکانات برنامه (مثل اسکن برنامه‌ها، بررسی دستی لینک ها، نکات آموزشی و...) استفاده کند.
-              br
-              |  این دسترسی فقط برای خواندن پیامک دریافتی جدید است و شامل ارسال پیامک یا خواندن پیامک‌های قبلی نمی‌شود.
-
-          +accordion-item("collapseX1", "fas fa-universal-access", "چرا اپلیکیشن به سرویس دسترسی‌پذیری (BIND_ACCESSIBILITY_SERVICE) نیاز دارد؟", {text: 'دسترسی اختیاری', color: 'bg-info'})
-            | این برنامه برای شناسایی سایت‌های فیشینگ و هشدار به کاربر هنگام وب‌گردی، نیاز به دسترسی به سرویس دسترسی‌پذیری دارد. با استفاده از این دسترسی، لینک‌ها و صفحات مشکوک بررسی می‌شوند و در صورت مشاهده موارد خطرناک، هشدار لازم نمایش داده می‌شود. همچنین در هنگام استفاده از درگاه‌های پرداخت، اصالت درگاه‌های معتبر شاپرک به کاربر اطلاع داده می‌شود.
-            .alert.alert-info.mt-2
-              |  این دسترسی اختیاری است و کاربر می‌تواند بدون اعطای این دسترسی از سایر امکانات برنامه (مثل اسکن برنامه‌ها، بررسی دستی لینک ها، نکات آموزشی و...) استفاده کند.
-            
-          +accordion-item("collapse19", "fas fa-layer-group", "چرا اپلیکیشن به دسترسی نمایش روی سایر برنامه‌ها (SYSTEM_ALERT_WINDOW) نیاز دارد؟")
-            | این برنامه برای نمایش هشدارها، به این دسترسی نیاز دارد. به‌وسیله این دسترسی، برنامه می‌تواند هشدارها را حتی زمانی که در حال استفاده از برنامه‌های دیگر هستید، به شما نمایش دهد.
-
-          +accordion-item("collapse15", "fas fa-box-open", "چرا اپلیکیشن به دسترسی لیست برنامه‌های نصب شده (QUERY_ALL_PACKAGES) نیاز دارد؟")
-            | این برنامه برای اسکن برنامه‌های نصب شده به منظور شناسایی برنامه‌های مشکوک و فیشینگ، به لیست برنامه‌های نصب‌شده نیاز دارد.
-
-          +accordion-item("collapse18", "fas fa-trash", "چرا اپلیکیشن به دسترسی درخواست حذف برنامه (REQUEST_DELETE_PACKAGES) نیاز دارد؟")
-            | این برنامه هنگام شناسایی برنامه مشکوک، به کاربر هشدار داده و پیشنهاد حذف برنامه را می‌دهد. برای این منظور، به این دسترسی نیاز دارد. توجه داشته باشید که این دسترسی تنها درخواست حذف را به سیستم ارسال می‌کند و کاربر باید تایید کند که برنامه را حذف کند. هیچ‌گونه اقدام خودکاری برای حذف برنامه انجام نمی‌شود و حذف تنها با تایید کاربر امکان‌پذیر است.
-
-          +accordion-item("collapse17", "fas fa-tasks", "چرا اپلیکیشن به دسترسی اجرای سرویس پیش‌زمینه (FOREGROUND_SERVICE) نیاز دارد؟")
-            | برای اطمینان از اینکه سپرهای امنیتی پیامک، وب‌گردی، نصب برنامه و… همیشه فعال باقی می‌مانند، این برنامه از اندروید نسخه ۸ (Android 8) به بالا به این دسترسی نیاز دارد. بدیهی‌ست روی نسخه‌های قدیمی‌تر اندروید این دسترسی دریافت نمی‌شود.
-
-          +accordion-item("collapseX2", "fas fa-sync", "چرا اپلیکیشن به دسترسی سرویس پیش‌زمینه برای همگام‌سازی داده (FOREGROUND_SERVICE_DATA_SYNC) نیاز دارد؟")
-            | برای اجرای سرویس‌های پیش‌زمینه که مسئول همگام‌سازی داده‌ها هستند، این برنامه به این دسترسی نیاز دارد. توجه داشته باشید که این دسترسی از اندروید نسخه ۱۰ (Android 10) به بالا دریافت می‌شود.
-
-          +accordion-item("collapse16", "fas fa-bell", "چرا اپلیکیشن به دسترسی نمایش اعلان (POST_NOTIFICATIONS) نیاز دارد؟")
-            | از اندروید نسخه ۸ (Android 8) به بالا، برای راه‌اندازی سرویس‌های پیش‌زمینه، نمایش اعلان ضروری است تا کاربر از در حال اجرا بودن سرویس برنامه آگاه شود. برای این منظور، برنامه به این دسترسی نیاز دارد. همچنین، ممکن است در برخی موارد اطلاع‌رسانی‌هایی نظیر نسخه جدید نرم‌افزار و… از طریق اعلان‌ها به کاربر صورت گیرد.
-
-          +accordion-item("collapse14", "fas fa-power-off", "چرا اپلیکیشن به دسترسی اجرای پس از راه‌اندازی (بوت) مجدد دستگاه (RECEIVE_BOOT_COMPLETED) نیاز دارد؟")
-            | برای اطمینان از اینکه برنامه پس از راه‌اندازی مجدد دستگاه همچنان فعال باقی می‌ماند، این برنامه به این دسترسی نیاز دارد.
-
-          +accordion-item("collapseX", "fas fa-tower-broadcast", "چرا اپلیکیشن به دسترسی ویبره (VIBRATE) نیاز دارد؟")
-            | برای ایجاد لرزش هنگام نمایش هشدار شناسایی پیامک‌ها، لینک‌ها و برنامه‌های مشکوک، این برنامه به دسترسی ویبره نیاز دارد.
-
-          +accordion-item("collapse20", "fas fa-toggle-off", "آیا غیرفعال کردن برخی دسترسی‌های اپلیکیشن امکان‌پذیر است؟")
-            | بله، می‌توانید برخی از دسترسی‌های اپلیکیشن را غیرفعال کنید، اما این کار ممکن است برخی از قابلیت‌های اپلیکیشن را محدود کند. برای مثال، اگر دسترسی به پیامک‌ها را غیرفعال کنید، اپلیکیشن نمی‌تواند پیامک‌های فیشینگ را شناسایی کند. توصیه می‌کنیم برای بهره‌مندی از تمام قابلیت‌های امنیتی، دسترسی‌های مورد نیاز را فعال نگه دارید.
-
-          // Section 5: Otherr
-          +accordion-header("trust", "fas fa-folder", "سایر موارد")
-
-          +accordion-item("collapse22", "fab fa-apple", "آیا برنامه مطمئن باش برای iOS هم در دسترس است؟")
-            |  در حال حاضر، برنامه مطمئن باش فقط برای سیستم عامل اندروید در دسترس است. به دلیل محدودیت‌های سیستم عامل iOS در دسترسی به بخش‌های مختلف دستگاه، ارائه نسخه iOS با همان قابلیت‌ها دشوار است.
-            
-
-          +accordion-item("collapse23", "fas fa-shield-virus", "آیا استفاده از مطمئن باش به جای آنتی‌ویروس کافی است؟")
-            |   مطمئن باش با هدف مقابله با فیشینگ طراحی شده و تمرکز خود را بر شناسایی پیامک‌های مشکوک، سایت‌های فیشینگ و برنامه‌های مخرب گذاشته است و جایگزین آنتی‌ویروس نیست.
-          
   include ../layout/inc_section_donate

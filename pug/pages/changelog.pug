@@ -1,121 +1,37 @@
 extends ../layout/base.pug
 
 block variables
-  - var title = 'تغییرات نسخه‌ها | مطمئن باش'
-  - var description = 'لیست تغییرات نسخه‌های مختلف برنامه و افزونه مطمئن باش.'
-  - var keywords = 'MotmaenBash, changelog, تغییرات نسخه, ضد فیشینگ'
-  - var url = 'https://motmaenbash.ir/changelog.html'
+  - var t = changelog
+  - var title = t.title
+  - var description = t.description
+  - var keywords = t.keywords
+  - var url = t.url
+  - var lang = t.lang
+  - var locale = t.locale
+  - var alternateUrl = t.alternateUrl
+  - var alternateLang = t.alternateLang
 
 block content
-  section.container.my-2
-    h1.text-center.mb-3 تغییرات نسخه‌ها
+  section.container.my-2(class=t.sectionClass || false dir=t.contentDir || false)
+    h1.text-center.mb-3= t.heading
 
     .row.justify-content-center
       .col-12
           ul.nav.nav-tabs.d-flex.flex-wrap.gap-2.mb-3(role="tablist")
-            li.nav-item
-              a.btn.btn-blue.active(href="#android", data-bs-toggle="tab") برنامه اندروید
-            li.nav-item
-              a.btn.btn-blue(href="#chrome", data-bs-toggle="tab") اکستنشن کروم
-            li.nav-item
-              a.btn.btn-blue(href="#firefox", data-bs-toggle="tab") اکستنشن فایرفاکس
+            each tab, index in t.tabs
+              li.nav-item
+                a.btn.btn-blue(href="#" + tab.id data-bs-toggle="tab" class=index === 0 ? "active" : false)= tab.label
 
     .tab-content
-      // Android Tab
-      .tab-pane.fade.show.active(id="android")
-
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 نسخه ۱.۰.۴
-            ul
-              li اضافه شدن تشخیص و هشدار برنامه‌های مشکوک بر اساس منبع نصب و تحلیل ترکیب دسترسی‌ها بدون وابستگی به پایگاه داده
-              li حل مشکل کرش در اندروید ۱۳ و رفع خطاهای هنگام بررسی برنامه‌ها
-              li غیرفعال شدن پیش‌فرض پنجره نمایش پیامک جدید و افزودن تنظیمات این قسمت به مراحل معرفی اولیه برنامه
-              li کاهش محدودیت فاصله به‌روزرسانی دستی از ۱ ساعت به ۱۵ دقیقه و اضافه شدن گزینه ۱۲ ساعت به تنظیمات به‌روزرسانی خودکار پایگاه داده
-              li اضافه شدن مرحله جدید «اعتماد به مطمئن باش» به مراحل معرفی اولیه برنامه
-              li رفع برخی مشکلات در بخش آمار
-              li رفع غلط‌های املایی، بهبود رابط کاربری، بهبود جزئی در پایگاه داده برنامه و رفع چند اشکال دیگر…
-
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 نسخه ۱.۰.۳-بتا
-            ul
-              li رفع مشکل نمایش هشدار پشت سر هم هنگام مراجعه به وب‌سایت مشکوک
-              li بهبود جزئی در رابط کاربری صفحه تنظیمات
-              li رفع چند اشکال جزیی دیگر
-
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 نسخه ۱.۰.۲-بتا
-            ul
-              li بهبود طراحی کارت نکته روز
-              li رفع مشکل کوچک شدن حروف انگلیسی متن پیامک در پنجره پیامک جدید
-              li رفع مشکل نمایش هشدار پشت سر هم برای یک آدرس اینترنتی در برخی موارد
-              li بهبود فرآیند به‌روزرسانی پایگاه داده و رفع مشکل تلاش مکرر در صورت بروز خطا
-              li رفع مشکل تکرار شدن متن در پنجره آخرین تغییرات
-              li بهبود جزئی در رابط کاربری هشدار
-              li رفع چند اشکال جزیی دیگر
-
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 نسخه ۱.۰.۱ (آزمایشی - بتا)
-            ul
-              li حذف دسترسی‌های غیرضروری اضافه شده توسط کتابخانه‌های فایربیس
-              li اضافه شدن تاریخچه به‌روزرسانی‌های برنامه
-              li بهبود عملکرد اسکرول در صفحه‌های مختلف
-              li اصلاح نمایش متن در دستگاه‌های با فونت بزرگ
-              li لینک شدن شماره فرستنده در پنجره پیامک جدید
-              li حذف نوار پایین (فوتر) از پنجره نمایش پیامک جدید
-              li اضافه شدن تنظیمات نمایش پنجره پیامک جدید
-              li رفع مشکل صدای هشدار هنگام دریافت پیامک جدید
-              li بهبود آیکون و عنوان پنجره نمایش پیامک جدید
-              li حذف فاصله‌های چندخطی در متن پیامک نمایش داده شده
-              li رفع مشکل عدم بسته شدن پنجره پیامک با دکمه بازگشت (Back)
-              li رفع مشکل نمایش برنامه در لیست اپ‌های بازکننده لینک‌ها
-              li بهبود فرآیند بررسی پیامک دریافتی
-              li و رفع برخی ایرادهای جزئی دیگر…
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 🚀 نسخه ۱.۰.۰ (آزمایشی - آلفا)
-            ul
-              li انتشار اولین نسخه آزمایشی با امکانات زیر:
-              li سپر پیامک، وب‌گردی و نصب برنامه
-              li قابلیت بررسی اصالت درگاه پرداخت
-              li اسکن دستی برنامه‌های نصب‌شده
-              li بررسی دستی لینک‌ها
-              li به‌روزرسانی خودکار پایگاه داده
-              li و…
-
-      // Chrome Extension Tab
-      .tab-pane.fade(id="chrome")
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 نسخه ۱.۱.۰
-            ul
-              li استفاده از فونت متغیر (Variable font) وزیرمتن
-              li بهبود جزئی در رابط کاربری
-              li ارتقای manifest_version از نسخه ۲ به نسخه ۳
-
-
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 🚀 نسخه ۱.۰.۳ (اولین نسخه)
-            ul
-              li انتشار اولین نسخه از افزونه کروم
-              li قابلیت بررسی اصالت درگاه‌های پرداخت آنلاین
-
-      // Firefox Extension Tab
-      .tab-pane.fade(id="firefox")
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 نسخه ۱.۱.۰
-            ul
-              li استفاده از فونت متغیر (Variable font) وزیرمتن
-              li بهبود جزئی در رابط کاربری
-
-        .card.mb-3
-          .card-body
-            h5.fw-bold.mb-2 🚀 نسخه ۱.۰.۲ (اولین نسخه)
-            ul
-              li انتشار اولین نسخه از افزونه فایرفاکس
-              li قابلیت بررسی اصالت درگاه‌های پرداخت آنلاین
+      each tab, index in t.tabs
+        .tab-pane.fade(id=tab.id class=index === 0 ? "show active" : false)
+          each release in tab.releases
+            .card.mb-3
+              .card-body
+                h5.fw-bold.mb-2.d-flex.align-items-center.flex-wrap.gap-2
+                  span= release.version
+                  if release.badge
+                    span.badge.bg-info.text-white.fs-6= release.badge
+                ul
+                  each item in release.items
+                    li= item

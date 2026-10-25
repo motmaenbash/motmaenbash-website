@@ -1,0 +1,115 @@
+{
+  "title": "لە ڕاگەیاندن | مطمئن باش",
+  "description": "ڕاپۆرت و ناساندنەکانی ڕاگەیاندن دەربارەی ئەپ و زیادکراوی مطمئن باش.",
+  "keywords": "مطمئن باش, ڕاگەیاندن, فیشینگ",
+  "url": "https://motmaenbash.ir/ckb/press.html",
+  "alternateUrl": "https://motmaenbash.ir/press.html",
+  "alternateLang": "fa",
+  "heading": "مطمئن باش لە ڕاگەیاندن",
+  "lead": "ڕاپۆرت و ناساندنەکانی ڕاگەیاندن دەربارەی مطمئن باش.",
+  "items": [
+    {
+      "outlet": "نوشدارو",
+      "date": "",
+      "title": "ناساندنی ئەپی «مطمئن باش» بۆ ناسینەوەی بەرنامە زیانبەخش، ماڵپەڕی ساختە و پەیامی کورتی فیشینگ",
+      "href": "https://nooshdaroo.ir/security-tools/motmaen-bash/",
+      "logo": "/images/press/nooshdaroo-logo.jpg"
+    },
+    {
+      "outlet": "دیجیاتۆ",
+      "date": "١٨ی تیر ١٤٠٤",
+      "title": "ناساندنی ئەپی ئەندرۆیدی «مطمئن باش»",
+      "href": "https://digiato.com/iran-technology-news/unveiling-android-app-motmaenbash",
+      "logo": "/images/press/digiato-logo.svg"
+    },
+    {
+      "outlet": "زوومیت",
+      "date": "١٧ی تیر ١٤٠٤",
+      "title": "نەرمەکاڵای ئێرانی «مطمئن باش» ناسێنرا؛ ئاسایشی مۆبایل بە خۆڕایی",
+      "href": "https://www.zoomit.ir/software-application/443587-motmaen-bash-milad-nouri-app-released-android/",
+      "logo": "/images/press/zoomit-logo.svg"
+    },
+    {
+      "outlet": "ئاژانسی هەواڵی ئانا",
+      "date": "٢٤ی تیر ١٤٠٤",
+      "title": "«مطمئن باش»، سپەرێکی ئێرانیی خۆڕایی و سەرچاوەکراوە دژی بڵاوبوونەوەی فیشینگ",
+      "href": "https://ana.ir/fa/news/984599/",
+      "logo": "/images/press/ana-logo.svg"
+    },
+    {
+      "outlet": "ئیستنا",
+      "date": "١٨ی تیر ١٤٠٤",
+      "title": "«مطمئن باش» ناسێنرا؛ ئامرازێکی خۆکار دژی فێڵی ئینتەرنێت و فیشینگ",
+      "href": "https://ictna.ir/id/196908/",
+      "logo": "/images/press/ictna-logo.png"
+    },
+    {
+      "outlet": "دیدگاه نیوز",
+      "date": "٢٢ی ئابان ١٤٠٤",
+      "title": "نەرمەکاڵای ئێرانی «مطمئن باش» ناسێنرا؛ ئاسایشی مۆبایل و بەرەنگاربوونەوەی فیشینگ",
+      "href": "https://didgahnews.ir/%d9%86%d8%b1%d9%85%d8%a7%d9%81%d8%b2%d8%a7%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%db%8c-%d9%85%d8%b7%d9%85%d8%a6%d9%86-%d8%a8%d8%a7%d8%b4-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b4%d8%af/",
+      "logo": "/images/press/didgahnews-logo.png"
+    },
+    {
+      "outlet": "زوومیت",
+      "date": "١١ی مۆرداد ١٤٠٤",
+      "title": "مطمئن باش؛ ئەپێک بۆ پاراستنی دایک و باوک و کەسانی کەمئەزموون لە فێڵی ئینتەرنێت",
+      "href": "https://www.zoomit.ir/software-application/444788-motmaen-bash-protection-app/",
+      "logo": "/images/press/zoomit-logo.svg"
+    },
+    {
+      "outlet": "تک‌خور",
+      "date": "",
+      "title": "«مطمئن باش» ناسێنرا؛ ئامرازێکی خۆکار دژی فێڵی ئینتەرنێت و فیشینگ",
+      "href": "https://techkhor.ir/%D9%85%D8%B7%D9%85%D8%A6%D9%86-%D8%A8%D8%A7%D8%B4-%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF%D8%9B-%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1-%D8%AE%D9%88%D8%AF%DA%A9%D8%A7%D8%B1-%D9%85/",
+      "logoSpace": true
+    },
+    {
+      "outlet": "بلۆگی سینا سوهەیلی",
+      "date": "٢٤ی تیر ١٤٠٤",
+      "title": "ناساندنی ئەپی «مطمئن باش»",
+      "href": "https://sinasoheili.net/daily/motmaen-bash/",
+      "logoSpace": true
+    }
+  ],
+  "socialTitle": "ناساندنی مطمئن باش لە تۆڕە کۆمەڵایەتییەکان",
+  "social": [
+    {
+      "outlet": "ئینستاگرام ⁦@milad_nouri و @miladnu⁩",
+      "title": "ڕیلز",
+      "href": "https://www.instagram.com/reels/DL1uBdssHea/",
+      "cover": "/images/press/social/ig-milad.jpg"
+    },
+    {
+      "outlet": "ئینستاگرام ‎@ahooraniazi",
+      "title": "ڕیلز",
+      "href": "https://www.instagram.com/reel/DMDVdvsMtPC",
+      "cover": "/images/press/social/ig-ahoora.jpg"
+    },
+    {
+      "outlet": "ئینستاگرام ‎@thezoomit",
+      "title": "ڕیلز",
+      "href": "https://www.instagram.com/reels/DL-dcr1scNr/",
+      "cover": "/images/press/social/ig-zoomit.jpg"
+    },
+    {
+      "outlet": "ئینستاگرام ‎@arianabrouni",
+      "title": "ڕیلز",
+      "href": "https://www.instagram.com/reels/DL-TZcuI-cP/",
+      "cover": "/images/press/social/ig-ariana.jpg"
+    },
+    {
+      "outlet": "ئینستاگرام ‎@digiato.insider",
+      "title": "پۆست",
+      "href": "https://www.instagram.com/p/DL4eDOwNUPM/",
+      "cover": "/images/press/social/ig-digiato.jpg"
+    },
+    {
+      "outlet": "یوتیوب ‎ahoora niazi",
+      "title": "نقد و بررسی اپلیکیشن مطمئن باش با میلاد نوری",
+      "href": "https://www.youtube.com/watch?v=xCiRx22fPQ8",
+      "cover": "/images/press/social/youtube-xCiRx22fPQ8.jpg",
+      "wide": true
+    }
+  ]
+}

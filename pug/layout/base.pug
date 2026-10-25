@@ -1,7 +1,9 @@
 block variables
+- if (typeof lang === "undefined") lang = "fa"
+- if (typeof dir === "undefined") dir = "rtl"
 
 doctype html
-html(lang="fa" dir="rtl")
+html(lang=lang dir=dir)
   head
     block meta
       include inc_head
