@@ -1,18 +1,19 @@
 -
   var siteUrl = "https://motmaenbash.ir"
-  var siteName = "مطمئن باش"
   var shareImage = siteUrl + "/images/shield-bg.png"
   var pageLang = typeof lang === "undefined" ? "fa" : lang
-  var pageLocale = typeof locale === "undefined" ? (pageLang === "en" ? "en_US" : "fa_IR") : locale
+  var siteName = pageLang === "en" ? "MotmaenBash" : "مطمئن باش"
+  var siteAlternateName = pageLang === "en" ? "مطمئن باش" : "MotmaenBash"
+  var pageLocale = typeof locale === "undefined" ? (pageLang === "en" ? "en_US" : pageLang === "ckb" ? "ckb_IQ" : "fa_IR") : locale
   var pageRobots = typeof robots === "undefined" ? "index, follow" : robots
   var pageKeywords = typeof keywords === "undefined" ? "" : keywords
-  var inLanguage = pageLang === "en" ? "en" : "fa-IR"
+  var inLanguage = pageLang === "en" ? "en" : pageLang === "ckb" ? "ckb" : "fa-IR"
   var graph = [
     {
       "@type": "Organization",
       "@id": siteUrl + "/#organization",
       "name": siteName,
-      "alternateName": "MotmaenBash",
+      "alternateName": siteAlternateName,
       "url": siteUrl,
       "logo": shareImage,
       "email": "hello@motmaenbash.ir",
@@ -25,8 +26,8 @@
       "@id": siteUrl + "/#website",
       "url": siteUrl,
       "name": siteName,
-      "alternateName": "MotmaenBash",
-      "inLanguage": "fa-IR",
+      "alternateName": siteAlternateName,
+      "inLanguage": inLanguage,
       "publisher": { "@id": siteUrl + "/#organization" }
     },
     {
@@ -44,12 +45,12 @@
     graph.push(
       {
         "@type": "SoftwareApplication",
-        "name": "مطمئن باش برای اندروید",
+        "name": typeof softwareAndroidName === "undefined" ? "مطمئن باش برای اندروید" : softwareAndroidName,
         "applicationCategory": "SecurityApplication",
         "operatingSystem": "Android",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IRR" },
         "downloadUrl": "https://play.google.com/store/apps/details?id=nu.milad.motmaenbash",
-        "installUrl": siteUrl + "/#android-app",
+        "installUrl": typeof softwareAndroidInstall === "undefined" ? siteUrl + "/#android-app" : softwareAndroidInstall,
         "url": siteUrl,
         "image": shareImage,
         "description": description,
@@ -58,11 +59,11 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "افزونه مرورگر مطمئن باش",
+        "name": typeof softwareExtensionName === "undefined" ? "افزونه مرورگر مطمئن باش" : softwareExtensionName,
         "applicationCategory": "SecurityApplication",
         "operatingSystem": "Chrome, Firefox",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IRR" },
-        "installUrl": siteUrl + "/#download",
+        "installUrl": typeof softwareExtensionInstall === "undefined" ? siteUrl + "/#download" : softwareExtensionInstall,
         "url": siteUrl,
         "image": shareImage,
         "description": description,
@@ -96,8 +97,6 @@ meta(property="og:image:alt" content=siteName)
 meta(property="og:image:width" content="1024")
 meta(property="og:image:height" content="1024")
 meta(property="og:locale" content=pageLocale)
-if typeof alternateUrl !== "undefined"
-  meta(property="og:locale:alternate" content=(pageLang === "en" ? "fa_IR" : "en_US"))
 
 // Twitter Meta Tags
 meta(name="twitter:card" content="summary_large_image")
@@ -110,11 +109,35 @@ meta(name="twitter:image:alt" content=siteName)
 // Other required meta tags
 link(rel="icon" type="image/png" href=shareImage)
 link(rel="canonical" href=url)
-if typeof alternateUrl !== "undefined"
-  link(rel="alternate" hreflang=alternateLang href=alternateUrl)
-  link(rel="alternate" hreflang=(pageLang === "en" ? "en" : "fa") href=url)
-  link(rel="alternate" hreflang="x-default" href=(pageLang === "en" ? alternateUrl : url))
-link(rel="stylesheet" href="css/bootstrap.rtl.min.css?v=v5.3.3")
-link(rel="stylesheet" href="css/style.css?v=1.0.9")
+-
+  var hreflangPageId = "home"
+  if (typeof url !== "undefined" && url) {
+    var hreflangPath = String(url).replace(/^https?:\/\/[^/]+/, "")
+    siteLanguages.forEach(function (language) {
+      if (language.prefix && (hreflangPath === language.prefix || hreflangPath.indexOf(language.prefix + "/") === 0)) {
+        hreflangPath = hreflangPath.slice(language.prefix.length) || "/"
+      }
+    })
+    if (hreflangPath === "" || hreflangPath === "/") hreflangPageId = "home"
+    else hreflangPageId = hreflangPath.replace(/^\//, "").replace(/\.html$/, "")
+  }
+  var hreflangHref = function (language) {
+    if (hreflangPageId === "home") return "https://motmaenbash.ir" + (language.prefix ? language.prefix + "/" : "/")
+    return "https://motmaenbash.ir" + (language.prefix || "") + "/" + hreflangPageId + ".html"
+  }
+  var faLanguage = null
+  siteLanguages.forEach(function (language) {
+    if (language.code === "fa") faLanguage = language
+  })
+if typeof pagesByLang !== "undefined" && pagesByLang.fa.indexOf(hreflangPageId) !== -1
+  each language in siteLanguages
+    if pagesByLang[language.code].indexOf(hreflangPageId) !== -1
+      link(rel="alternate" hreflang=language.code href=hreflangHref(language))
+      if language.code !== pageLang
+        meta(property="og:locale:alternate" content=language.locale)
+  link(rel="alternate" hreflang="x-default" href=hreflangHref(faLanguage))
+- var bootstrapFile = dir === "ltr" ? "bootstrap.min.css" : "bootstrap.rtl.min.css"
+link(rel="stylesheet" href="/css/" + bootstrapFile + "?v=v5.3.3")
+link(rel="stylesheet" href="/css/style.css?v=1.0.19")
 
 script(type="application/ld+json")!= structuredData

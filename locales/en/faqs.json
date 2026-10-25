@@ -1,0 +1,746 @@
+{
+  "title": "FAQ | MotmaenBash",
+  "description": "Answers about phishing, trusting MotmaenBash, and why the Android app asks for each permission.",
+  "keywords": "FAQ, phishing, MotmaenBash, browser extension, Android app, online fraud",
+  "url": "https://motmaenbash.ir/en/faqs.html",
+  "alternateUrl": "https://motmaenbash.ir/faqs.html",
+  "alternateLang": "fa",
+  "heading": "FAQ",
+  "links": [
+    {
+      "href": "#trust",
+      "label": "Trust MotmaenBash?"
+    },
+    {
+      "href": "#general",
+      "label": "Phishing basics"
+    },
+    {
+      "href": "#motmaen-bash",
+      "label": "How MotmaenBash works"
+    },
+    {
+      "href": "#android-app",
+      "label": "Android permissions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "trust",
+      "icon": "fas fa-lock",
+      "title": "Trust MotmaenBash?",
+      "badge": "Important",
+      "items": [
+        {
+          "icon": "fas fa-lock",
+          "title": "Is MotmaenBash itself safe?",
+          "badge": {
+            "text": "Please read",
+            "color": "bg-success"
+          },
+          "blocks": [
+            {
+              "type": "split",
+              "mainCol": "col-md-9",
+              "sideCol": "col-md-3",
+              "main": [
+                {
+                  "type": "p",
+                  "class": "fw-bold",
+                  "text": "Yes. MotmaenBash is open source, and the code can be read on GitHub."
+                },
+                {
+                  "type": "p",
+                  "text": "Why MotmaenBash can be trusted:"
+                },
+                {
+                  "type": "ul",
+                  "icon": "fas fa-check-double text-success me-1",
+                  "items": [
+                    "The app is open source. Developers and anyone else can review the code.",
+                    "MotmaenBash has no server of its own, and it does not upload or store that information anywhere.",
+                    "Checks for suspicious apps, links, and other cases run offline, using the database inside the app.",
+                    "SMS and accessibility are optional. Without them you can still scan apps and check links by hand.",
+                    "There is no account. The app does not ask for a phone number, email address, or other account details.",
+                    "MotmaenBash is reviewed and published by established app stores.",
+                    "The offline database is updated from a public GitHub repository."
+                  ]
+                }
+              ],
+              "side": [
+                {
+                  "type": "panel",
+                  "title": "Open source, so anyone can review it",
+                  "blocks": [
+                    {
+                      "type": "buttons",
+                      "items": [
+                        {
+                          "href": "/en/git.html",
+                          "label": "View the code on GitHub",
+                          "icon": "fab fa-github me-1",
+                          "blank": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-user-shield",
+          "title": "Does MotmaenBash use my personal information?",
+          "badge": {
+            "text": "Please read",
+            "color": "bg-success"
+          },
+          "blocks": [
+            {
+              "type": "text",
+              "text": "No. MotmaenBash is open source and has no server of its own. Message text, links, and the list of installed apps are not uploaded or stored. Only crash reports and aggregate usage counts go to Firebase."
+            },
+            {
+              "type": "br"
+            },
+            {
+              "type": "text",
+              "text": "To check links, SMS messages, and suspicious apps, the app does not send personal information, messages, or install data to a server or a third party. Those checks run offline, on the device."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-chart-bar",
+          "title": "Does the app use analytics?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Yes. These tools are used to see that the app stays stable and to improve it:"
+            },
+            {
+              "type": "ul",
+              "class": "",
+              "items": [
+                "Firebase Crashlytics (Google) reports crashes.",
+                "Firebase Analytics (Google) counts general usage.",
+                "Those counts include events such as how often a warning is shown. They do not include the warning text, technical details, or information that identifies a person.",
+                {
+                  "text": "Firebase libraries add some advertising permissions on their own. Those permissions are removed from the app manifest:",
+                  "manifest": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-download",
+          "title": "Where do I download a safe copy?",
+          "blocks": [
+            {
+              "type": "split",
+              "mainCol": "col-md-8",
+              "sideCol": "col-md-4",
+              "main": [
+                {
+                  "type": "text",
+                  "text": "Download the app and the extensions only from the links on the MotmaenBash website."
+                },
+                {
+                  "type": "br"
+                },
+                {
+                  "type": "text",
+                  "text": "Copies from other places may have been modified. Use the links on this website:"
+                }
+              ],
+              "side": [
+                {
+                  "type": "panel",
+                  "blocks": [
+                    {
+                      "type": "buttons",
+                      "items": [
+                        {
+                          "href": "/en/#android-app",
+                          "label": "Get the Android app",
+                          "icon": "ion-logo-android me-1",
+                          "blank": true
+                        },
+                        {
+                          "href": "/en/#download",
+                          "label": "Get the browser extension",
+                          "icon": "ion-ios-cloud-download me-1",
+                          "blank": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "alert",
+              "class": "alert-danger mt-3",
+              "icon": "fas fa-triangle-exclamation me-1",
+              "text": "We are not responsible for installing the app or the extension from an unofficial source."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "icon": "fas fa-shield",
+      "title": "Phishing basics",
+      "items": [
+        {
+          "icon": "fas fa-shield",
+          "title": "What is phishing, and how does it work?",
+          "blocks": [
+            {
+              "type": "split",
+              "rowClass": "mt-3",
+              "mainCol": "col-md-8",
+              "sideCol": "col-md-4",
+              "main": [
+                {
+                  "type": "p",
+                  "text": "Phishing is a scam that pretends to be a real organization or service and tries to steal identity details, bank information, or passwords."
+                },
+                {
+                  "type": "ul",
+                  "class": "list-check",
+                  "items": [
+                    "The attacker pretends to be a trusted organization",
+                    "The message arrives by email, SMS, or a social network",
+                    "The page is designed to look like a real payment gateway or a known service",
+                    "The person is pushed to enter private information"
+                  ]
+                },
+                {
+                  "type": "alert",
+                  "class": "alert-info mt-3",
+                  "strong": "A common example:",
+                  "text": "a fake SMS about a court notice. The link leads to a page that asks you to install a malicious app or enter bank details."
+                },
+                {
+                  "type": "hr"
+                },
+                {
+                  "type": "h6",
+                  "text": "Attackers use several tricks:"
+                },
+                {
+                  "type": "ul",
+                  "icon": "fas fa-triangle-exclamation text-warning me-1",
+                  "items": [
+                    "Texts promising a prize or free mobile data.",
+                    "Fake bank payment pages that collect card details.",
+                    "Malicious apps shared in social networks and messengers.",
+                    "Fake emails with urgent warnings, such as “your account is blocked” or “confirm your information now”."
+                  ]
+                },
+                {
+                  "type": "alert",
+                  "class": "alert-warning mt-3",
+                  "icon": "fas fa-triangle-exclamation me-1",
+                  "text": "Information entered on those pages goes to the attacker."
+                }
+              ],
+              "side": [
+                {
+                  "type": "sidecards",
+                  "items": [
+                    {
+                      "icon": "ion-md-alert me-2",
+                      "title": "Common phishing:",
+                      "items": [
+                        "Fake text messages",
+                        "Fake bank pages",
+                        "Malicious apps",
+                        "Urgent emails"
+                      ]
+                    },
+                    {
+                      "icon": "ion-ios-chatbubbles me-2",
+                      "title": "Bait texts",
+                      "items": [
+                        "Free credit",
+                        "Fake bank warnings",
+                        "Suspicious short links"
+                      ]
+                    },
+                    {
+                      "icon": "ion-logo-android me-2",
+                      "title": "Fake apps",
+                      "items": [
+                        "Copies of banking apps",
+                        "Copies of government apps",
+                        "Unknown VPN tools"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-comment",
+          "title": "How do I recognize a phishing SMS?",
+          "blocks": [
+            {
+              "type": "h6",
+              "text": "Look for these signs:"
+            },
+            {
+              "type": "ul",
+              "icon": "fas fa-triangle-exclamation text-warning me-1",
+              "items": [
+                "Spelling and grammar mistakes",
+                "Shortened or unusual links",
+                "Bait such as “you have won a prize” or “you have an unpaid toll”",
+                "Claims about a subsidy payment, or that you were removed from a payment list",
+                "A message pretending to be the judiciary and asking you to open a notice or a case",
+                "A personal phone number instead of an official sender such as adliran",
+                "A request for personal information, a card password, or a confirmation code",
+                "A threat such as “your account will be blocked if you do not pay”"
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-envelope",
+          "title": "How do I recognize a phishing email?",
+          "blocks": [
+            {
+              "type": "h6",
+              "text": "Look for these signs:"
+            },
+            {
+              "type": "ul",
+              "icon": "fas fa-triangle-exclamation text-warning me-1",
+              "items": [
+                "A sender domain that only looks real, such as support@google-support.com instead of @google.com",
+                "Shortened or unusual links",
+                "A link domain that only looks real, such as inistagram.com instead of instagram.com",
+                "A request for private information after you open a link, such as a username and password",
+                "Urgent threats, such as losing access to the account",
+                "An attachment you were not expecting"
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-shield-alt",
+          "title": "How do I avoid phishing?",
+          "blocks": [
+            {
+              "type": "h6",
+              "text": "These habits help:"
+            },
+            {
+              "type": "ul",
+              "icon": "fas fa-check-double text-success me-1",
+              "items": [
+                "Learn the current tricks, and warn people around you",
+                "Look at the site carefully before entering information",
+                "Install mobile apps only from official stores",
+                "Pay attention to warnings from the browser and other security tools",
+                "Do not enter information on a site you do not know",
+                "Delete suspicious texts and emails",
+                "Do not open unexpected links in messengers, social networks, SMS, or email",
+                "Do not install unknown apps, including VPNs, from Telegram or other messengers",
+                "Install MotmaenBash for yourself and for family members:"
+              ]
+            },
+            {
+              "type": "buttons",
+              "items": [
+                {
+                  "href": "/en/#android-app",
+                  "label": "Get the MotmaenBash app",
+                  "icon": "fab fa-android me-1",
+                  "blank": true,
+                  "class": "me-3"
+                },
+                {
+                  "href": "/en/#download",
+                  "label": "Get the MotmaenBash extension",
+                  "icon": "fas fa-download me-1",
+                  "blank": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motmaen-bash",
+      "icon": "fas fa-mobile-alt",
+      "title": "How MotmaenBash works",
+      "items": [
+        {
+          "icon": "fab fa-android",
+          "title": "How does the Android app work?",
+          "blocks": [
+            {
+              "type": "p",
+              "class": "lead",
+              "text": "The Android app uses the checks below. 🚀"
+            },
+            {
+              "type": "cards",
+              "rowClass": "mt-3",
+              "items": [
+                {
+                  "title": "SMS",
+                  "blocks": [
+                    {
+                      "type": "ul",
+                      "icon": "fas fa-check-double text-success me-1",
+                      "items": [
+                        "Checks new SMS messages and flags suspicious ones",
+                        "Scans links in those messages and warns you",
+                        "Shows a warning when a message looks suspicious"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Browser",
+                  "blocks": [
+                    {
+                      "type": "ul",
+                      "icon": "fas fa-check-double text-success me-1",
+                      "items": [
+                        "Checks links opened in the browser",
+                        "Shows a green confirmation on genuine Shaparak payment pages",
+                        "Warns you immediately about a suspicious or misleading site"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "cards",
+              "rowClass": "mt-2",
+              "items": [
+                {
+                  "title": "Apps",
+                  "blocks": [
+                    {
+                      "type": "ul",
+                      "icon": "fas fa-check-double text-success me-1",
+                      "items": [
+                        "Warns you when a suspicious app is installed",
+                        "Can scan apps that are already installed",
+                        "Warns you about apps that ask for suspicious permissions"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "General",
+                  "blocks": [
+                    {
+                      "type": "ul",
+                      "icon": "fas fa-check-double text-success me-1",
+                      "items": [
+                        "Shows short security tips on the home screen.",
+                        "Updates the database as new threats appear.",
+                        "Works offline, at the moment the message, link, or app is seen.",
+                        "Lets people report new scams, and those reports improve the database."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-mobile-alt",
+          "title": "Does the app upload SMS messages, links, or app data to a server?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "No. The app does not upload user information to a server, it works offline, and it has no central server. Suspicious links, phishing SMS, and malicious apps are checked on the device. The on-device database is updated from a GitHub repository, and that update does not send anything about you."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-globe",
+          "title": "How does the browser extension work?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "The browser extension does two things:"
+            },
+            {
+              "type": "ul",
+              "icon": "fas fa-check-double text-success me-1",
+              "items": [
+                "Checks the address of payment gateways",
+                {
+                  "before": "Shows a green mark",
+                  "icon": "fas fa-circle-check text-success mx-1",
+                  "after": " when the payment gateway looks genuine"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-flag",
+          "title": "How do I report a new scam?",
+          "blocks": [
+            {
+              "type": "split",
+              "main": [
+                {
+                  "type": "p",
+                  "text": "Use the report form for phishing SMS messages, sites, and apps. Reports help MotmaenBash recognize more cases."
+                }
+              ],
+              "side": [
+                {
+                  "type": "panel",
+                  "blocks": [
+                    {
+                      "type": "buttons",
+                      "items": [
+                        {
+                          "href": "https://forms.gle/odNaY6jeks2eqZDZA",
+                          "label": "Send a report",
+                          "icon": "far fa-envelope me-1",
+                          "blank": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-dollar-sign",
+          "title": "Is the app free?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Yes. It is free to use. The app may show text or image ads, either for a while or permanently."
+            }
+          ]
+        },
+        {
+          "icon": "fab fa-chrome",
+          "title": "Which Android browsers does the browsing shield support?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "The browsing shield currently supports:"
+            },
+            {
+              "type": "br"
+            },
+            {
+              "type": "text",
+              "text": "Chrome, Firefox, Microsoft Edge, Opera, Brave, DuckDuckGo, Samsung Internet, UC Browser, and Qwant."
+            },
+            {
+              "type": "br"
+            },
+            {
+              "type": "text",
+              "text": "More browsers may be added later."
+            },
+            {
+              "type": "br"
+            },
+            {
+              "type": "text",
+              "text": "Older browser versions can behave differently. The shield is checked against current versions, so keep your browser updated."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "android-app",
+      "icon": "fas fa-layer-group",
+      "title": "Android permissions",
+      "items": [
+        {
+          "icon": "fas fa-wifi",
+          "title": "Why does the app need Internet and network-state access (INTERNET and ACCESS_NETWORK_STATE)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Internet is used to update the database. Network-state access avoids errors when the phone is offline."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-comment",
+          "title": "Why does the app need new SMS messages (RECEIVE_SMS)?",
+          "badge": {
+            "text": "Optional",
+            "color": "bg-info"
+          },
+          "blocks": [
+            {
+              "type": "text",
+              "text": "This permission is how the app sees a new SMS and checks it for phishing. It covers only the message that just arrived. The app cannot send SMS, and it cannot read messages already stored on the phone."
+            },
+            {
+              "type": "alert",
+              "class": "alert-info mt-2",
+              "text": "This permission is optional. Without it you can still scan apps, check links by hand, and read the security tips. It does not allow sending SMS or reading older messages."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-universal-access",
+          "title": "Why does the app need the accessibility service (BIND_ACCESSIBILITY_SERVICE)?",
+          "badge": {
+            "text": "Optional",
+            "color": "bg-info"
+          },
+          "blocks": [
+            {
+              "type": "text",
+              "text": "The browsing shield uses accessibility to notice links and pages while you browse, and to warn you about dangerous ones. On a payment page it can also tell you when the gateway belongs to Shaparak."
+            },
+            {
+              "type": "alert",
+              "class": "alert-info mt-2",
+              "text": "This permission is optional. Without it you can still scan apps, check links by hand, and read the security tips."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-layer-group",
+          "title": "Why does the app need to display over other apps (SYSTEM_ALERT_WINDOW)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Warnings use this permission, so they can appear while you are in another app."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-box-open",
+          "title": "Why does the app need the list of installed apps (QUERY_ALL_PACKAGES)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "The app scan needs the list of installed apps so it can look for suspicious and phishing apps."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-trash",
+          "title": "Why does the app need to request app deletion (REQUEST_DELETE_PACKAGES)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "When the app finds a suspicious program, it can offer to uninstall it. This permission only sends that request to Android. Nothing is removed unless you confirm it."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-tasks",
+          "title": "Why does the app need a foreground service (FOREGROUND_SERVICE)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "From Android 8, this permission keeps the SMS, browsing, and install shields running. Older Android versions do not grant it."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-sync",
+          "title": "Why does the app need a data-sync foreground service (FOREGROUND_SERVICE_DATA_SYNC)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "This permission is for the foreground service that syncs data. It is requested from Android 10 upward."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-bell",
+          "title": "Why does the app need to post notifications (POST_NOTIFICATIONS)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "From Android 8, a foreground service has to show a notification so you can see that it is running. The app may also use a notification for news such as a new version."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-power-off",
+          "title": "Why does the app need to start after reboot (RECEIVE_BOOT_COMPLETED)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "This permission starts the app again after the phone restarts, so the shields keep working."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-tower-broadcast",
+          "title": "Why does the app need vibration (VIBRATE)?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "The phone vibrates when a warning appears for a suspicious SMS, link, or app."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-toggle-off",
+          "title": "Can I turn some permissions off?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Yes. Turning a permission off limits what the app can do. Without SMS access, for example, it cannot check phishing texts. Leave the permissions on if you want every shield."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "icon": "fas fa-folder",
+      "title": "Other questions",
+      "items": [
+        {
+          "icon": "fab fa-apple",
+          "title": "Is there an iOS app?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "MotmaenBash is available for Android only. iOS does not allow the same access to SMS, browsing, and installed apps, so the same features are not practical there."
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-shield-virus",
+          "title": "Can MotmaenBash replace an antivirus?",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "No. MotmaenBash is built to catch phishing: suspicious SMS, phishing sites, and malicious apps. It is not a replacement for antivirus software."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "title": "مخزن کد | مطمئن باش",
+  "description": "اطلاعات بیشتر درباره اپلیکیشن و افزونه مطمئن باش.",
+  "keywords": "MotmaenBash, مطمئن باش, ضد فیشینگ, افزونه مرورگر, اپلیکیشن اندروید, کلاهبرداری اینترنتی, فیشینگ",
+  "url": "https://motmaenbash.ir/git.html",
+  "alternateUrl": "https://motmaenbash.ir/en/git.html",
+  "alternateLang": "en",
+  "heading": "مخزن‌های کد مطمئن باش",
+  "lead": "پروژه مطمئن باش به‌صورت متن‌باز (Open Source) توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه از طریق لینک‌های زیر در دسترس است:",
+  "githubLabel": "مخزن کد در گیت‌هاب:",
+  "repos": [
+    {
+      "icon": "fab fa-android",
+      "title": "نسخه اندروید",
+      "license": "لایسنس: Apache license 2.0",
+      "href": "https://github.com/motmaenbash/motmaenbash-android",
+      "notes": [
+        "نسخه اندروید مطمئن باش تحت مجوز Apache 2.0 منتشر شده است.",
+        "استفاده، تغییر یا توزیع کد منبع آزاد است، اما استفاده از نام یا لوگوی «مطمئن باش» (MotmaenBash / Motmaen Bash) به‌طور کامل ممنوع است.",
+        "بیلد و انتشار عمومی پروژه تحت همین نام «مطمئن باش» فقط توسط تیم اصلی پروژه مجاز است."
+      ]
+    },
+    {
+      "icon": "fab fa-chrome",
+      "title": "اکستنشن کروم",
+      "license": "لایسنس: MIT license",
+      "href": "https://github.com/motmaenbash/motmaenbash-chrome"
+    },
+    {
+      "icon": "fab fa-firefox",
+      "title": "اکستنشن فایرفاکس",
+      "license": "لایسنس: MIT license",
+      "href": "https://github.com/motmaenbash/motmaenbash-firefox"
+    },
+    {
+      "icon": "fas fa-window-restore",
+      "title": "وب‌سایت مطمئن باش",
+      "license": "لایسنس: MIT license",
+      "href": "https://github.com/motmaenbash/motmaenbash-website"
+    },
+    {
+      "icon": "fas fa-database",
+      "title": "پایگاه داده مطمئن باش",
+      "license": "لایسنس: CC-BY-4.0 license",
+      "href": "https://github.com/miladnouri/motmaenbash-data"
+    }
+  ],
+  "donateTitle": "حمایت مالی",
+  "donateText": "با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.",
+  "donateLabel": "حمایت مالی"
+}

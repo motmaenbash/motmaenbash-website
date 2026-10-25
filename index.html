@@ -32,8 +32,14 @@
     <!-- Other required meta tags-->
     <link rel="icon" type="image/png" href="https://motmaenbash.ir/images/shield-bg.png">
     <link rel="canonical" href="https://motmaenbash.ir">
-    <link rel="stylesheet" href="css/bootstrap.rtl.min.css?v=v5.3.3">
-    <link rel="stylesheet" href="css/style.css?v=1.0.9">
+    <link rel="alternate" hreflang="fa" href="https://motmaenbash.ir/">
+    <link rel="alternate" hreflang="ckb" href="https://motmaenbash.ir/ckb/">
+    <meta property="og:locale:alternate" content="ckb_IQ">
+    <link rel="alternate" hreflang="en" href="https://motmaenbash.ir/en/">
+    <meta property="og:locale:alternate" content="en_US">
+    <link rel="alternate" hreflang="x-default" href="https://motmaenbash.ir/">
+    <link rel="stylesheet" href="/css/bootstrap.rtl.min.css?v=v5.3.3">
+    <link rel="stylesheet" href="/css/style.css?v=1.0.12">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -120,12 +126,12 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         
-        <a class="navbar-brand" href="https://motmaenbash.ir">مطمئن باش</a>
+        <a class="navbar-brand" href="/">مطمئن باش</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="donate.html"><i class="fas fa-heart fa-beat"></i> حمایت مالی</a></li>
-            <li class="nav-item"><a class="nav-link" href="faqs.html" title="سوال‌های پرتکرار"><i class="fas fa-circle-question"></i> سوال‌های پرتکرار            </a></li>
+            <li class="nav-item"><a class="nav-link" href="/donate.html"><i class="fas fa-heart fa-beat"></i> حمایت مالی</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faqs.html" title="سوال‌های پرتکرار"><i class="fas fa-circle-question"></i> سوال‌های پرتکرار</a></li>
             <li class="nav-item dropdown" id="downloadMenu"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fas fa-download"></i> دانلود</a>
               <ul class="dropdown-menu">
                 
@@ -148,7 +154,14 @@
                 <li><a class="dropdown-item" href="https://chrome.google.com/webstore/detail/motmaenbash-مطمئن-باش/efhpmpdbeaganelnekhbffjphahncbgn" target="_blank">یاندکس</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="git.html" title="مخزن‌های پروژه"><i class="fab fa-github"></i> گیت‌هاب</a></li>
+            <li class="nav-item"><a class="nav-link" href="/git.html" title="مخزن‌های پروژه"><i class="fab fa-github"></i> گیت‌هاب</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" title="زبان"><i class="fas fa-language"></i> فارسی</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="/" lang="fa" aria-current="page">فارسی</a></li>
+                <li><a class="dropdown-item" href="/ckb/" lang="ckb">کوردی</a></li>
+                <li><a class="dropdown-item" href="/en/" lang="en">English</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -157,24 +170,19 @@
     <section class="hero-section">
       <canvas id="hero-bg"></canvas>
       <div class="hero-overlay"></div>
-      <div class="hero-content"><img class="logo mb-2" src="images/shield-tr.png" alt="MotmaenBash | مطمئن باش">
+      <div class="hero-content"><img class="logo mb-2" src="/images/shield-tr.png" alt="MotmaenBash | مطمئن باش">
         <h1 title="مطمئن باش">مطمئن باش!</h1>
         <h2>سپر امنیت دیجیتال شما</h2>
         <div class="mt-5 mb-3">در شبکه‌های اجتماعی به اشتراک بگذارید:</div>
-        <p class="social-share">
-          <!-- WhatsApp Share Link--><a class="mx-2" target="_blank" href="https://wa.me/?text=بررسی%20اصالت%20درگاه‌های%20پرداخت%20اینترنتی%20ایرانی%20%0A%20https://motmaenbash.ir" title="Share on Whatsapp" aria-label="واتس‌اپ"><i class="fab fa-whatsapp fs-1"></i></a>
-          <!-- Twitter Share Link--><a class="mx-2" target="_blank" href="https://x.com/intent/tweet?text=بررسی%20اصالت%20درگاه‌های%20پرداخت%20اینترنتی%20ایرانی&amp;url=https://motmaenbash.ir" title="Share on Twitter" aria-label="توییتر"><i class="fab fa-twitter fs-1"></i></a>
-          <!-- Telegram Share Link--><a class="mx-2" target="_blank" href="https://t.me/share/url?url=https://motmaenbash.ir&amp;text=بررسی%20اصالت%20درگاه‌های%20پرداخت%20اینترنتی%20ایرانی" title="Share on Telegram" aria-label="تلگرام"><i class="fab fa-telegram fs-1"></i></a>
-          <!-- Linkedin Share Link--><a class="mx-2" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=https://motmaenbash.ir" title="Share on LinkedIn" aria-label="لینکدین"><i class="fab fa-linkedin fs-1"></i></a>
-        </p>
+        <p class="social-share"><a class="mx-2" target="_blank" href="https://wa.me/?text=%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C%20%D8%A7%D8%B5%D8%A7%D9%84%D8%AA%20%D8%AF%D8%B1%DA%AF%D8%A7%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA%20%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C%20%0A%20https://motmaenbash.ir" title="Share on Whatsapp" aria-label="واتس‌اپ"><i class="fab fa-whatsapp fs-1"></i></a><a class="mx-2" target="_blank" href="https://x.com/intent/tweet?text=%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C%20%D8%A7%D8%B5%D8%A7%D9%84%D8%AA%20%D8%AF%D8%B1%DA%AF%D8%A7%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA%20%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C&amp;url=https://motmaenbash.ir" title="Share on Twitter" aria-label="توییتر"><i class="fab fa-twitter fs-1"></i></a><a class="mx-2" target="_blank" href="https://t.me/share/url?url=https://motmaenbash.ir&amp;text=%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C%20%D8%A7%D8%B5%D8%A7%D9%84%D8%AA%20%D8%AF%D8%B1%DA%AF%D8%A7%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA%20%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C" title="Share on Telegram" aria-label="تلگرام"><i class="fab fa-telegram fs-1"></i></a><a class="mx-2" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=https://motmaenbash.ir" title="Share on LinkedIn" aria-label="لینکدین"><i class="fab fa-linkedin fs-1"></i></a></p>
         <div class="pt-3"><a class="btn fs-5 m-2" href="#android-app">نصب اپلیکیشن <b>مطمئن باش</b></a><a class="btn fs-5 m-2" href="#download">نصب افزونه <b>مطمئن باش</b></a></div>
-        <div class="pt-3"><a class="btn fs-6 m-2" href="#trust">امنیت <b>"مطمئن باش"</b>و اعتماد به آن</a></div>
+        <div class="pt-3"><a class="btn fs-6 m-2" href="#trust">امنیت <b>&quot;مطمئن باش&quot;</b> و اعتماد به آن</a></div>
       </div>
     </section>
     <section class="container my-2" id="trust">
-      <h2 class="title-bg d-flex align-items-center mb-lg-4">امنیت "مطمئن باش" و اعتماد به آن</h2>
+      <h2 class="title-bg d-flex align-items-center mb-lg-4">امنیت &quot;مطمئن باش&quot; و اعتماد به آن</h2>
       <div class="trust-box text-white p-4 fs-6 rounded-4">
-        <h4 class="text-white mb-3"><strong>آیا خود "مطمئن باش" امن و قابل اعتماد است؟</strong></h4>
+        <h4 class="text-white mb-3"><strong>آیا خود &quot;مطمئن باش&quot; امن و قابل اعتماد است؟</strong></h4>
         <ul class="list-unstyled trust-list">
           <li class="mb-2"><i class="fas fa-check-double me-2"></i>پروژه متن‌باز (Open Source) و قابل بررسی توسط عموم کاربران</li>
           <li class="mb-2"><i class="fas fa-check-double me-2"></i>بررسی پیامک، لینک و اپ روی خود گوشی کاربر و عدم ارسال و ذخیره محتوای آن‌ها روی سرور</li>
@@ -182,8 +190,8 @@
           <li class="mb-2"><i class="fas fa-check me-2"></i>اختیاری بودن دسترسی‌های حساس برنامه و امکان استفاده کاربر از سایر امکانات برنامه بدون این دسترسی‌ها</li>
           <li class="mb-2"><i class="fas fa-check me-2"></i>بدون نیاز به ثبت‌نام و حساب کاربری و عدم دریافت هرگونه اطلاعات کاربری</li>
           <li class="mb-2"><i class="fas fa-check me-2"></i>بررسی (با سخت‌گیری بالا) و انتشار توسط مارکت‌های معتبر</li>
-          <li><i class="fas fa-check me-2"></i>بروزرسانی خودکار و دوره‌ای دیتابیس (پایگاه داده) آفلاین داخل اپلیکیشن از یک مخزن (ریپازیتوری) گیت‌هاب</li>
-        </ul><a class="btn btn-blue mt-3" href="faqs.html#trust" target="_blank">اطلاعات بیشتر...</a>
+          <li class="mb-2"><i class="fas fa-check me-2"></i>بروزرسانی خودکار و دوره‌ای دیتابیس (پایگاه داده) آفلاین داخل اپلیکیشن از یک مخزن (ریپازیتوری) گیت‌هاب</li>
+        </ul><a class="btn btn-blue mt-3" href="/faqs.html#trust" target="_blank">اطلاعات بیشتر...</a>
       </div>
     </section>
     <section class="container my-2" id="android-app">
@@ -191,9 +199,9 @@
       <div class="row align-items-start">
         <div class="col-md-6 mb-2">
           <div class="mb-4 fw-light mt-3">
-            <div class="d-flex align-items-start"><img class="app-icon rounded-3 mb-2 me-3" src="images/shield-bg.png" alt="Android App">
+            <div class="d-flex align-items-start"><img class="app-icon rounded-3 mb-2 me-3" src="/images/shield-bg.png" alt="Android App">
               <div>
-                <p>اپلیکیشن اندروید<b>مطمئن باش</b> یک ابزار جامع برای محافظت از شما در برابر انواع کلاهبرداری‌های اینترنتی است. این اپلیکیشن به طور خودکار موارد مشکوک را شناسایی کرده و به شما هشدار می‌دهد.</p>
+                <p>اپلیکیشن اندروید <b>مطمئن باش</b> یک ابزار جامع برای محافظت از شما در برابر انواع کلاهبرداری‌های اینترنتی است. این اپلیکیشن به طور خودکار موارد مشکوک را شناسایی کرده و به شما هشدار می‌دهد.</p>
               </div>
             </div>
             <ul class="list-unstyled mt-2 fs-6">
@@ -207,39 +215,41 @@
           </div>
           <div class="row g-3 text-center">
             <div class="col-md-6"><a class="btn btn-blue btn-platform w-100" href="https://play.google.com/store/apps/details?id=nu.milad.motmaenbash" target="_blank" title="دانلود مطمئن باش از Google Play">
-                <div class="btn-platform-icon"> <img src="images/platforms/google-play.webp"></div>
+                <div class="btn-platform-icon"><img src="/images/platforms/google-play.webp"></div>
                 <div class="btn-platform-text">دریافت از Google Play</div></a></div>
             <div class="col-md-6"><a class="btn btn-blue btn-platform w-100" href="https://cafebazaar.ir/app/nu.milad.motmaenbash" target="_blank" title="دانلود مطمئن باش از بازار">
-                <div class="btn-platform-icon"> <img src="images/platforms/bazzar.webp"></div>
+                <div class="btn-platform-icon"><img src="/images/platforms/bazzar.webp"></div>
                 <div class="btn-platform-text">دریافت از بازار</div></a></div>
             <div class="col-md-6"><a class="btn btn-blue btn-platform w-100" href="https://myket.ir/app/nu.milad.motmaenbash?utm_source=search-ads-gift&amp;utm_medium=cpc" target="_blank" title="دانلود مطمئن باش از مایکت">
-                <div class="btn-platform-icon"> <img src="images/platforms/myket.webp"></div>
+                <div class="btn-platform-icon"><img src="/images/platforms/myket.webp"></div>
                 <div class="btn-platform-text">دریافت از مایکت</div></a></div>
-            <div class="col-md-6">          <a class="btn btn-platform btn-platform-disabled w-100" href="#" target="_blank" title="به زودی!">
-                <div class="btn-platform-icon"> <img src="images/platforms/f-droid.webp"></div>
-                <div class="btn-platform-text"> F-Droid (به‌زودی)</div></a></div>
+            <div class="col-md-6"><a class="btn btn-platform btn-platform-disabled w-100" href="#" title="به زودی!">
+                <div class="btn-platform-icon"><img src="/images/platforms/f-droid.webp"></div>
+                <div class="btn-platform-text">F-Droid (به‌زودی)</div></a></div>
           </div>
         </div>
         <div class="col-12 col-md-6">
           <div class="row">
-            <div class="col"><img class="screenshot" src="images/screenshot1.jpg" alt="تصویر برنامه مطمئن باش"></div>
-            <div class="col"><img class="screenshot" src="images/screenshot2.jpg" alt="تصویر برنامه مطمئن باش"></div>
-            <div class="col"><img class="screenshot" src="images/screenshot3.jpg" alt="تصویر برنامه مطمئن باش"></div>
+            <div class="col"><img class="screenshot" src="/images/screenshot1.jpg" alt="تصویر برنامه مطمئن باش"></div>
+            <div class="col"><img class="screenshot" src="/images/screenshot2.jpg" alt="تصویر برنامه مطمئن باش"></div>
+            <div class="col"><img class="screenshot" src="/images/screenshot3.jpg" alt="تصویر برنامه مطمئن باش"></div>
           </div>
         </div>
         <div class="col-12">
-          <div class="alert alert-warning mt-5 fs-6"><i class="fas fa-triangle-exclamation me-1"></i> لطفا اپلیکیشن&nbsp;<b>مطمئن باش</b> را تنها از لینک‌های رسمی بالا دریافت و نصب کنید.<br><i class="fas fa-triangle-exclamation me-1"></i> نسخه‌هایی که از سایر منابع دریافت می‌شوند، ممکن است تغییر یافته، ناامن یا آلوده به بدافزار باشند.<br><i class="fas fa-triangle-exclamation me-1"></i> هرگونه خطر و پیامد ناشی از نصب نسخه‌های غیررسمی بر عهده کاربر خواهد بود.</div>
+          <div class="alert alert-warning mt-5 fs-6"><i class="fas fa-triangle-exclamation me-1"></i> لطفا اپلیکیشن مطمئن باش را تنها از لینک‌های رسمی بالا دریافت و نصب کنید.<br><i class="fas fa-triangle-exclamation me-1"></i> نسخه‌هایی که از سایر منابع دریافت می‌شوند، ممکن است تغییر یافته، ناامن یا آلوده به بدافزار باشند.<br><i class="fas fa-triangle-exclamation me-1"></i> هرگونه خطر و پیامد ناشی از نصب نسخه‌های غیررسمی بر عهده کاربر خواهد بود.
+          </div>
         </div>
       </div>
     </section>
     <section class="container my-2" id="download">
       <h2 class="mb-4 text-center">افزونه مرورگر مطمئن باش</h2>
-      <p class="text-center text-muted mb-5"> افزونه&nbsp;<strong>مطمئن باش</strong> برای مرورگرهای اینترنتی طراحی شده تا اصالت درگاه‌های پرداخت اینترنتی را بررسی کند. با نصب این افزونه، از کلاهبرداری‌های اینترنتی هنگام پرداخت آنلاین در امان بمانید.</p>
+      <p class="text-center text-muted mb-5"> افزونه <strong>مطمئن باش</strong> برای مرورگرهای اینترنتی طراحی شده تا اصالت درگاه‌های پرداخت اینترنتی را بررسی کند. با نصب این افزونه، از کلاهبرداری‌های اینترنتی هنگام پرداخت آنلاین در امان بمانید.</p>
       <div class="row justify-content-center g-4">
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm position-relative">
-            <div class="position-absolute top-0 end-0 mt-2 me-2"><span class="badge bg-success me-1">دسکتاپ</span></div>
-            <div class="card-body text-center"><img class="w-25 mb-4" src="images/chrome.svg" alt="افزونه کروم">
+            <div class="position-absolute top-0 end-0 mt-2 me-2"><span class="badge me-1 bg-success">دسکتاپ</span>
+            </div>
+            <div class="card-body text-center"><img class="w-25 mb-4" src="/images/chrome.svg" alt="افزونه کروم">
               <h5>مرورگر گوگل کروم</h5>
               <p class="text-muted fs-6">امنیت بیشتر در پرداخت‌های اینترنتی</p><a class="btn btn-blue mt-2" href="https://chromewebstore.google.com/detail/motmaenbash-%D9%85%D8%B7%D9%85%D8%A6%D9%86-%D8%A8%D8%A7%D8%B4/efhpmpdbeaganelnekhbffjphahncbgn" target="_blank"><i class="fas fa-download"></i> دریافت افزونه گوگل کروم</a>
             </div>
@@ -247,8 +257,9 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm position-relative">
-            <div class="position-absolute top-0 end-0 mt-2 me-2"><span class="badge bg-success me-1">دسکتاپ</span><span class="badge bg-info">موبایل</span></div>
-            <div class="card-body text-center"><img class="w-25 mb-4" src="images/firefox.svg" alt="افزونه فایرفاکس">
+            <div class="position-absolute top-0 end-0 mt-2 me-2"><span class="badge me-1 bg-success">دسکتاپ</span><span class="badge me-1 bg-info">موبایل</span>
+            </div>
+            <div class="card-body text-center"><img class="w-25 mb-4" src="/images/firefox.svg" alt="افزونه فایرفاکس">
               <h5>مرورگر فایرفاکس</h5>
               <p class="text-muted fs-6">امنیت بیشتر در پرداخت‌های اینترنتی</p><a class="btn btn-blue mt-2" href="https://addons.mozilla.org/en-US/firefox/addon/motmaenbash-%D9%85%D8%B7%D9%85%D8%A6%D9%86-%D8%A8%D8%A7%D8%B4/" target="_blank"><i class="fas fa-download"></i> دریافت افزونه فایرفاکس</a>
             </div>
@@ -256,8 +267,9 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm position-relative">
-            <div class="position-absolute top-0 end-0 mt-2 me-2"><span class="badge bg-success me-1">دسکتاپ</span><span class="badge bg-info">موبایل</span></div>
-            <div class="card-body text-center"><img class="w-25 mb-4" src="images/yandex.svg" alt="افزونه یاندکس">
+            <div class="position-absolute top-0 end-0 mt-2 me-2"><span class="badge me-1 bg-success">دسکتاپ</span><span class="badge me-1 bg-info">موبایل</span>
+            </div>
+            <div class="card-body text-center"><img class="w-25 mb-4" src="/images/yandex.svg" alt="افزونه یاندکس">
               <h5>مرورگر یاندکس</h5>
               <p class="text-muted fs-6">امکان نصب افزونه‌های کروم بر روی مرورگر یاندکس</p><a class="btn btn-blue mt-2" href="https://chrome.google.com/webstore/detail/motmaenbash-%D9%85%D8%B7%D9%85%D8%A6%D9%86-%D8%A8%D8%A7%D8%B4/efhpmpdbeaganelnekhbffjphahncbgn" target="_blank"><i class="fas fa-download"></i> دریافت افزونه یاندکس</a>
             </div>
@@ -269,14 +281,7 @@
       <h2 class="title-bg" title="فیشینگ چیست؟">فیشینگ چیست؟</h2>
       <div class="row">
         <div class="col-md-6">
-          <p class="lh-lg fw-light">
-            فیشینگ (Phishing) یکی از رایج‌ترین و خطرناک‌ترین حملات سایبری است که مهاجمان و کلاهبرداران با ایجاد
-            نسخه‌های جعلی از سایت‌ها، درگاه‌های پرداخت و اپلیکیشن‌های موبایل شبیه به نسخه‌های اصلی، کاربران را
-            فریب داده و تلاش می‌کنند اطلاعات حساس شما مانند اطلاعات بانکی، نام کاربری و رمزهای عبور، دارایی کیف
-            پول رمزارز، هویت دیجیتال و... را سرقت می‌کنند. این حملات معمولا از طریق ارسال ایمیل‌های جعلی،
-            پیامک‌های فریبنده یا تبلیغات گمراه‌کننده و انتشار لینک در شبکه‌های اجتماعی و پیام‌رسان‌ها با هدف
-            تشویق کاربر به باز کردن لینک مخرب و یا نصب اپلیکیشن مخرب انجام می‌شوند.
-          </p>
+          <p class="lh-lg fw-light">فیشینگ (Phishing) یکی از رایج‌ترین و خطرناک‌ترین حملات سایبری است که مهاجمان و کلاهبرداران با ایجاد نسخه‌های جعلی از سایت‌ها، درگاه‌های پرداخت و اپلیکیشن‌های موبایل شبیه به نسخه‌های اصلی، کاربران را فریب داده و تلاش می‌کنند اطلاعات حساس شما مانند اطلاعات بانکی، نام کاربری و رمزهای عبور، دارایی کیف پول رمزارز، هویت دیجیتال و... را سرقت می‌کنند. این حملات معمولا از طریق ارسال ایمیل‌های جعلی، پیامک‌های فریبنده یا تبلیغات گمراه‌کننده و انتشار لینک در شبکه‌های اجتماعی و پیام‌رسان‌ها با هدف تشویق کاربر به باز کردن لینک مخرب و یا نصب اپلیکیشن مخرب انجام می‌شوند.</p>
           <p class="lh-lg fw-bold">هدف اصلی حملات فیشینگ، دستیابی به داده‌های محرمانه کاربران است:</p>
           <ul class="list-unstyled fs-6">
             <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>اطلاعات کارت‌های بانکی و حساب‌های مالی</li>
@@ -291,9 +296,7 @@
             <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>ارسال پیامک‌های فریبنده با پیشنهادات وسوسه‌انگیز همراه با لینک به سایت‌ها و اپلیکیشن‌های جعلی</li>
             <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>انتشار اپلیکیشن‌های مخرب و جعلی در پیام‌رسان‌ها و شبکه‌های اجتماعی</li>
           </ul>
-          <div class="alert alert-warning mt-4 fs-6"><i class="fas fa-triangle-exclamation me-1"></i>کلاهبرداران با استفاده از مهندسی اجتماعی و ترفندهای روانشناختی، کاربران را متقاعد می‌کنند تا بدون
-            آگاهی از خطرات موجود، اطلاعات محرمانه خود را در اختیار آن‌ها قرار دهند.
-          </div>
+          <div class="alert alert-warning mt-4 fs-6"><i class="fas fa-triangle-exclamation me-1"></i>کلاهبرداران با استفاده از مهندسی اجتماعی و ترفندهای روانشناختی، کاربران را متقاعد می‌کنند تا بدون آگاهی از خطرات موجود، اطلاعات محرمانه خود را در اختیار آن‌ها قرار دهند.</div>
         </div>
         <div class="col-md-6 accordion" id="faqAccordion">
           <div class="accordion-item">
@@ -302,17 +305,17 @@
               </button>
             </h3>
             <div class="accordion-collapse collapse" id="collapse-1" data-bs-parent="#faqAccordion">
-              <div class="accordion-body fs-6">
-                مهاجمان با ارسال ایمیل یا پیام جعلی سعی در فریب کاربران دارند. این پیام‌ها معمولا حاوی
-                لینک‌هایی به صفحات جعلی هستند که شبیه به صفحات واقعی بانک‌ها یا سرویس‌های معتبر طراحی
-                شده‌اند. کاربران با وارد کردن اطلاعات خود در این صفحات، ناخواسته اطلاعاتشان را در اختیار
-                کلاهبرداران قرار می‌دهند.
+              <div class="accordion-body fs-6">مهاجمان با ارسال ایمیل یا پیام جعلی سعی در فریب کاربران دارند. این پیام‌ها معمولا حاوی لینک‌هایی به صفحات جعلی هستند که شبیه به صفحات واقعی بانک‌ها یا سرویس‌های معتبر طراحی شده‌اند. کاربران با وارد کردن اطلاعات خود در این صفحات، ناخواسته اطلاعاتشان را در اختیار کلاهبرداران قرار می‌دهند.
                 <p>رایج‌ترین روش‌های فیشینگ شامل موارد زیر است:</p>
                 <ul class="list-unstyled">
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>ارسال پیامک‌های فریبنده با وعده‌های دروغین مانند "برنده جایزه شده‌اید" یا "بسته اینترنت رایگان"</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>ساخت صفحات جعلی درگاه پرداخت بانکی برای سرقت اطلاعات کارت</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>انتشار اپلیکیشن‌های مخرب در شبکه‌های اجتماعی و پیام‌رسان‌ها</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>ارسال ایمیل‌های جعلی با هشدارهای اضطراری مانند "مسدود شدن حساب"</li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> ارسال پیامک‌های فریبنده با وعده‌های دروغین مانند &quot;برنده جایزه شده‌اید&quot; یا &quot;بسته اینترنت رایگان&quot;
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> ساخت صفحات جعلی درگاه پرداخت بانکی برای سرقت اطلاعات کارت
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> انتشار اپلیکیشن‌های مخرب در شبکه‌های اجتماعی و پیام‌رسان‌ها
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> ارسال ایمیل‌های جعلی با هشدارهای اضطراری مانند &quot;مسدود شدن حساب&quot;
+                  </li>
                 </ul>
               </div>
             </div>
@@ -325,14 +328,22 @@
             <div class="accordion-collapse collapse" id="collapse-2" data-bs-parent="#faqAccordion">
               <div class="accordion-body fs-6">برای تشخیص پیامک‌های فیشینگ به این نکات توجه کنید:
                 <ul class="list-unstyled">
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>وجود لینک‌های کوتاه‌شده و مشکوک در متن پیامک</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>وجود اشتباهات املایی و نگارشی در متن.</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>ارسال پیامک‌های جعلی با عناوین فریبنده مانند "برنده جایزه شده‌اید" یا "پرداخت عوارض معوقه".</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>پیامک‌های جعلی با ادعای واریز یارانه یا حذف از لیست دریافت‌کنندگان.</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>پیامک‌های جعلی به نام قوه قضاییه با درخواست مشاهده پرونده.</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>ارسال پیامک از شماره‌های شخصی به جای سرشماره‌های رسمی مانند adliran.</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>درخواست اطلاعات شخصی، رمز کارت یا کد تأیید در پیامک.</li>
-                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i>استفاده از جملات تهدیدآمیز مانند "در صورت عدم پرداخت، حساب شما مسدود می‌شود".</li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> وجود لینک‌های کوتاه‌شده و مشکوک در متن پیامک
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> وجود اشتباهات املایی و نگارشی در متن.
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> ارسال پیامک‌های جعلی با عناوین فریبنده مانند &quot;برنده جایزه شده‌اید&quot; یا &quot;پرداخت عوارض معوقه&quot;.
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> پیامک‌های جعلی با ادعای واریز یارانه یا حذف از لیست دریافت‌کنندگان.
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> پیامک‌های جعلی به نام قوه قضاییه با درخواست مشاهده پرونده.
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> ارسال پیامک از شماره‌های شخصی به جای سرشماره‌های رسمی مانند adliran.
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> درخواست اطلاعات شخصی، رمز کارت یا کد تأیید در پیامک.
+                  </li>
+                  <li><i class="fas fa-triangle-exclamation text-warning me-1"></i> استفاده از جملات تهدیدآمیز مانند &quot;در صورت عدم پرداخت، حساب شما مسدود می‌شود&quot;.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -345,12 +356,18 @@
             <div class="accordion-collapse collapse" id="collapse-3" data-bs-parent="#faqAccordion">
               <div class="accordion-body fs-6">برای تشخیص ایمیل‌های فیشینگ به این نکات توجه کنید:
                 <ul class="list-unstyled">
-                  <li><i class="fas fa-check-double text-success me-1"></i>بررسی دامنه فرستنده با دقت بالا (مثال: support@google-support.com به جای @google.com)</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>وجود اشتباهات املایی و نگارشی در متن</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>درخواست اطلاعات حساس از طریق ایمیل</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>وجود لینک‌های کوتاه‌شده و مشکوک</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>درخواست‌های فوری و تهدیدآمیز برای ورود اطلاعات حساس</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>خودداری از کلیک روی لینک‌های ناشناس و مشکوک</li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> بررسی دامنه فرستنده با دقت بالا (مثال: support@google-support.com به جای @google.com)
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> وجود اشتباهات املایی و نگارشی در متن
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> درخواست اطلاعات حساس از طریق ایمیل
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> وجود لینک‌های کوتاه‌شده و مشکوک
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> درخواست‌های فوری و تهدیدآمیز برای ورود اطلاعات حساس
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> خودداری از کلیک روی لینک‌های ناشناس و مشکوک
+                  </li>
                 </ul>
               </div>
             </div>
@@ -361,19 +378,30 @@
               </button>
             </h3>
             <div class="accordion-collapse collapse" id="collapse-4" data-bs-parent="#faqAccordion">
-              <div class="accordion-body fs-6">اپلیکیشن اندروید "مطمئن باش" از مکانیزم‌ها و روش‌های زیر برای افزایش امنیت کاربران در برابر حملات فیشینگ استفاده می‌کند: 🚀
+              <div class="accordion-body fs-6">اپلیکیشن اندروید &quot;مطمئن باش&quot; از مکانیزم‌ها و روش‌های زیر برای افزایش امنیت کاربران در برابر حملات فیشینگ استفاده می‌کند: 🚀
                 <ul class="list-unstyled">
-                  <li><i class="fas fa-check-double text-success me-1"></i>بررسی خودکار پیامک‌های دریافتی و شناسایی پیامک‌های مشکوک بر اساس شماره، متن و لینک‌های داخل پیامک.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>اسکن لینک‌های موجود در پیامک‌ها و مقایسه با پایگاه داده فیشینگ برای نمایش هشدار در صورت خطر.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>بررسی و هشدار هنگام شناسایی اپلیکیشن‌های مشکوک هنگام نصب اپلیکیشن جدید.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>امکان اسکن دستی اپلیکیشن‌های نصب‌شده برای شناسایی برنامه‌های مخرب.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>نمایش نکات آموزشی کوتاه و کاربردی درباره امنیت در صفحه اصلی برنامه.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>بررسی خودکار لینک‌های بازشده در مرورگر و هشدار در صورت شناسایی صفحات مشکوک.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>نمایش پیام اطمینان سبز هنگام ورود به درگاه‌های پرداخت معتبر شاپرک.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>هشدار فوری هنگام شناسایی وب‌سایت‌های مشکوک یا فریبنده روی مرورگر کاربر</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>امکان گزارش موارد جدید کلاهبرداری توسط کاربران و به‌روزرسانی پایگاه داده به‌صورت مشارکتی.</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>به‌روزرسانی مداوم و خودکار پایگاه داده برای شناسایی تهدیدات جدید</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>عملکرد برنامه به‌صورت لحظه‌ای و آفلاین بدون نیاز به اینترنت</li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> بررسی خودکار پیامک‌های دریافتی و شناسایی پیامک‌های مشکوک بر اساس شماره، متن و لینک‌های داخل پیامک.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> اسکن لینک‌های موجود در پیامک‌ها و مقایسه با پایگاه داده فیشینگ برای نمایش هشدار در صورت خطر.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> بررسی و هشدار هنگام شناسایی اپلیکیشن‌های مشکوک هنگام نصب اپلیکیشن جدید.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> امکان اسکن دستی اپلیکیشن‌های نصب‌شده برای شناسایی برنامه‌های مخرب.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> نمایش نکات آموزشی کوتاه و کاربردی درباره امنیت در صفحه اصلی برنامه.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> بررسی خودکار لینک‌های بازشده در مرورگر و هشدار در صورت شناسایی صفحات مشکوک.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> نمایش پیام اطمینان سبز هنگام ورود به درگاه‌های پرداخت معتبر شاپرک.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> هشدار فوری هنگام شناسایی وب‌سایت‌های مشکوک یا فریبنده روی مرورگر کاربر
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> امکان گزارش موارد جدید کلاهبرداری توسط کاربران و به‌روزرسانی پایگاه داده به‌صورت مشارکتی.
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> به‌روزرسانی مداوم و خودکار پایگاه داده برای شناسایی تهدیدات جدید
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> عملکرد برنامه به‌صورت لحظه‌ای و آفلاین بدون نیاز به اینترنت
+                  </li>
                 </ul>
               </div>
             </div>
@@ -384,10 +412,12 @@
               </button>
             </h3>
             <div class="accordion-collapse collapse" id="collapse-5" data-bs-parent="#faqAccordion">
-              <div class="accordion-body fs-6">افزونه مرورگر "مطمئن باش" از روش‌های زیر برای حفاظت بیشتر از شما در مقابل فیشینگ استفاده می‌کند:
+              <div class="accordion-body fs-6">افزونه مرورگر &quot;مطمئن باش&quot; از روش‌های زیر برای حفاظت بیشتر از شما در مقابل فیشینگ استفاده می‌کند:
                 <ul class="list-unstyled">
-                  <li><i class="fas fa-check-double text-success me-1"></i>بررسی خودکار آدرس درگاه‌های پرداخت</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>نمایش نماد سبزرنگ<span class="text-success"><i class="fas fa-circle-check text-success mx-1"></i></span>در صورت اطمینان از اصالت درگاه پرداخت</li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> بررسی خودکار آدرس درگاه‌های پرداخت
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> نمایش نماد سبزرنگ<span class="text-success"><i class="fas fa-circle-check text-success mx-1"></i></span> در صورت اطمینان از اصالت درگاه پرداخت
+                  </li>
                 </ul>
               </div>
             </div>
@@ -400,15 +430,24 @@
             <div class="accordion-collapse collapse" id="collapse-6" data-bs-parent="#faqAccordion">
               <div class="accordion-body fs-6">برای محافظت در برابر حملات فیشینگ، اقدامات زیر را انجام دهید:
                 <ul class="list-unstyled">
-                  <li><i class="fas fa-check-double text-success me-1"></i>افزایش سطح آگاهی خود درباره روش‌های جدید فیشینگ و هشدار به اطرافیان</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>بررسی دقیق سایت‌ها قبل از وارد کردن اطلاعات</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>دانلود برنامه‌های موبایل فقط از منابع رسمی و معتبر</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>توجه به هشدارهای امنیتی مرورگر، آنتی‌ویروس و سایر ابزارهای امنیتی</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>عدم وارد کردن اطلاعات در سایت‌های ناشناس و مشکوک</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>نادیده گرفتن و حذف پیامک‌ها و ایمیل‌های مشکوک</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>کلیک نکردن روی لینک‌های ناشناس و مشکوک</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>استفاده از افزونه‌های مرورگر مانند "مطمئن باش"</li>
-                  <li><i class="fas fa-check-double text-success me-1"></i>استفاده از اپلیکیشن موبایل "مطمئن باش"</li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> افزایش سطح آگاهی خود درباره روش‌های جدید فیشینگ و هشدار به اطرافیان
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> بررسی دقیق سایت‌ها قبل از وارد کردن اطلاعات
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> دانلود برنامه‌های موبایل فقط از منابع رسمی و معتبر
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> توجه به هشدارهای امنیتی مرورگر، آنتی‌ویروس و سایر ابزارهای امنیتی
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> عدم وارد کردن اطلاعات در سایت‌های ناشناس و مشکوک
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> نادیده گرفتن و حذف پیامک‌ها و ایمیل‌های مشکوک
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> کلیک نکردن روی لینک‌های ناشناس و مشکوک
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> استفاده از افزونه‌های مرورگر مانند &quot;مطمئن باش&quot;
+                  </li>
+                  <li><i class="fas fa-check-double text-success me-1"></i> استفاده از اپلیکیشن موبایل &quot;مطمئن باش&quot;
+                  </li>
                 </ul>
               </div>
             </div>
@@ -418,26 +457,28 @@
     </section>
     <section class="container my-2" id="donate">
       <div class="donate text-center">
-        <h2 class="title-bg" title="حمایت مالی">حمایت مالی</h2>
-        <p>با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.</p><a class="btn btn-warning" href="donate.html" target="_blank">حمایت مالی</a>
+        <h2 class="title-bg">حمایت مالی</h2>
+        <p>با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.</p><a class="btn btn-warning" href="/donate.html" target="_blank">حمایت مالی</a>
       </div>
     </section>
     <section class="container my-2 text-center" id="report">
       <h2 class="title-bg mb-4" title="گزارش پیامک، لینک یا اپلیکیشن کلاهبرداری">گزارش پیامک، لینک یا اپلیکیشن کلاهبرداری</h2>
-      <p class="lh-lg fw-light"> هرچه اطلاعات بیشتری در برنامه<strong> مطمئن باش</strong> جمع‌آوری شود، دامنه تشخیص آن گسترده‌تر خواهد بود. بنابراین، در راستای تکمیل این اطلاعات و شناسایی الگوهای بیشتر، لطفا اگر پیامک کلاه‌برداری/فیشینگ دریافت کردید یا به لینک/اپلیکیشن کلاهبرداری برخورد کردید، از طریق لینک زیر آن را گزارش کنید:</p><a class="btn btn-blue" href="https://forms.gle/odNaY6jeks2eqZDZA" target="_blank" title="گزارش کلاهبرداری">ارسال گزارش کلاهبرداری</a>
+      <p class="lh-lg fw-light">هرچه اطلاعات بیشتری در برنامه <strong>مطمئن باش</strong> جمع‌آوری شود، دامنه تشخیص آن گسترده‌تر خواهد بود. بنابراین، در راستای تکمیل این اطلاعات و شناسایی الگوهای بیشتر، لطفا اگر پیامک کلاه‌برداری/فیشینگ دریافت کردید یا به لینک/اپلیکیشن کلاهبرداری برخورد کردید، از طریق لینک زیر آن را گزارش کنید:</p><a class="btn btn-blue" href="https://forms.gle/odNaY6jeks2eqZDZA" target="_blank" title="ارسال گزارش کلاهبرداری">ارسال گزارش کلاهبرداری</a>
     </section>
     <section class="container my-2" id="media">
       <h2 class="title-bg text-center mb-3" title="مطمئن باش در رسانه‌ها">مطمئن باش در رسانه‌ها</h2>
       <div class="row media-logos justify-content-center align-content-center text-center g-4">
-        <div class="col-6 col-md-2"><a href="https://nooshdaroo.ir/security-tools/motmaen-bash/" target="_blank"><img class="logo-width-120" src="images/press/nooshdaroo-logo.jpg" alt="Nooshdaroo Logo"></a></div>
-        <div class="col-6 col-md-2"><a href="https://digiato.com/iran-technology-news/unveiling-android-app-motmaenbash" target="_blank"><img src="images/press/digiato-logo.svg" alt="Digiato Logo"></a></div>
-        <div class="col-6 col-md-2"><a href="https://www.zoomit.ir/software-application/443587-motmaen-bash-milad-nouri-app-released-android/" target="_blank"><img src="images/press/zoomit-logo.svg" alt="Zoomit Logo"></a></div>
-        <div class="col-6 col-md-2"><a href="https://ana.ir/fa/news/984599/" target="_blank"><img class="logo-width-150" src="images/press/ana-logo.svg" alt="ICTNA Logo"></a></div>
-        <div class="col-6 col-md-2"><a href="https://ictna.ir/id/196908/" target="_blank"><img class="logo-width-150" src="images/press/ictna-logo.png" alt="ICTNA Logo"></a></div>
-      </div><br>
-      <p class="text-center fs-6 mb-4"><strong>مطمئن باش</strong> با هدف افزایش امنیت کاربران ایرانی در فضای مجازی توسعه یافته است. حضور این ابزار در رسانه‌های مختلف، نقش مهمی در آگاهی‌بخشی عمومی و کاهش کلاهبرداری‌های اینترنتی دارد. اگر خبرنگار، وبلاگ‌نویس یا تولیدکننده محتوا هستید، می‌توانید با معرفی این افزونه به مخاطبان خود، در ارتقای امنیت سایبری کاربران ایرانی سهیم باشید.<br> برای دریافت اطلاعات بیشتر یا هماهنگی جهت تهیه گزارش و مصاحبه، با ما در ارتباط باشید: hello [at] Motmaenbash [dot] ir</p>
-      <div class="alert alert-info text-center fs-6 mb-4">چنانچه قصد معرفی «مطمئن باش» را در سایت و رسانه خود دارید، جهت شفافیت بیشتر و آگاهی کاربران، لطفا به نکات مهم در مورد<a class="fs-6 m-1" href="#trust"> <b>امنیت مطمئن باش و اعتماد به آن </b></a>هم اشاره کنید.</div>
-      <p class="text-center fs-6 mb-4"> با اشتراک‌گذاری «مطمئن باش» در شبکه‌های اجتماعی و معرفی آن به دوستان و آشنایان، به گسترش فرهنگ امنیت سایبری و محافظت از هموطنان در برابر کلاهبرداری‌های اینترنتی کمک کنید.</p>
+        <div class="col-6 col-md-2"><a href="https://nooshdaroo.ir/security-tools/motmaen-bash/" target="_blank"><img class="logo-width-120" src="/images/press/nooshdaroo-logo.jpg" alt="Nooshdaroo Logo"></a></div>
+        <div class="col-6 col-md-2"><a href="https://digiato.com/iran-technology-news/unveiling-android-app-motmaenbash" target="_blank"><img src="/images/press/digiato-logo.svg" alt="Digiato Logo"></a></div>
+        <div class="col-6 col-md-2"><a href="https://www.zoomit.ir/software-application/443587-motmaen-bash-milad-nouri-app-released-android/" target="_blank"><img src="/images/press/zoomit-logo.svg" alt="Zoomit Logo"></a></div>
+        <div class="col-6 col-md-2"><a href="https://ana.ir/fa/news/984599/" target="_blank"><img class="logo-width-150" src="/images/press/ana-logo.svg" alt="ICTNA Logo"></a></div>
+        <div class="col-6 col-md-2"><a href="https://ictna.ir/id/196908/" target="_blank"><img class="logo-width-150" src="/images/press/ictna-logo.png" alt="ICTNA Logo"></a></div>
+        <div class="col-6 col-md-2"><a href="https://didgahnews.ir/%d9%86%d8%b1%d9%85%d8%a7%d9%81%d8%b2%d8%a7%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%db%8c-%d9%85%d8%b7%d9%85%d8%a6%d9%86-%d8%a8%d8%a7%d8%b4-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b4%d8%af/" target="_blank"><img class="logo-width-180" src="/images/press/didgahnews-logo.png" alt="Didgah News Logo"></a></div>
+      </div>
+      <p class="text-center mt-4 mb-0"><a class="btn btn-outline-primary" href="/press.html">مشاهده بیشتر</a></p><br>
+      <p class="text-center fs-6 mb-4"><strong>مطمئن باش</strong> با هدف افزایش امنیت کاربران ایرانی در فضای مجازی توسعه یافته است. حضور این ابزار در رسانه‌های مختلف، نقش مهمی در آگاهی‌بخشی عمومی و کاهش کلاهبرداری‌های اینترنتی دارد. اگر خبرنگار، وبلاگ‌نویس یا تولیدکننده محتوا هستید، می‌توانید با معرفی این افزونه به مخاطبان خود، در ارتقای امنیت سایبری کاربران ایرانی سهیم باشید.<br>برای دریافت اطلاعات بیشتر یا هماهنگی جهت تهیه گزارش و مصاحبه، با ما در ارتباط باشید: hello [at] Motmaenbash [dot] ir</p>
+      <div class="alert alert-info text-center fs-6 mb-4">چنانچه قصد معرفی «مطمئن باش» را در سایت و رسانه خود دارید، جهت شفافیت بیشتر و آگاهی کاربران، لطفا به نکات مهم در مورد <a class="fs-6 m-1" href="#trust"><b>امنیت مطمئن باش و اعتماد به آن</b></a> هم اشاره کنید.</div>
+      <p class="text-center fs-6 mb-4">با اشتراک‌گذاری «مطمئن باش» در شبکه‌های اجتماعی و معرفی آن به دوستان و آشنایان، به گسترش فرهنگ امنیت سایبری و محافظت از هموطنان در برابر کلاهبرداری‌های اینترنتی کمک کنید.</p>
     </section>
     <footer class="bg-dark text-white py-3">
       <div class="container">
@@ -445,9 +486,9 @@
           <div class="col-md-3">
             <h5 class="mb-1">دسترسی سریع</h5>
             <ul class="list-unstyled">
-              <li><a href="index.html#android-app">اپلیکیشن اندروید</a></li>
-              <li><a href="index.html#download">افزونه مرورگر</a></li>
-              <li><a href="donate.html" target="_blank">حمایت مالی</a></li>
+              <li><a href="/#android-app">اپلیکیشن اندروید</a></li>
+              <li><a href="/#download">افزونه مرورگر</a></li>
+              <li><a href="/donate.html" target="_blank">حمایت مالی</a></li>
               <li><a href="https://forms.gle/odNaY6jeks2eqZDZA" target="_blank">ارسال گزارش</a></li>
               <li><a href="https://t.me/miladnourichannel" target="_blank">پیگیری اخبار</a></li>
             </ul>
@@ -455,23 +496,30 @@
           <div class="col-md-4">
             <h5 class="mb-1">اطلاعات بیشتر</h5>
             <ul class="list-unstyled">
-              <li><a href="faqs.html">سوال‌های پرتکرار</a></li>
-              <li><a href="faqs.html#trust">اعتماد به مطمئن باش؟!</a></li>
-              <li><a href="privacy.html">سیاست حریم خصوصی</a></li>
-              <li><a href="about.html">درباره مطمئن باش</a></li>
-              <li><a href="changelog.html">تاریخچه به‌روزرسانی‌ها (Changelog)</a></li>
+              <li><a href="/faqs.html">سوال‌های پرتکرار</a></li>
+              <li><a href="/faqs.html#trust">اعتماد به مطمئن باش؟!</a></li>
+              <li><a href="/privacy.html">سیاست حریم خصوصی</a></li>
+              <li><a href="/about.html">درباره مطمئن باش</a></li>
+              <li><a href="/press.html">در رسانه‌ها</a></li>
+              <li><a href="/changelog.html">تاریخچه به‌روزرسانی‌ها (Changelog)</a></li>
             </ul>
           </div>
           <div class="col-md-4 fs-6">
-            <p class="text-center mb-3 lh-lg fs-6">پروژه مطمئن باش به‌صورت متن‌باز (Open Source) توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه (نسخه اندروید، اکستنشن کروم و فایرفاکس و وب‌سایت مطمئن باش)، از طریق لینک زیر در دسترس است: </p><a class="btn btn-outline-light btn-sm" href="git.html"><i class="fab fa-github me-1"></i> مخزن‌های مرتبط با پروژه</a>
+            <p class="text-center mb-3 lh-lg fs-6">پروژه مطمئن باش به‌صورت متن‌باز (Open Source) توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه (نسخه اندروید، اکستنشن کروم و فایرفاکس و وب‌سایت مطمئن باش)، از طریق لینک زیر در دسترس است:</p><a class="btn btn-outline-light btn-sm" href="/git.html"><i class="fab fa-github me-1"></i> مخزن‌های مرتبط با پروژه</a>
           </div>
         </div>
         <hr class="my-3">
-        <p class="text-center mb-0 fs-6 footer-copyright">توسعه داده شده توسط <a href="https://milad.nu" target="_blank">میلاد نوری </a><i class="fas fa-heart fa-beat text-danger mx-1"></i>برای مردم ایران</p>
+        <ul class="list-unstyled d-flex justify-content-center flex-wrap gap-3 mb-2">
+          <li class="text-white"><i class="fas fa-language me-1"></i>زبان</li>
+          <li><a class="fw-bold text-white" href="/" lang="fa" aria-current="page">فارسی</a></li>
+          <li><a href="/ckb/" lang="ckb">کوردی</a></li>
+          <li><a href="/en/" lang="en">English</a></li>
+        </ul>
+        <p class="text-center mb-0 fs-6 footer-copyright">توسعه داده شده توسط <a href="https://milad.nu" target="_blank">میلاد نوری</a> <i class="fas fa-heart fa-beat text-danger mx-1"></i> برای مردم ایران</p>
       </div>
     </footer>
-    <script src="js/jquery-4.0.0.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js?v=5.3.3"></script>
-    <script src="js/main.js?v=1.0.3"></script>
+    <script src="/js/jquery-4.0.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js?v=5.3.3"></script>
+    <script src="/js/main.js?v=1.0.3"></script>
   </body>
 </html>

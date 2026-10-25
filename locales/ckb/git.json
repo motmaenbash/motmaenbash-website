@@ -1,0 +1,51 @@
+{
+  "title": "کۆگاکانی سەرچاوە | مطمئن باش",
+  "description": "کۆگاکانی سەرچاوە و مۆڵەتەکانی ئەپی ئەندرۆید، زیادکراوی وێبگەڕ، وێبسایت، و بنکەدراوەی مطمئن باش.",
+  "keywords": "مطمئن باش, سەرچاوەکراوە, ئەندرۆید, زیادکراوی وێبگەڕ, مۆڵەت, گیتهاب",
+  "url": "https://motmaenbash.ir/ckb/git.html",
+  "alternateUrl": "https://motmaenbash.ir/git.html",
+  "alternateLang": "fa",
+  "heading": "کۆگاکانی سەرچاوەی مطمئن باش",
+  "lead": "مطمئن باش سەرچاوەکراوەیە. کۆگای هەر بەشێکی پڕۆژەکە لە خوارەوە هاتووە.",
+  "githubLabel": "گیتهاب:",
+  "repos": [
+    {
+      "icon": "fab fa-android",
+      "title": "ئەپی ئەندرۆید",
+      "license": "مۆڵەت: Apache 2.0",
+      "href": "https://github.com/motmaenbash/motmaenbash-android",
+      "notes": [
+        "ئەپی ئەندرۆید بە مۆڵەتی Apache 2.0 بڵاو کراوەتەوە.",
+        "دەتوانیت سەرچاوەکە بەکاربهێنیت، بیگۆڕیت و بڵاوی بکەیتەوە. بەکارهێنانی ناو یان لۆگۆی مطمئن باش یان MotmaenBash ڕێگەپێدراو نییە.",
+        "وەشانە گشتییەکان بە ناوی مطمئن باش تەنها لەلایەن خودی پڕۆژەوە بڵاودەکرێنەوە."
+      ]
+    },
+    {
+      "icon": "fab fa-chrome",
+      "title": "زیادکراوی کرۆم",
+      "license": "مۆڵەت: MIT",
+      "href": "https://github.com/motmaenbash/motmaenbash-chrome"
+    },
+    {
+      "icon": "fab fa-firefox",
+      "title": "زیادکراوی فایەرفۆکس",
+      "license": "مۆڵەت: MIT",
+      "href": "https://github.com/motmaenbash/motmaenbash-firefox"
+    },
+    {
+      "icon": "fas fa-window-restore",
+      "title": "وێبسایت",
+      "license": "مۆڵەت: MIT",
+      "href": "https://github.com/motmaenbash/motmaenbash-website"
+    },
+    {
+      "icon": "fas fa-database",
+      "title": "بنکەدراوە",
+      "license": "مۆڵەت: CC-BY-4.0",
+      "href": "https://github.com/miladnouri/motmaenbash-data"
+    }
+  ],
+  "donateTitle": "پاڵپشتی پڕۆژە",
+  "donateText": "پاڵپشتی دارایی یارمەتی دەدات مطمئن باش نوێ بکرێتەوە.",
+  "donateLabel": "پاڵپشتی دارایی"
+}

@@ -1,0 +1,139 @@
+{
+  "title": "Changelog | MotmaenBash",
+  "description": "Release notes for the MotmaenBash Android app and browser extensions.",
+  "keywords": "MotmaenBash, changelog, release notes, phishing protection",
+  "url": "https://motmaenbash.ir/en/changelog.html",
+  "alternateUrl": "https://motmaenbash.ir/changelog.html",
+  "alternateLang": "fa",
+  "heading": "Changelog",
+  "tabs": [
+    {
+      "id": "android",
+      "label": "Android app",
+      "releases": [
+        {
+          "version": "Next version",
+          "badge": "Coming soon",
+          "items": [
+            "Kurdish (Sorani) and a language step in the intro",
+            "Tap a highlighted number or code in an SMS warning to copy it",
+            "DEX-hash detection of malicious sideloaded apps",
+            "App scan results are shown in two separate lists",
+            "Risky permission combinations can be expanded, and that warning can be shown as information only",
+            "Trusted install sources and trusted sideloaded apps are read from the database, instead of a fixed list in the app",
+            "System apps are skipped during the install check",
+            "The alert sound plays only once for each scan of suspicious apps",
+            "A neutral SMS warning closes itself after the SMS app opens",
+            "Fixed a crash when drawing some app icons",
+            "Fixed a white flash in dark mode when moving between screens",
+            "An in-app FAQ"
+          ]
+        },
+        {
+          "version": "Version 1.0.4",
+          "items": [
+            "Suspicious apps can now be flagged from the install source and the combination of permissions they request, without relying on the database",
+            "Fixed a crash on Android 13 and errors while checking apps",
+            "The new-SMS window is off by default, and its setting was added to the intro",
+            "Manual database refresh can be used again after 15 minutes instead of 1 hour, and automatic refresh can be set to 12 hours",
+            "Added a “Trust MotmaenBash” step to the intro",
+            "Fixed some statistics issues",
+            "Fixed typos, improved the interface and the on-device database, and fixed a few other bugs…"
+          ]
+        },
+        {
+          "version": "Version 1.0.3 beta",
+          "items": [
+            "Fixed repeated warnings when opening a suspicious site",
+            "Small improvements to the settings screen",
+            "Fixed a few other minor bugs"
+          ]
+        },
+        {
+          "version": "Version 1.0.2 beta",
+          "items": [
+            "Improved the daily tip card",
+            "Fixed English SMS text rendering too small in the new-SMS window",
+            "Fixed repeated warnings for the same address in some cases",
+            "Improved database updates and stopped endless retries after an error",
+            "Fixed duplicated text in the changelog window",
+            "Small improvements to the warning interface",
+            "Fixed a few other minor bugs"
+          ]
+        },
+        {
+          "version": "Version 1.0.1 (experimental beta)",
+          "items": [
+            "Removed extra permissions added by the Firebase libraries",
+            "Added an in-app changelog",
+            "Improved scrolling on several screens",
+            "Fixed text layout on devices with a large font",
+            "The sender number in the new-SMS window is now a link",
+            "Removed the footer from the new-SMS window",
+            "Added a setting for the new-SMS window",
+            "Fixed the alert sound when a new SMS arrives",
+            "Improved the icon and title of the new-SMS window",
+            "Removed extra blank lines from the SMS text shown in the window",
+            "The new-SMS window now closes with the Back button",
+            "The app no longer appears in the list of apps that open links",
+            "Improved checking of incoming SMS",
+            "And a few other small fixes…"
+          ]
+        },
+        {
+          "version": "🚀 Version 1.0.0 (experimental alpha)",
+          "items": [
+            "First experimental release, with:",
+            "SMS, browsing, and app-install shields",
+            "Payment-gateway checks",
+            "A manual scan of installed apps",
+            "Manual link checks",
+            "Automatic database updates",
+            "and more…"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chrome",
+      "label": "Chrome extension",
+      "releases": [
+        {
+          "version": "Version 1.1.0",
+          "items": [
+            "Switched to the Vazirmatn variable font",
+            "Small interface improvements",
+            "Upgraded manifest_version from 2 to 3"
+          ]
+        },
+        {
+          "version": "🚀 Version 1.0.3 (first release)",
+          "items": [
+            "First release of the Chrome extension",
+            "Checks online payment gateways"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "firefox",
+      "label": "Firefox extension",
+      "releases": [
+        {
+          "version": "Version 1.1.0",
+          "items": [
+            "Switched to the Vazirmatn variable font",
+            "Small interface improvements"
+          ]
+        },
+        {
+          "version": "🚀 Version 1.0.2 (first release)",
+          "items": [
+            "First release of the Firefox extension",
+            "Checks online payment gateways"
+          ]
+        }
+      ]
+    }
+  ]
+}

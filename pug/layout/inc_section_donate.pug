@@ -1,5 +1,5 @@
-section#donate.container.my-2
+section#donate.container.my-2(dir=nav.contentDir || false)
   .donate.text-center
-    h2.title-bg(title="حمایت مالی") حمایت مالی
-    p با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.
-    a.btn.btn-warning(href="donate.html" target="_blank") حمایت مالی
+    h2.title-bg= nav.donateTitle
+    p= nav.donateText
+    a.btn.btn-warning(href=nav.prefix + "/donate.html" target="_blank")= nav.donateLabel

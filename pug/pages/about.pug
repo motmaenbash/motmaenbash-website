@@ -1,84 +1,72 @@
 extends ../layout/base.pug
 
 block variables
-  - var title = 'درباره | مطمئن باش'
-  - var description = 'اطلاعات بیشتر درباره اپلیکیشن و افزونه مطمئن باش.'
-  - var keywords = 'MotmaenBash, مطمئن باش, ضد فیشینگ, افزونه مرورگر, اپلیکیشن اندروید, کلاهبرداری اینترنتی, فیشینگ'
-  - var url = 'https://motmaenbash.ir/about.html'
+  - var t = about
+  - var title = t.title
+  - var description = t.description
+  - var keywords = t.keywords
+  - var url = t.url
+  - var lang = t.lang
+  - var locale = t.locale
+  - var alternateUrl = t.alternateUrl
+  - var alternateLang = t.alternateLang
 
 block content
-  section.container.my-2
-    h1.text-center.mb-4 درباره مطمئن باش
+  section.container.my-2(class=t.sectionClass || false dir=t.contentDir || false)
+    h1.text-center.mb-4= t.heading
 
     .row
       div
         p.lead.text-center
-          strong.fw-bold مطمئن باش
-          |  یک پروژه متن‌باز، رایگان و مستقل است که با هدف افزایش آگاهی و امنیت کاربران ایرانی در برابر کلاهبرداری‌های اینترنتی و فیشینگ توسعه داده شده است.
+          if t.leadStrong
+            strong.fw-bold= t.leadStrong
+          | #{t.lead}
 
         .card.mt-4
           .card-body
-            h2.card-title توسعه‌دهنده
+            h2.card-title= t.developerTitle
             p.card-text
-              |  این پروژه توسط
-              a(href="https://milad.nu" target="_blank") 
-                strong  میلاد نوری
-              |  توسعه یافته است. امید است توسعه این پروژه در آینده با همکاری جامعه کاربران و توسعه‌دهندگان داوطلب، ادامه یابد. هدف ما ایجاد یک ابزار ساده، کاربردی و فراگیر برای کاربران ایرانی است.
-            p.card-text
-              |  شفافیت و امنیت اولویت ماست. به همین دلیل، تمام کدهای پروژه به‌صورت متن‌باز در گیت‌هاب منتشر شده است. 
-            p.card-text
-              |  شما هم می‌توانید در بهبود این پروژه نقش داشته باشید! اگر توسعه‌دهنده هستید، پیشنهادات و مشارکت‌های شما در گیت‌هاب ارزشمند خواهد بود.
-            a.btn.btn-outline-primary.mt-2(href='git.html') مشاهده در گیت‌هاب
-
+              = t.developerBefore
+              a(href="https://milad.nu" target="_blank"): strong= t.developerName
+              = t.developerAfter
+            each paragraph in t.developerParagraphs
+              p.card-text= paragraph
+            a.btn.btn-outline-primary.mt-2(href=t.gitHref)= t.gitLabel
 
         .card.mt-4
           .card-body
-            h2.card-title اهداف پروژه
+            h2.card-title= t.goalsTitle
             ul.list-unstyled
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  افزایش آگاهی عمومی کاربران درباره کلاهبرداری‌های آنلاین، فیشینگ و روش‌های مقابله با آن‌ها
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  ارائه ابزارهای ساده و کاربردی برای عموم کاربران
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  کاهش ریسک کاربران در معرض حملات فیشینگ و کلاهبرداری‌های اینترنتی   
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  توسعه و به‌روزرسانی مستمر برای مقابله با کلاهبرداری‌های جدید اینترنتی                                            
+              each goal in t.goals
+                li
+                  i.fas.fa-check-double.text-success.me-1
+                  |  #{goal}
 
         .card.mt-4
           .card-body
-            h2.card-title قابلیت‌های مطمئن باش
+            h2.card-title= t.featuresTitle
             ul.list-unstyled
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  افزونه مرورگر برای بررسی اصالت درگاه‌های پرداخت آنلاین
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  اپلیکیشن اندروید برای بررسی پیامک‌ها، لینک‌ها و اپلیکیشن‌های مشکوک و جلوگیری از حملات فیشینگ
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  به‌روزرسانی مداوم پایگاه داده برای تشخیص کلاهبرداری‌های جدید
-              li
-                i.fas.fa-check-double.text-success.me-1
-                |  امکان گزارش موارد مشکوک توسط کاربران و بهبود مستمر سیستم
+              each feature in t.features
+                li
+                  i.fas.fa-check-double.text-success.me-1
+                  |  #{feature}
 
         .card.mt-4
           .card-body
-            h2.card-title تماس با ما
+            h2.card-title= t.contactTitle
             p.card-text
-              |  اگر سوال، پیشنهاد یا انتقادی دارید، می‌توانید از طریق ایمیل زیر با ما در ارتباط باشید:
-
+              | #{t.contactIntro}
               br
-              strong hello [at] motmaenbash [dot] ir
+              strong= t.email
             p.card-text
-              |  همچنین می‌توانید توسعه‌دهنده را در شبکه‌های اجتماعی دنبال کنید:
-              a(href='https://t.me/MiladNouriChannel' target='_blank')  تلگرام
-              |  /
-              a(href='https://twitter.com/MilaDnu' target='_blank')  توییتر
-              |  /
-              a(href='https://youtube.com/MilaDnu' target='_blank')  یوتیوب
+              = t.contactFollow
+              each social, index in t.socials
+                if index
+                  |  / 
+                a(href=social.href target="_blank")= social.label
 
-  include ../layout/inc_section_donate
+  section#donate.container.my-2(class=t.sectionClass || false dir=t.contentDir || false)
+    .donate.text-center
+      h2.title-bg= t.donateTitle
+      p= t.donateText
+      a.btn.btn-warning(href="/donate.html" target=t.donateBlank ? "_blank" : false)= t.donateLabel

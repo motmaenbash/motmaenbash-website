@@ -1,37 +1,53 @@
+include inc_lang
+
 footer.bg-dark.text-white.py-3
   .container
     .row.g-4.fs-6
       .col-md-3
-        h5.mb-1 دسترسی سریع
+        h5.mb-1= nav.quick
         ul.list-unstyled
-          li: a(href="index.html#android-app") اپلیکیشن اندروید
-          li: a(href="index.html#download") افزونه مرورگر
-          li: a(href="donate.html" target="_blank") حمایت مالی
-          li: a(href="https://forms.gle/odNaY6jeks2eqZDZA" target="_blank") ارسال گزارش
-          li: a(href="https://t.me/miladnourichannel" target="_blank") پیگیری اخبار
+          li: a(href=nav.prefix + "/#android-app")= nav.android
+          li: a(href=nav.prefix + "/#download")= nav.extension
+          li: a(href=nav.prefix + "/donate.html" target="_blank")= nav.donate
+          li: a(href="https://forms.gle/odNaY6jeks2eqZDZA" target="_blank")= nav.report
+          li: a(href="https://t.me/miladnourichannel" target="_blank")= nav.news
 
       .col-md-4
-        h5.mb-1 اطلاعات بیشتر
+        h5.mb-1= nav.more
         ul.list-unstyled
-          li: a(href="faqs.html") سوال‌های پرتکرار
-          li: a(href="faqs.html#trust") اعتماد به مطمئن باش؟!
-          li: a(href="privacy.html") سیاست حریم خصوصی
-          li: a(href="about.html") درباره مطمئن باش
-          li: a(href="changelog.html") تاریخچه به‌روزرسانی‌ها (Changelog)
+          li: a(href=nav.prefix + "/faqs.html")= nav.faqs
+          li: a(href=nav.prefix + "/faqs.html#trust")= nav.trust
+          li: a(href=nav.prefix + "/privacy.html")= nav.privacy
+          li: a(href=nav.prefix + "/about.html")= nav.about
+          li: a(href=nav.prefix + "/press.html")= nav.press
+          li: a(href=nav.prefix + "/changelog.html")= nav.changelog
 
       .col-md-4.fs-6
 
 
-        p.text-center.mb-3.lh-lg.fs-6
-         | پروژه مطمئن باش به‌صورت متن‌باز (Open Source) توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه (نسخه اندروید، اکستنشن کروم و فایرفاکس و وب‌سایت مطمئن باش)، از طریق لینک زیر در دسترس است: 
+        p.text-center.mb-3.lh-lg.fs-6= nav.oss
 
-        a.btn.btn-outline-light.btn-sm(href="git.html")
+        a.btn.btn-outline-light.btn-sm(href=nav.prefix + "/git.html")
             i.fab.fa-github.me-1
-            |  مخزن‌های مرتبط با پروژه
+            |  #{nav.repos}
 
     hr.my-3
+    ul.list-unstyled.d-flex.justify-content-center.flex-wrap.gap-3.mb-2
+      li.text-white
+        i.fas.fa-language.me-1
+        | #{nav.language}
+      each language in siteLanguages
+        if pagesByLang[language.code].indexOf(pageId) !== -1
+          li
+            a(
+              href=pageHref(language)
+              lang=language.code
+              class=language.code === lang ? "fw-bold text-white" : false
+              aria-current=language.code === lang ? "page" : false
+            )= language.label
     p.text-center.mb-0.fs-6.footer-copyright
-      | توسعه داده شده توسط 
-      a(href="https://milad.nu" target="_blank") میلاد نوری 
+      | #{nav.devBefore}
+      a(href="https://milad.nu" target="_blank")= nav.devName
+      |  
       i.fas.fa-heart.fa-beat.text-danger.mx-1
-      | برای مردم ایران
+      |  #{nav.devAfter}

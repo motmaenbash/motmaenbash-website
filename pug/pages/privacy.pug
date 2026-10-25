@@ -1,78 +1,65 @@
 extends ../layout/base.pug
 
 block variables
-  - var title = 'سیاست حریم خصوصی | مطمئن باش'
-  - var description = 'سیاست حفظ حریم خصوصی اپلیکیشن مطمئن باش، شفاف درباره اطلاعات جمع‌آوری شده، استفاده از آن‌ها و حقوق کاربران.'
-  - var keywords = 'سیاست حفظ حریم خصوصی, حریم خصوصی, MotmaenBash, مطمئن باش, امنیت اطلاعات, اپلیکیشن ضد فیشینگ'
-  - var url = 'https://motmaenbash.ir/privacy.html'
-  - var alternateUrl = 'https://motmaenbash.ir/privacy_en.html'
-  - var alternateLang = 'en'
+  - var t = privacy
+  - var title = t.title
+  - var description = t.description
+  - var keywords = t.keywords
+  - var url = t.url
+  - var lang = t.lang
+  - var locale = t.locale
+  - var alternateUrl = t.alternateUrl
+  - var alternateLang = t.alternateLang
 
 block content
-  section.container.my-2
-    .text-end.mb-4
-      a.btn.btn-outline-secondary.btn-sm(href="privacy_en.html" lang="en") View English Version
+  section.container.my-2(class=t.sectionClass || false dir=t.contentDir || false)
+    .d-flex.justify-content-end.flex-wrap.gap-2.mb-4
+      each language in siteLanguages
+        if language.code !== lang && pagesByLang[language.code].indexOf("privacy") !== -1
+          a.btn.btn-outline-secondary.btn-sm(href=pageHref(language) lang=language.code)= language.label
 
-    h1.text-center.mb-4 سیاست حریم خصوصی (Privacy Policy)
+    h1.text-center.mb-4= t.heading
 
     .row
       div
-        p.lead.text-center
-          | این سند توضیح می‌دهد که اپلیکیشن اندروید «مطمئن باش» با اطلاعات شما چگونه رفتار می‌کند.
+        p.lead.text-center= t.lead
 
         .card.mt-4
           .card-body
-            h2.card-title جمع‌آوری و امنیت اطلاعات
+            h2.card-title= t.collectionTitle
             ul.list-unstyled
-              li
-                | اپلیکیشن مطمئن باش هیچ‌گونه حساب کاربری، ثبت‌نام یا ورود ندارد و هیچ اطلاعات شخصی‌ای مانند نام، ایمیل یا شماره تماس اصلا از کاربر دریافت نمی‌شود.
-              li
-                | بررسی پیامک‌ها، لینک‌ها و برنامه‌های نصب‌شده تنها به‌صورت آفلاین و محلی روی دستگاه انجام می‌شود و «مطمئن باش» هیچ‌گونه سروری برای ذخیره یا پردازش اطلاعات کاربران ندارد.
-              li
-                | محتوای پیامک، لینک و فهرست برنامه‌ها به سرور یا فضای ابری ارسال نمی‌شود، چون مطمئن باش سروری برای این کار ندارد. تنها گزارش خطا و آمار کلی استفاده از برنامه به فایربیس گوگل فرستاده می‌شود و در بخش ابزارهای آماری توضیح داده شده است.
-              li
-                | به منظور شناسایی تهدیدهای جدید شامل پیامک‌های فیشینگ، سایت‌های کلاهبرداری و اپلیکیشن‌های مشکوک، پایگاه داده برنامه از یک مخزن عمومی گیت‌هاب به‌روزرسانی می‌شود.
+              each item in t.collection
+                li= item
 
             hr
 
-            p.card-text
-              | تمام پردازش‌ها و هشدارها، از جمله بررسی لینک‌ها، پیامک‌ها و اپلیکیشن‌های نصب‌شده، به‌صورت کاملا آفلاین انجام می‌شود و «مطمئن باش» هیچ‌گونه سروری برای ذخیره یا پردازش اطلاعات کاربران ندارد.
-            p.card-text
-              | بخش «ارسال گزارش» برنامه جهت گزارش موارد جدید توسط کاربران، از طریق یک فرم گوگل انجام می‌شود که از اطلاعات ارسال‌شده در آن فرم که توسط کاربر و به‌صورت داوطلبانه پر می‌شود، برای تکمیل پایگاه داده و شناسایی کلاهبرداری‌های جدید استفاده می‌شود.
-            p.card-text
-              | کاربران می‌توانند در هر زمان دسترسی‌های برنامه را از طریق تنظیمات اندروید لغو کنند.
+            each paragraph in t.afterCollection
+              p.card-text= paragraph
 
         .card.mt-4
           .card-body
-            h2.card-title ابزارهای آماری
+            h2.card-title= t.analyticsTitle
             p.card-text
-              | برای بررسی پایداری برنامه و بهبود کیفیت آن، از ابزارهای زیر استفاده شده است:
+              | #{t.analyticsIntro}
               ul
-                li
-                  | برای گزارش خطاها و کرش‌های احتمالی از سرویس Crashlytics فایربیس (متعلق به گوگل) استفاده می‌شود.
-                li
-                  | برای اطلاعات آماری کلی، از سرویس Analytics فایربیس (متعلق به گوگل) استفاده شده است.
-              p.card-text
-                | اطلاعات آماری شامل شمارش برخی رویدادها مانند تعداد نمایش هشدارها می‌شود، اما هیچ‌گونه داده‌ای شامل محتوای هشدارها، جزئیات فنی یا اطلاعات شناسایی‌کننده از کاربران ذخیره یا ارسال نمی‌شود.
-              p.card-text
-                | کتابخانه‌های آماری فایربیس متعلق به گوگل، برای استفاده‌های آماری، به‌صورت خودکار برخی دسترسی‌های مربوط به تبلیغات را به برنامه اضافه می‌کنند. ما برای حفظ حریم خصوصی کاربران، این دسترسی‌ها را نیز به‌صورت دستی از طریق کدهای زیر از فایل مانیفست برنامه حذف کرده‌ایم:
-                .code-box.bg-light.border.rounded.p-3.mt-2
-                  pre.mb-0
-                    code.float-end.text-end(dir="ltr")
-                      | &lt;!-- Remove permissions automatically added by Firebase and Google Play Services --&gt;
-                      br
-                      | &lt;uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" /&gt;
-                      br
-                      | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" tools:node="remove" /&gt;
-                      br
-                      | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" tools:node="remove" /&gt;
-                      br
-                      | &lt;uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" tools:node="remove" /&gt;
+                each item in t.analytics
+                  li= item
+            each note in t.analyticsNotes
+              p.card-text= note
+            .code-box.bg-light.border.rounded.p-3.mt-2
+              pre.mb-0
+                code(dir="ltr")
+                  | &lt;!-- Remove permissions automatically added by Firebase and Google Play Services --&gt;
+                  br
+                  | &lt;uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" /&gt;
+                  br
+                  | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" tools:node="remove" /&gt;
+                  br
+                  | &lt;uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" tools:node="remove" /&gt;
+                  br
+                  | &lt;uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" tools:node="remove" /&gt;
 
         .card.mt-4
           .card-body
-            h2.card-title اطلاعات بیشتر
-            p.card-text
-              | برای اطلاعات بیشتر، می‌توانید به صفحه 
-              a(href="https://motmaenbash.ir/faqs.html") سوال‌های پرتکرار 
-              | مراجعه کنید.
+            h2.card-title= t.moreTitle
+            p.card-text #{t.moreBefore} #[a(href=t.moreHref lang=t.moreLang || false) #{t.moreLink}] #{t.moreAfter}

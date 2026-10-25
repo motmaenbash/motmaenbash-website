@@ -32,8 +32,14 @@
     <!-- Other required meta tags-->
     <link rel="icon" type="image/png" href="https://motmaenbash.ir/images/shield-bg.png">
     <link rel="canonical" href="https://motmaenbash.ir/about.html">
-    <link rel="stylesheet" href="css/bootstrap.rtl.min.css?v=v5.3.3">
-    <link rel="stylesheet" href="css/style.css?v=1.0.9">
+    <link rel="alternate" hreflang="fa" href="https://motmaenbash.ir/about.html">
+    <link rel="alternate" hreflang="ckb" href="https://motmaenbash.ir/ckb/about.html">
+    <meta property="og:locale:alternate" content="ckb_IQ">
+    <link rel="alternate" hreflang="en" href="https://motmaenbash.ir/en/about.html">
+    <meta property="og:locale:alternate" content="en_US">
+    <link rel="alternate" hreflang="x-default" href="https://motmaenbash.ir/about.html">
+    <link rel="stylesheet" href="/css/bootstrap.rtl.min.css?v=v5.3.3">
+    <link rel="stylesheet" href="/css/style.css?v=1.0.11">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -81,12 +87,12 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         
-        <a class="navbar-brand" href="https://motmaenbash.ir">مطمئن باش</a>
+        <a class="navbar-brand" href="/">مطمئن باش</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="donate.html"><i class="fas fa-heart fa-beat"></i> حمایت مالی</a></li>
-            <li class="nav-item"><a class="nav-link" href="faqs.html" title="سوال‌های پرتکرار"><i class="fas fa-circle-question"></i> سوال‌های پرتکرار            </a></li>
+            <li class="nav-item"><a class="nav-link" href="/donate.html"><i class="fas fa-heart fa-beat"></i> حمایت مالی</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faqs.html" title="سوال‌های پرتکرار"><i class="fas fa-circle-question"></i> سوال‌های پرتکرار</a></li>
             <li class="nav-item dropdown" id="downloadMenu"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fas fa-download"></i> دانلود</a>
               <ul class="dropdown-menu">
                 
@@ -109,7 +115,14 @@
                 <li><a class="dropdown-item" href="https://chrome.google.com/webstore/detail/motmaenbash-مطمئن-باش/efhpmpdbeaganelnekhbffjphahncbgn" target="_blank">یاندکس</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="git.html" title="مخزن‌های پروژه"><i class="fab fa-github"></i> گیت‌هاب</a></li>
+            <li class="nav-item"><a class="nav-link" href="/git.html" title="مخزن‌های پروژه"><i class="fab fa-github"></i> گیت‌هاب</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" title="زبان"><i class="fas fa-language"></i> فارسی</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="/about.html" lang="fa" aria-current="page">فارسی</a></li>
+                <li><a class="dropdown-item" href="/ckb/about.html" lang="ckb">کوردی</a></li>
+                <li><a class="dropdown-item" href="/en/about.html" lang="en">English</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -118,13 +131,15 @@
       <h1 class="text-center mb-4">درباره مطمئن باش</h1>
       <div class="row">
         <div>
-          <p class="lead text-center"><strong class="fw-bold">مطمئن باش</strong> یک پروژه متن‌باز، رایگان و مستقل است که با هدف افزایش آگاهی و امنیت کاربران ایرانی در برابر کلاهبرداری‌های اینترنتی و فیشینگ توسعه داده شده است.</p>
+          <p class="lead text-center"><strong class="fw-bold">مطمئن باش</strong> یک پروژه متن‌باز، رایگان و مستقل است که با هدف افزایش آگاهی و امنیت کاربران ایرانی در برابر کلاهبرداری‌های اینترنتی و فیشینگ توسعه داده شده است.
+          </p>
           <div class="card mt-4">
             <div class="card-body">
               <h2 class="card-title">توسعه‌دهنده</h2>
-              <p class="card-text"> این پروژه توسط<a href="https://milad.nu" target="_blank"> <strong> میلاد نوری</strong></a> توسعه یافته است. امید است توسعه این پروژه در آینده با همکاری جامعه کاربران و توسعه‌دهندگان داوطلب، ادامه یابد. هدف ما ایجاد یک ابزار ساده، کاربردی و فراگیر برای کاربران ایرانی است.</p>
-              <p class="card-text"> شفافیت و امنیت اولویت ماست. به همین دلیل، تمام کدهای پروژه به‌صورت متن‌باز در گیت‌هاب منتشر شده است. </p>
-              <p class="card-text"> شما هم می‌توانید در بهبود این پروژه نقش داشته باشید! اگر توسعه‌دهنده هستید، پیشنهادات و مشارکت‌های شما در گیت‌هاب ارزشمند خواهد بود.</p><a class="btn btn-outline-primary mt-2" href="git.html">مشاهده در گیت‌هاب</a>
+              <p class="card-text">این پروژه توسط <a href="https://milad.nu" target="_blank"><strong>میلاد نوری</strong></a> توسعه یافته است. امید است توسعه این پروژه در آینده با همکاری جامعه کاربران و توسعه‌دهندگان داوطلب، ادامه یابد. هدف ما ایجاد یک ابزار ساده، کاربردی و فراگیر برای کاربران ایرانی است.
+              </p>
+              <p class="card-text">شفافیت و امنیت اولویت ماست. به همین دلیل، تمام کدهای پروژه به‌صورت متن‌باز در گیت‌هاب منتشر شده است.</p>
+              <p class="card-text">شما هم می‌توانید در بهبود این پروژه نقش داشته باشید! اگر توسعه‌دهنده هستید، پیشنهادات و مشارکت‌های شما در گیت‌هاب ارزشمند خواهد بود.</p><a class="btn btn-outline-primary mt-2" href="/git.html">مشاهده در گیت‌هاب</a>
             </div>
           </div>
           <div class="card mt-4">
@@ -133,8 +148,8 @@
               <ul class="list-unstyled">
                 <li><i class="fas fa-check-double text-success me-1"></i> افزایش آگاهی عمومی کاربران درباره کلاهبرداری‌های آنلاین، فیشینگ و روش‌های مقابله با آن‌ها</li>
                 <li><i class="fas fa-check-double text-success me-1"></i> ارائه ابزارهای ساده و کاربردی برای عموم کاربران</li>
-                <li><i class="fas fa-check-double text-success me-1"></i> کاهش ریسک کاربران در معرض حملات فیشینگ و کلاهبرداری‌های اینترنتی   </li>
-                <li><i class="fas fa-check-double text-success me-1"></i> توسعه و به‌روزرسانی مستمر برای مقابله با کلاهبرداری‌های جدید اینترنتی                                            </li>
+                <li><i class="fas fa-check-double text-success me-1"></i> کاهش ریسک کاربران در معرض حملات فیشینگ و کلاهبرداری‌های اینترنتی</li>
+                <li><i class="fas fa-check-double text-success me-1"></i> توسعه و به‌روزرسانی مستمر برای مقابله با کلاهبرداری‌های جدید اینترنتی</li>
               </ul>
             </div>
           </div>
@@ -152,8 +167,9 @@
           <div class="card mt-4">
             <div class="card-body">
               <h2 class="card-title">تماس با ما</h2>
-              <p class="card-text"> اگر سوال، پیشنهاد یا انتقادی دارید، می‌توانید از طریق ایمیل زیر با ما در ارتباط باشید:<br><strong>hello [at] motmaenbash [dot] ir</strong></p>
-              <p class="card-text"> همچنین می‌توانید توسعه‌دهنده را در شبکه‌های اجتماعی دنبال کنید:<a href="https://t.me/MiladNouriChannel" target="_blank"> تلگرام</a> /<a href="https://twitter.com/MilaDnu" target="_blank"> توییتر</a> /<a href="https://youtube.com/MilaDnu" target="_blank"> یوتیوب</a></p>
+              <p class="card-text">اگر سوال، پیشنهاد یا انتقادی دارید، می‌توانید از طریق ایمیل زیر با ما در ارتباط باشید:<br><strong>hello [at] motmaenbash [dot] ir</strong></p>
+              <p class="card-text">همچنین می‌توانید توسعه‌دهنده را در شبکه‌های اجتماعی دنبال کنید: <a href="https://t.me/MiladNouriChannel" target="_blank">تلگرام</a> / <a href="https://twitter.com/MilaDnu" target="_blank">توییتر</a> / <a href="https://youtube.com/MilaDnu" target="_blank">یوتیوب</a>
+              </p>
             </div>
           </div>
         </div>
@@ -161,8 +177,8 @@
     </section>
     <section class="container my-2" id="donate">
       <div class="donate text-center">
-        <h2 class="title-bg" title="حمایت مالی">حمایت مالی</h2>
-        <p>با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.</p><a class="btn btn-warning" href="donate.html" target="_blank">حمایت مالی</a>
+        <h2 class="title-bg">حمایت مالی</h2>
+        <p>با حمایت مالی (دونیت)، می‌توانید به توسعه و بهبود مستمر این پروژه کمک کنید.</p><a class="btn btn-warning" href="/donate.html" target="_blank">حمایت مالی</a>
       </div>
     </section>
     <footer class="bg-dark text-white py-3">
@@ -171,9 +187,9 @@
           <div class="col-md-3">
             <h5 class="mb-1">دسترسی سریع</h5>
             <ul class="list-unstyled">
-              <li><a href="index.html#android-app">اپلیکیشن اندروید</a></li>
-              <li><a href="index.html#download">افزونه مرورگر</a></li>
-              <li><a href="donate.html" target="_blank">حمایت مالی</a></li>
+              <li><a href="/#android-app">اپلیکیشن اندروید</a></li>
+              <li><a href="/#download">افزونه مرورگر</a></li>
+              <li><a href="/donate.html" target="_blank">حمایت مالی</a></li>
               <li><a href="https://forms.gle/odNaY6jeks2eqZDZA" target="_blank">ارسال گزارش</a></li>
               <li><a href="https://t.me/miladnourichannel" target="_blank">پیگیری اخبار</a></li>
             </ul>
@@ -181,23 +197,30 @@
           <div class="col-md-4">
             <h5 class="mb-1">اطلاعات بیشتر</h5>
             <ul class="list-unstyled">
-              <li><a href="faqs.html">سوال‌های پرتکرار</a></li>
-              <li><a href="faqs.html#trust">اعتماد به مطمئن باش؟!</a></li>
-              <li><a href="privacy.html">سیاست حریم خصوصی</a></li>
-              <li><a href="about.html">درباره مطمئن باش</a></li>
-              <li><a href="changelog.html">تاریخچه به‌روزرسانی‌ها (Changelog)</a></li>
+              <li><a href="/faqs.html">سوال‌های پرتکرار</a></li>
+              <li><a href="/faqs.html#trust">اعتماد به مطمئن باش؟!</a></li>
+              <li><a href="/privacy.html">سیاست حریم خصوصی</a></li>
+              <li><a href="/about.html">درباره مطمئن باش</a></li>
+              <li><a href="/press.html">در رسانه‌ها</a></li>
+              <li><a href="/changelog.html">تاریخچه به‌روزرسانی‌ها (Changelog)</a></li>
             </ul>
           </div>
           <div class="col-md-4 fs-6">
-            <p class="text-center mb-3 lh-lg fs-6">پروژه مطمئن باش به‌صورت متن‌باز (Open Source) توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه (نسخه اندروید، اکستنشن کروم و فایرفاکس و وب‌سایت مطمئن باش)، از طریق لینک زیر در دسترس است: </p><a class="btn btn-outline-light btn-sm" href="git.html"><i class="fab fa-github me-1"></i> مخزن‌های مرتبط با پروژه</a>
+            <p class="text-center mb-3 lh-lg fs-6">پروژه مطمئن باش به‌صورت متن‌باز (Open Source) توسعه داده شده است و مخزن کد بخش‌های مختلف این پروژه (نسخه اندروید، اکستنشن کروم و فایرفاکس و وب‌سایت مطمئن باش)، از طریق لینک زیر در دسترس است:</p><a class="btn btn-outline-light btn-sm" href="/git.html"><i class="fab fa-github me-1"></i> مخزن‌های مرتبط با پروژه</a>
           </div>
         </div>
         <hr class="my-3">
-        <p class="text-center mb-0 fs-6 footer-copyright">توسعه داده شده توسط <a href="https://milad.nu" target="_blank">میلاد نوری </a><i class="fas fa-heart fa-beat text-danger mx-1"></i>برای مردم ایران</p>
+        <ul class="list-unstyled d-flex justify-content-center flex-wrap gap-3 mb-2">
+          <li class="text-white"><i class="fas fa-language me-1"></i>زبان</li>
+          <li><a class="fw-bold text-white" href="/about.html" lang="fa" aria-current="page">فارسی</a></li>
+          <li><a href="/ckb/about.html" lang="ckb">کوردی</a></li>
+          <li><a href="/en/about.html" lang="en">English</a></li>
+        </ul>
+        <p class="text-center mb-0 fs-6 footer-copyright">توسعه داده شده توسط <a href="https://milad.nu" target="_blank">میلاد نوری</a> <i class="fas fa-heart fa-beat text-danger mx-1"></i> برای مردم ایران</p>
       </div>
     </footer>
-    <script src="js/jquery-4.0.0.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js?v=5.3.3"></script>
-    <script src="js/main.js?v=1.0.3"></script>
+    <script src="/js/jquery-4.0.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js?v=5.3.3"></script>
+    <script src="/js/main.js?v=1.0.3"></script>
   </body>
 </html>

@@ -1,0 +1,41 @@
+{
+  "title": "Privacy Policy | MotmaenBash",
+  "description": "Privacy policy of the MotmaenBash Android app, explaining data collection, usage, and user rights in a transparent manner.",
+  "keywords": "privacy policy, privacy, MotmaenBash, phishing protection, data security, Android app",
+  "url": "https://motmaenbash.ir/en/privacy.html",
+  "alternateUrl": "https://motmaenbash.ir/privacy.html",
+  "alternateLang": "fa",
+  "otherHref": "/privacy.html",
+  "otherLang": "fa",
+  "otherLabel": "مشاهده نسخه فارسی",
+  "heading": "Privacy Policy",
+  "lead": "This document explains how the MotmaenBash Android app handles your information.",
+  "collectionTitle": "Data Collection and Security",
+  "collection": [
+    "MotmaenBash does not require any user account, registration, or login, and it does not collect any personal data such as name, email, or phone number.",
+    "SMS, link, and installed app analysis is performed locally and offline on the device. MotmaenBash does not use any server to store or process user data.",
+    "Message text, links, and the list of installed apps are not sent to a server or cloud. MotmaenBash has no backend for that. Only crash reports and aggregate usage counts are sent to Firebase and described under Analytics Tools.",
+    "To detect new threats such as phishing SMS, scam websites, and suspicious apps, the app updates its database from a public GitHub repository."
+  ],
+  "afterCollection": [
+    "All processing and alerts - including link, SMS, and app checks - are fully offline. MotmaenBash does not use any server for data collection or analysis.",
+    "The \"Report\" section of the app allows users to voluntarily report new cases via a Google Form. Any information submitted through this form is used solely to improve the database and identify new phishing or scam threats.",
+    "Users can revoke the app's permissions at any time through the Android system settings."
+  ],
+  "analyticsTitle": "Analytics Tools",
+  "analyticsIntro": "The following tools are used solely to improve app stability and quality:",
+  "analytics": [
+    "Crashlytics by Firebase (owned by Google) is used for crash reporting.",
+    "Firebase Analytics (owned by Google) is used for general app usage statistics."
+  ],
+  "analyticsNotes": [
+    "Analytics data includes counts of events such as alert displays, but does not include any sensitive content, technical details, or personally identifiable information.",
+    "Firebase libraries may automatically request advertising-related permissions. To protect user privacy, the following permissions have been manually removed from the app’s manifest:"
+  ],
+  "moreTitle": "More Information",
+  "moreBefore": "For more information, please visit our",
+  "moreLink": "FAQ (Persian)",
+  "moreAfter": "page.",
+  "moreHref": "/faqs.html",
+  "moreLang": "fa"
+}
